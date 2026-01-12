@@ -1,0 +1,6 @@
+# Documentation build requirements for Read the Docs
+sphinx>=4.0,<6.0
+myst-parser>=1.0.0
+sphinx-copybutton>=0.5.0
+sphinx-design>=0.3.0
+sphinx-tabs>=3.4.0

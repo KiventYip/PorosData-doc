@@ -9,7 +9,7 @@ For detailed contribution guidelines, please refer to our [full contributing gui
 ## 🚀 Quick Start
 
 1. Fork the repository
-2. Clone your fork: `git clone https://github.com/your-username/porosdata-processor-doc.git`
+2. Clone your fork: `git clone https://github.com/KiventYip/PorosData-doc.git`
 3. Create a feature branch: `git checkout -b feature/your-feature`
 4. Make your changes
 5. Test your changes by building the documentation locally
@@ -41,7 +41,7 @@ open _build/html/index.html
 
 ## 🐛 Issues and Questions
 
-- Check our [GitHub Issues](https://github.com/KiventYip/PorosData-Processor-doc/issues)
+- Check our [GitHub Issues](https://github.com/KiventYip/PorosData-doc/issues)
 - For documentation-specific questions, use the "documentation" label
 
 Thank you for helping improve our documentation!

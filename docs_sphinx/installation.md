@@ -82,7 +82,7 @@ import porosdata_processor
 from porosdata_processor import TextCleaner
 
 # Incorrect
-import PorosData-Processor  # Wrong case and hyphens
+# import PorosData-Processor  # Wrong case and hyphens (invalid Python syntax)
 ```
 
 **Encoding Issues**: Ensure your files are properly encoded:

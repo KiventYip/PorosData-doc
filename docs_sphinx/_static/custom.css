@@ -1,9 +1,50 @@
-/* Custom CSS for PorosData-Processor documentation */
+/* Custom CSS for PorosData documentation - Enhanced responsive layout */
 
-/* Increase page width for better readability */
-div.document {
+/* Global layout improvements */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Improve overall page structure */
+.wy-body-for-nav {
+    background: #f8f9fa;
+}
+
+/* Better content area utilization */
+.wy-nav-content {
+    background: white;
+    border-radius: 8px;
+    margin: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced header styling */
+.wy-nav-top {
+    background: #2980b9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Optimize page layout for better readability and responsive design */
+.wy-nav-content {
+    max-width: none !important;
+}
+
+.wy-nav-content-wrap {
+    margin-left: auto !important;
+    margin-right: auto !important;
     max-width: 1200px !important;
-    width: 95% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+/* Main content area with responsive width */
+div.document {
+    max-width: 900px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
 }
 
 /* Improve code block readability */
@@ -42,15 +83,126 @@ div.sphinxsidebarwrapper {
     padding: 20px;
 }
 
-/* Better mobile responsiveness */
-@media (max-width: 768px) {
-    div.document {
-        width: 98% !important;
-        margin: 10px auto !important;
+/* Enhanced admonition styling for ecosystem components */
+div.admonition-tip {
+    border-left: 4px solid #17a2b8;
+    background-color: #f8f9fa;
+}
+
+div.admonition-tip .admonition-title {
+    color: #17a2b8;
+    font-weight: bold;
+}
+
+div.admonition-important {
+    border-left: 4px solid #dc3545;
+    background-color: #fff5f5;
+}
+
+div.admonition-important .admonition-title {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+div.admonition-note {
+    border-left: 4px solid #28a745;
+    background-color: #f8fff8;
+}
+
+div.admonition-note .admonition-title {
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* Hide "View page source" link for cleaner footer */
+div.rst-footer-buttons {
+    display: none !important;
+}
+
+/* Hide source link in footer */
+a.rst-viewsource-link {
+    display: none !important;
+}
+
+/* Enhanced responsive design for all screen sizes */
+@media (min-width: 1400px) {
+    /* Large desktop screens */
+    .wy-nav-content-wrap {
+        max-width: 1400px !important;
     }
 
-    div.sphinxsidebar {
-        width: 100%;
-        margin-bottom: 20px;
+    div.document {
+        max-width: 1000px !important;
+    }
+}
+
+@media (max-width: 1199px) {
+    /* Medium to large tablets and small desktops */
+    .wy-nav-content-wrap {
+        max-width: 100% !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    div.document {
+        max-width: 850px !important;
+        padding: 15px !important;
+    }
+}
+
+@media (max-width: 991px) {
+    /* Small tablets and large phones */
+    .wy-nav-content-wrap {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    div.document {
+        max-width: 100% !important;
+        padding: 10px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mobile devices */
+    .wy-nav-content-wrap {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+
+    div.document {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 10px !important;
+    }
+
+    /* Hide sidebar on very small screens to maximize content space */
+    .wy-nav-side {
+        display: none;
+    }
+
+    .wy-nav-content-wrap {
+        margin-left: 0 !important;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Extra small devices */
+    div.document {
+        padding: 5px !important;
+    }
+
+    /* Adjust code blocks for small screens */
+    .highlight {
+        padding: 0.5em !important;
+        margin: 0.5em 0 !important;
+        font-size: 0.9em !important;
+    }
+
+    /* Adjust table cells for small screens */
+    table.docutils th,
+    table.docutils td {
+        padding: 4px 6px !important;
+        font-size: 0.9em !important;
     }
 }

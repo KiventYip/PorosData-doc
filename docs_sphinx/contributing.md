@@ -1,4 +1,4 @@
-# Contributing to PorosData-Processor
+# Contributing to PorosData
 
 We welcome contributions from the community! This document provides guidelines for contributing to the project.
 

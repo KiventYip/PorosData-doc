@@ -1,6 +1,6 @@
-# Contributing to PorosData-Processor Documentation
+# Contributing to PorosData Documentation
 
-Thank you for your interest in contributing to the PorosData-Processor documentation! This document provides guidelines and information for contributors.
+Thank you for your interest in contributing to the PorosData documentation! This document provides guidelines and information for contributors.
 
 ## 📖 Documentation Structure
 

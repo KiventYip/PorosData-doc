@@ -1,6 +1,6 @@
 # Development Roadmap
 
-This document outlines planned improvements and features for PorosData-Processor. As an actively maintained project, we continuously work to enhance security, performance, and functionality.
+This document outlines planned improvements and features for the PorosData ecosystem. As an actively maintained project, we continuously work to enhance security, performance, and functionality across all components.
 
 ## 🔒 Security Enhancements (In Progress)
 

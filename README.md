@@ -40,6 +40,65 @@ Our documentation is currently undergoing a major transformation from a **user o
 
 Please refer to the [Installation Guide](docs_sphinx/installation.md) and [Quick Start](docs_sphinx/quickstart.md).
 
+## 🏗️ Documentation Repository Structure
+
+This guide explains the Sphinx-based documentation repository architecture, helping contributors understand file responsibilities and modification workflows.
+
+### 🗺️ File System Mapping
+
+| Path | Responsibility | Key Files |
+|------|----------------|-----------|
+| `docs_sphinx/` | **Content Root** - All documentation source files | `*.md`, `*.rst`, `index.rst` |
+| `docs_sphinx/_static/` | **Assets Layer** - CSS, images, and custom resources | `custom.css`, logos, icons |
+| `docs_sphinx/_templates/` | **Template Layer** - Custom HTML templates and layouts | `page.html`, `layout.html` |
+| `docs_sphinx/_build/` | **Output Layer** - Generated HTML (auto-created, don't edit) | `html/`, `doctrees/` |
+| `conf.py` | **Configuration Engine** - Controls themes, extensions, and build behavior | Sphinx settings, autodoc config |
+| `index.rst` | **Navigation Hub** - Root table of contents linking all documentation | toctree directives |
+
+### ✍️ Developer Modification Guide
+
+#### **Scenario A: Adding Kernel Documentation**
+- **Create**: New `.rst` file in appropriate directory (e.g., `04_development/new-plugin-guide.rst`)
+- **Register**: Add to `index.rst` toctree under relevant section
+- **Build**: Run `make html` to verify navigation integration
+
+#### **Scenario B: Modifying Theme Styling**
+- **Edit**: `docs_sphinx/_static/custom.css` for color, font, and layout changes
+- **Register**: Ensure `custom.css` is listed in `conf.py` `html_css_files` array
+- **Apply**: Changes take effect on next build - no server restart needed
+
+#### **Scenario C: Enabling Code Documentation**
+- **Configure**: Add `'sphinx.ext.autodoc'` to `extensions` list in `conf.py`
+- **Import**: Use `.. automodule::` directives in `.rst` files
+- **Generate**: Run `sphinx-apidoc` to auto-extract docstrings
+
+### 🖼️ Visual Hierarchy Diagram
+
+```mermaid
+graph TD
+    A[Configuration Layer<br/>conf.py] --> B[Structure Layer<br/>index.rst]
+    B --> C[Content Layer<br/>01_architecture/, 02_internals/, etc.]
+    C --> D[Presentation Layer<br/>_static/, _templates/]
+
+    A --> E[Extensions<br/>autodoc, mathjax]
+    A --> F[Theme Settings<br/>RTD Theme, CSS files]
+
+    D --> G[Styling<br/>custom.css]
+    D --> H[Templating<br/>layout.html]
+
+    C --> I[Markdown Files<br/>.md content]
+    C --> J[RST Files<br/>.rst structure]
+```
+
+### 🔧 Quick Workflow Reference
+
+1. **Content Changes**: Edit `.md`/`.rst` files → `make html` → commit
+2. **Style Changes**: Edit `custom.css` → `make html` → commit
+3. **Structure Changes**: Edit `index.rst` → `make html` → commit
+4. **Config Changes**: Edit `conf.py` → `make html` → test thoroughly
+
+**Pro Tip**: Always run `make html` locally before committing to catch formatting errors early!
+
 ## 🤝 Contributing
 
 We welcome contributions! Please read our [Contributing Guide](docs_sphinx/contributing.md).

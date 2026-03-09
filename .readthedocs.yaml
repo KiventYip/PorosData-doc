@@ -20,12 +20,12 @@ python:
 # 搜索配置
 search:
   ranking:
-    - title: 10
-    - headers: 8
-    - content: 5
+    title: 10
+    headers: 8
+    content: 5
 
-# 构建产物配置
-formats:
-  - pdf      # 生成 PDF 版本
-  - htmlzip  # 生成 HTML 压缩包
-  - epub     # 生成 EPUB 版本 (如果适用)
+# 构建产物配置 (可选 - 根据需要启用)
+# formats:
+#   - pdf      # 生成 PDF 版本
+#   - htmlzip  # 生成 HTML 压缩包
+#   - epub     # 生成 EPUB 版本 (如果适用)

@@ -63,6 +63,6 @@ PorosData 是专为材料科学及相关实证领域打造的 **AI4S 数据编�
 
 ## 项目生态
 
-- [贡献指南](contributing.zh.md)
+- [贡献指南](community/contributing.zh.md)
 - [路线图](roadmap.zh.md)
 - [更新日志](changelog.zh.md)

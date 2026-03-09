@@ -138,4 +138,4 @@ splitting:
 
 - 查看 [API 参考](api-reference.zh.md) 了解详细的方法文档
 - 查看 [示例](examples.zh.md) 了解实际使用案例
-- 了解 [插件开发](contributing.zh.md) 来扩展功能
+- 了解 [插件开发](community/contributing.zh.md) 来扩展功能

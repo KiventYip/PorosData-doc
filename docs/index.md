@@ -63,6 +63,6 @@ PorosData is an **AI4S data orchestration framework** specifically engineered fo
 
 ## 项目生态
 
-- [贡献指南](contributing.md)
+- [贡献指南](community/contributing.md)
 - [路线图](roadmap.md)
 - [更新日志](changelog.md)

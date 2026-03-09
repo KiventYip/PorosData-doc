@@ -22,13 +22,6 @@
         <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/changelog/"/>
     </url>
     <url>
-        <loc>Nonecontributing/</loc>
-        <lastmod>2026-03-09</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonecontributing/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/contributing/"/>
-    </url>
-    <url>
         <loc>Nonedesign-insights/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
@@ -106,6 +99,20 @@
         <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/guides/quickstart/"/>
     </url>
     <url>
+        <loc>Nonetools/designer/</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonetools/designer/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/tools/designer/"/>
+    </url>
+    <url>
+        <loc>Nonetools/processor/</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonetools/processor/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/tools/processor/"/>
+    </url>
+    <url>
         <loc>Nonezh/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
@@ -125,13 +132,6 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/changelog/"/>
         <xhtml:link rel="alternate" hreflang="en" href="Nonechangelog/"/>
-    </url>
-    <url>
-        <loc>Nonezh/contributing/</loc>
-        <lastmod>2026-03-09</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/contributing/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonecontributing/"/>
     </url>
     <url>
         <loc>Nonezh/design-insights/</loc>
@@ -209,5 +209,19 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/guides/quickstart/"/>
         <xhtml:link rel="alternate" hreflang="en" href="Noneguides/quickstart/"/>
+    </url>
+    <url>
+        <loc>Nonezh/tools/designer/</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/tools/designer/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonetools/designer/"/>
+    </url>
+    <url>
+        <loc>Nonezh/tools/processor/</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/tools/processor/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonetools/processor/"/>
     </url>
 </urlset>

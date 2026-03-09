@@ -138,4 +138,4 @@ splitting:
 
 - Explore [API Reference](api-reference.md) for detailed method documentation
 - Check out [Examples](examples.md) for real-world use cases
-- Learn about [Plugin Development](contributing.md) to extend functionality
+- Learn about [Plugin Development](community/contributing.md) to extend functionality

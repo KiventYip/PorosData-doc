@@ -82,8 +82,12 @@ nav:
 
   # 工具详情
   - Tools:
-      - Processor: tools/processor/
-      - Designer: tools/designer/
+      - Processor: tools/processor/index.md
+      - Designer: tools/designer/index.md
+
+  # 指南
+  - Guides:
+      - Quick Start Guide: guides/quickstart.md
 
   # 社区生态
   - Community:

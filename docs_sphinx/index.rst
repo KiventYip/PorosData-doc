@@ -13,66 +13,110 @@ PorosData Documentation
    :alt: PyPI version
    :target: https://pypi.org/project/porosdata-processor/
 
-**Data Sovereignty and Academic Integrity Declaration**
+**PorosData: A Comprehensive End-to-End Framework for Scientific Data Orchestration**
 
-In the era of AI for Science, data is no longer merely an information carrier, but the foundation of academic discourse. PorosData upholds the principle of "academic atomicity": every piece of data carries indivisible academic value, and we are committed to protecting the atomic integrity of mathematical formulas, citation systems, and scientific semantics throughout the data refinement process.
+PorosData is an **AI4S data orchestration framework** specifically engineered for the materials Science and related empirical fields. By providi**ng a full-lifecycle solution - form parsing and refinement to data synthesis - it serves as the bridge between raw scientific literature and AI models, safeguarding the semantic integrity, fidelity, and end-to-end provenance of scientific data
 
-This atomicity guarantee ensures:
-- **Semantic Fidelity**: Mathematical expressions never become distorted, citation chains never break
-- **Traceability**: Every cleaning decision has clear academic justification
-- **Extensibility**: New components and plugins seamlessly integrate atomicity contracts
+框架核心特性：  
+- **数据完整性保证**: 保护数学公式、引用体系和科学语义的原子性  
+- **模块化架构**: 三大核心工具包协同工作，覆盖科研数据处理全流程  
+- **学术导向设计**: 优先考虑学术规范和科研工作流的需求  
 
-We believe that true AI for Science is not only technological innovation, but also the inheritance of academic tradition.
+**学术原子性宣言**
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Architecture & Philosophy
+在 AI for Science 时代，数据不仅是信息载体，更是学术话语的基础。PorosData 秉持"学术原子性"原则：每份数据都承载不可分割的学术价值，我们致力于在数据精炼过程中保护数学公式、引用体系和科学语义的原子完整性。
 
-   01_architecture/overview
-   01_architecture/component-contracts
-   01_architecture/atomicity-guarantees
+原子性保证包括：
+- **语义保真**: 数学表达式永不失真，引用链条永不断裂
+- **可追溯性**: 每个清洗决策都有明确的学术依据
+- **可扩展性**: 新组件和插件无缝集成原子性契约
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Processing Engine Internals
+我们相信，真正的 AI for Science 不仅是技术创新，更是学术传统的传承。
 
-   02_internals/pipeline-orchestration
-   02_internals/scheduling-logic
-   02_internals/memory-management
+.. note::
+   **🚀 完整工作流案例**: 想要了解从PDF论文到AI训练数据集的完整流程？请查看 :doc:`end-to-end-workflow`。
 
-.. toctree::
-   :maxdepth: 3
-   :caption: Science-Data Guardians
+PorosData-Parser
+----------------
 
-   03_guardians/latex-protection
-   03_guardians/academic-units
-   03_guardians/protection-registry
+🔍 数据提取引擎
+
+从 PDF 论文、LaTeX 源码等非结构化文献中智能提取结构化科学数据。
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Plugin Architecture
+   :maxdepth: 1
+   :caption: Parser Documentation
+   :titlesonly:
 
-   04_development/plugin-protocol
-   04_development/extension-guide
-   04_development/testing-framework
+   PorosData-Parser/introduction
+   PorosData-Parser/tool-usage
+   PorosData-Parser/research-insights
+
+PorosData-Processor
+-------------------
+
+🧹 数据清洗流水线
+
+基于学术原子性原则，进行数据标准化、质量控制和预处理。
 
 .. toctree::
-   :maxdepth: 2
-   :caption: API Reference
+   :maxdepth: 1
+   :caption: Processor Documentation
+   :titlesonly:
 
-   api-reference
+   PorosData-Processor/introduction
+   PorosData-Processor/tool-usage
+   PorosData-Processor/research-insights
+
+PorosData-Designer
+------------------
+
+🎯 数据合成设计器
+
+将清洗后的数据重组为适合大模型训练的指令数据集和实验设计方案。
 
 .. toctree::
-   :maxdepth: 2
-   :caption: User Guide
+   :maxdepth: 1
+   :caption: Designer Documentation
+   :titlesonly:
+
+   PorosData-Designer/introduction
+   PorosData-Designer/tool-usage
+   PorosData-Designer/research-insights
+
+快速上手
+--------
+
+.. toctree::
+   :maxdepth: 1
+   :caption: 快速上手
+   :titlesonly:
 
    installation
    quickstart
    examples
 
+深度参考
+--------
+
 .. toctree::
-   :maxdepth: 2
-   :caption: Community
+   :maxdepth: 1
+   :caption: 深度参考
+   :titlesonly:
+
+   design-philosophy
+   research-review
+   design-insights
+   glossary
+   api-reference
+
+项目生态
+==================
+
+.. toctree::
+   :maxdepth: 1
+   :caption: 项目生态
+   :titlesonly:
 
    contributing
    roadmap

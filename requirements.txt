@@ -1,0 +1,16 @@
+# requirements.txt - 工业级稳定版本锁定
+# 核心框架 - 锁定 MkDocs 1.x 以避开 2.0 兼容性问题
+mkdocs>=1.5.0,<2.0.0             # MkDocs 核心框架 (避开 2.0)
+mkdocs-material>=9.5.0,<10.0.0   # Material 主题 (与 MkDocs 1.x 兼容)
+
+# 多语言支持 - 确保无缝语言切换
+mkdocs-static-i18n>=1.2.0,<2.0.0 # 后缀法多语言 (核心功能：切换时不跳回首页)
+
+# API 文档自动生成 - Data-Centric AI 项目必备
+mkdocstrings[python]>=0.24.0,<1.0.0 # Python API 自动文档生成
+
+# Markdown 增强 - AI/数据科学文档核心功能
+pymdown-extensions>=10.7,<11.0.0 # 高级 Markdown 扩展 (公式、代码块、表格)
+
+# 宏扩展 - 文档自动化
+mkdocs-macros-plugin>=1.0.0,<2.0.0 # 支持动态内容生成

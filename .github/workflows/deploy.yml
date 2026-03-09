@@ -1,0 +1,39 @@
+# .github/workflows/deploy.yml
+name: Deploy Documentation
+
+on:
+  push:
+    branches:
+      - main  # 监听 main 分支的更新
+    paths:
+      - 'docs/**'
+      - 'mkdocs.yml'
+      - '.github/workflows/deploy.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 获取完整 Git 历史，确保"页面最后更新时间"功能准确
+
+      - name: Set up Python runtime
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip' # 利用缓存加速构建
+
+      - name: Install documentation dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build & Deploy to GitHub Pages
+        # mkdocs-static-i18n 会自动处理多语言环境的嵌套部署
+        run: |
+          python build_clean.py gh-deploy --force

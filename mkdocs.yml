@@ -1,0 +1,195 @@
+# mkdocs.yml - 工业级 PorosData 文档配置
+site_name: PorosData
+site_description: Data-Centric AI Processing Pipeline & Toolchain
+repo_url: https://github.com/KiventYip/PorosData-doc
+edit_uri: edit/main/docs/
+
+# 构建配置 - 抑制已知警告
+strict: false  # 允许警告但继续构建
+
+# ---------------------------------------------------------
+# 1. 视觉体系 (Data-Centric AI Design System)
+# ---------------------------------------------------------
+theme:
+  name: material
+
+  # 字体配置：专业阅读体验 + 代码显示优化
+  font:
+    text: Inter              # 现代无衬线字体，适合长文档阅读
+    code: JetBrains Mono     # 等宽字体，优化代码可读性
+
+  # 色彩系统：Data-Centric AI 的深邃科技感
+  palette:
+    # 浅色模式 - 专业清爽
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white          # 纯白顶栏，现代极简
+      accent: indigo          # 靛蓝色强调，专业可信
+      toggle:
+        icon: material/weather-night
+        name: 切换至深色模式
+
+    # 深色模式 - 赛博科技感
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate           # 石板灰背景，护眼且高端
+      primary: black          # 纯黑顶栏，沉浸式
+      accent: cyan            # 青色强调，Data & AI 赛博感
+      toggle:
+        icon: material/weather-sunny
+        name: 切换至浅色模式
+
+  # 智能布局特性 - 彻底解决移动端遮挡问题
+  features:
+    # 导航优化
+    - navigation.tabs           # 顶部标签页，减少左侧边栏占用
+    - navigation.tabs.sticky    # 标签页悬浮，始终可见
+    - navigation.sections       # 侧边栏分组展示
+    - navigation.expand         # 默认展开当前章节
+    - navigation.top            # 回到顶部按钮，长文档必备
+
+    # 移动端体验革命 (核心：彻底解决遮挡问题)
+    - header.autohide           # 滚动时自动隐藏顶栏，解放屏幕空间
+    - toc.follow                # TOC 智能跟随，移动端折叠到右上角
+
+    # 开发者体验增强
+    - search.suggest            # 搜索智能提示
+    - search.highlight          # 搜索结果高亮
+    - content.code.copy         # 代码块一键复制
+    - content.code.annotate     # 代码块注释展开 (保持代码整洁)
+    - content.footnote.tooltips # 脚注提示优化
+
+# ---------------------------------------------------------
+# 2. 智能导航架构 (Industrial Navigation)
+# ---------------------------------------------------------
+nav:
+  # 主页
+  - Home: index.md
+
+  # 项目核心
+  - Project:
+      - Quick Start: quickstart.md
+      - Design Philosophy: design-philosophy.md
+      - End-to-End Workflow: end-to-end-workflow.md
+      - Research Review: research-review.md
+      - Design Insights: design-insights.md
+
+  # 技术文档
+  - Technical Docs:
+      - API Reference: api-reference.md
+      - Installation: installation.md
+      - Examples: examples.md
+      - Glossary: glossary.md
+
+  # 社区生态
+  - Community:
+      - Contributing: community/contributing.md
+      - Roadmap: roadmap.md
+      - Changelog: changelog.md
+
+# ---------------------------------------------------------
+# 3. 智能化多语言系统 (Zero-Friction i18n)
+# ---------------------------------------------------------
+plugins:
+  # 搜索功能
+  - search:
+      lang:
+        - en
+        - zh
+
+  # API 文档自动生成
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]  # 指向源码目录
+          options:
+            show_source: true
+            show_root_heading: true
+            show_object_full_path: false
+            show_category_heading: true
+
+  # 多语言核心插件 (解决切换不跳页的关键)
+  - i18n:
+      docs_structure: suffix        # 后缀法: index.md + index.zh.md
+      fallback_to_default: true     # 无翻译时回退到默认语言
+      reconfigure_material: true    # 拦截 Material 语言切换器，实现原地跳转
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: zh
+          name: 简体中文
+          build: true
+
+# ---------------------------------------------------------
+# 4. Markdown 增强扩展 (AI/Data Science Power Tools)
+# ---------------------------------------------------------
+markdown_extensions:
+  # 基础增强
+  - admonition                    # 提示框 (Note, Warning, Tip)
+  - attr_list                     # HTML 属性支持
+  - md_in_html                    # HTML 中嵌入 Markdown
+  - tables                        # 表格支持
+
+  # 高级内容展示
+  - pymdownx.details              # 可折叠内容 (适合隐藏复杂 Log)
+  - pymdownx.superfences         # 超级代码块 (Mermaid图表支持)
+  - pymdownx.highlight:           # 代码高亮增强
+      anchor_linenums: true       # 行号锚点分享
+      use_pygments: true
+  - pymdownx.inlinehilite         # 行内代码高亮
+  - pymdownx.snippets             # 外部文件引用
+  - pymdownx.tabbed:              # 选项卡 (安装命令展示)
+      alternate_style: true
+
+  # 数学公式支持 (AI 论文必备)
+  - pymdownx.arithmatex:
+      generic: true               # 通用公式语法支持
+
+  # 任务和列表增强
+  - pymdownx.tasklist:            # 任务列表
+      custom_checkbox: true
+  - pymdownx.tilde                # 删除线支持
+
+  # 脚注支持
+  - footnotes                     # 脚注支持
+
+# ---------------------------------------------------------
+# 5. 外部资源集成 (Math & Performance)
+# ---------------------------------------------------------
+extra_javascript:
+  # 数学公式渲染 (MathJax v3 - 高性能)
+  - assets/javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+# 自定义 CSS (可选微调)
+extra_css:
+  # 可在此添加自定义样式文件
+  # - assets/stylesheets/custom.css
+
+# ---------------------------------------------------------
+# 6. 构建优化 (Performance & SEO)
+# ---------------------------------------------------------
+# 排除构建文件
+exclude_docs: |
+  /.*\.tmp$
+  /temp/
+
+# 版权信息
+copyright: |
+  Copyright &copy; 2024 PorosData Team -
+  <a href="https://github.com/KiventYip/PorosData-doc/blob/main/LICENSE">MIT License</a>
+
+# 额外配置
+extra:
+  # 版本信息
+  version:
+    provider: mike  # 如果使用 mike 进行版本管理
+
+  # 社交媒体卡片
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/KiventYip/PorosData-doc
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/porosdata-processor/

@@ -146,7 +146,7 @@ html_theme_options = {
     'collapse_navigation': True,
     'sticky_navigation': True,
     'includehidden': True,
-    'titles_only': True,
+    'titles_only': False,
 
     # Footer customization
     'canonical_url': 'https://porosdata-doc.readthedocs.io/en/latest/',

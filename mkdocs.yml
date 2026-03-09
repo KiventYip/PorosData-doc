@@ -80,6 +80,11 @@ nav:
       - Examples: examples.md
       - Glossary: glossary.md
 
+  # 工具详情
+  - Tools:
+      - Processor: tools/processor/
+      - Designer: tools/designer/
+
   # 社区生态
   - Community:
       - Contributing: community/contributing.md
@@ -163,10 +168,9 @@ extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
-# 自定义 CSS (可选微调)
+# 自定义 CSS - 整合旧文档的优秀样式
 extra_css:
-  # 可在此添加自定义样式文件
-  # - assets/stylesheets/custom.css
+  - assets/stylesheets/custom.css
 
 # ---------------------------------------------------------
 # 6. 构建优化 (Performance & SEO)

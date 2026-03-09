@@ -1,0 +1,218 @@
+/* docs/assets/stylesheets/custom.css */
+/* 自定义样式 - 整合自旧Sphinx文档的优秀样式 */
+
+/* 全局布局改进 - 基于旧文档的响应式设计 */
+.wy-body-for-nav {
+    background: #f8f9fa;
+}
+
+.wy-nav-content {
+    background: white;
+    border-radius: 8px;
+    margin: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: none !important;
+}
+
+.wy-nav-content-wrap {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 1200px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+/* 改进代码块显示 */
+.highlight {
+    background-color: #f8f8f8;
+    border-radius: 4px;
+    padding: 1em;
+    margin: 1em 0;
+}
+
+/* 优化表格样式 */
+table.docutils {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+}
+
+table.docutils th,
+table.docutils td {
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+table.docutils th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+/* 增强数学公式显示 */
+.math {
+    font-size: 1.1em;
+    color: #2c3e50;
+}
+
+/* 改进列表样式 */
+.md-typeset ul {
+    list-style-type: disc;
+    margin-left: 1.5em;
+}
+
+.md-typeset ol {
+    list-style-type: decimal;
+    margin-left: 1.5em;
+}
+
+/* 自定义提示框样式 */
+.md-typeset .admonition {
+    border-radius: 8px;
+    margin: 1em 0;
+    padding: 1em;
+}
+
+.md-typeset .admonition.note {
+    border-left: 4px solid #2196f3;
+    background-color: #e3f2fd;
+}
+
+.md-typeset .admonition.warning {
+    border-left: 4px solid #ff9800;
+    background-color: #fff3e0;
+}
+
+.md-typeset .admonition.error {
+    border-left: 4px solid #f44336;
+    background-color: #ffebee;
+}
+
+.md-typeset .admonition.success {
+    border-left: 4px solid #4caf50;
+    background-color: #e8f5e8;
+}
+
+/* 响应式设计优化 */
+@media (min-width: 1400px) {
+    /* 大桌面屏幕 */
+    .wy-nav-content-wrap {
+        max-width: 1400px !important;
+    }
+}
+
+@media (max-width: 1199px) {
+    /* 中等屏幕 */
+    .wy-nav-content-wrap {
+        max-width: 100% !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
+
+@media (max-width: 991px) {
+    /* 小屏幕 */
+    .wy-nav-content-wrap {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* 移动设备 */
+    .wy-nav-content-wrap {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+
+    .wy-nav-content {
+        margin: 10px !important;
+    }
+
+    /* 移动端优化代码块 */
+    .highlight {
+        padding: 0.5em !important;
+        margin: 0.5em 0 !important;
+        font-size: 0.9em !important;
+        overflow-x: auto;
+    }
+
+    /* 移动端表格优化 */
+    table.docutils th,
+    table.docutils td {
+        padding: 4px 6px !important;
+        font-size: 0.9em !important;
+    }
+}
+
+@media (max-width: 576px) {
+    /* 超小屏幕 */
+    .wy-nav-content {
+        margin: 5px !important;
+        padding: 5px !important;
+    }
+
+    .highlight {
+        font-size: 0.85em !important;
+    }
+}
+
+/* 学术文档专用样式 */
+.scientific-formula {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 1em;
+    margin: 1em 0;
+    font-family: 'Computer Modern', 'Latin Modern Roman', serif;
+}
+
+.scientific-formula .formula-title {
+    font-weight: bold;
+    color: #495057;
+    margin-bottom: 0.5em;
+}
+
+.citation {
+    color: #6c757d;
+    font-style: italic;
+}
+
+.citation:before {
+    content: "[";
+}
+
+.citation:after {
+    content: "]";
+}
+
+/* 改进导航体验 */
+.md-nav__link--active {
+    font-weight: 600;
+    color: #1976d2 !important;
+}
+
+/* 优化搜索结果 */
+.md-search-result__article {
+    border-left: 3px solid #1976d2;
+    padding-left: 1em;
+    margin: 0.5em 0;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

@@ -1,213 +1,213 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
-        <loc>None./</loc>
+        <loc>./</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="None"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/"/>
+        <xhtml:link rel="alternate" hreflang="en" href=""/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/"/>
     </url>
     <url>
-        <loc>Noneapi-reference/</loc>
+        <loc>api-reference/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneapi-reference/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/api-reference/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="api-reference/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/api-reference/"/>
     </url>
     <url>
-        <loc>Nonechangelog/</loc>
+        <loc>changelog/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonechangelog/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="changelog/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/changelog/"/>
     </url>
     <url>
-        <loc>Nonedesign-insights/</loc>
+        <loc>design-insights/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonedesign-insights/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/design-insights/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="design-insights/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/design-insights/"/>
     </url>
     <url>
-        <loc>Nonedesign-philosophy/</loc>
+        <loc>design-philosophy/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonedesign-philosophy/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/design-philosophy/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="design-philosophy/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/design-philosophy/"/>
     </url>
     <url>
-        <loc>Noneend-to-end-workflow/</loc>
+        <loc>end-to-end-workflow/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneend-to-end-workflow/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/end-to-end-workflow/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="end-to-end-workflow/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/end-to-end-workflow/"/>
     </url>
     <url>
-        <loc>Noneexamples/</loc>
+        <loc>examples/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneexamples/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/examples/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="examples/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/examples/"/>
     </url>
     <url>
-        <loc>Noneglossary/</loc>
+        <loc>glossary/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneglossary/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/glossary/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="glossary/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/glossary/"/>
     </url>
     <url>
-        <loc>Noneinstallation/</loc>
+        <loc>installation/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneinstallation/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/installation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="installation/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/installation/"/>
     </url>
     <url>
-        <loc>Nonequickstart/</loc>
+        <loc>quickstart/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonequickstart/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/quickstart/"/>
     </url>
     <url>
-        <loc>Noneresearch-review/</loc>
+        <loc>research-review/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresearch-review/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/research-review/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="research-review/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/research-review/"/>
     </url>
     <url>
-        <loc>Noneroadmap/</loc>
+        <loc>roadmap/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneroadmap/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/roadmap/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="roadmap/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/roadmap/"/>
     </url>
     <url>
-        <loc>Nonecommunity/contributing/</loc>
+        <loc>community/contributing/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonecommunity/contributing/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/community/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="community/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/community/contributing/"/>
     </url>
     <url>
-        <loc>Nonetools/designer/</loc>
+        <loc>tools/designer/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonetools/designer/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/tools/designer/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="tools/designer/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/tools/designer/"/>
     </url>
     <url>
-        <loc>Nonetools/processor/</loc>
+        <loc>tools/processor/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonetools/processor/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/tools/processor/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="tools/processor/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/tools/processor/"/>
     </url>
     <url>
-        <loc>Nonezh/</loc>
+        <loc>zh/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="None"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/"/>
+        <xhtml:link rel="alternate" hreflang="en" href=""/>
     </url>
     <url>
-        <loc>Nonezh/api-reference/</loc>
+        <loc>zh/api-reference/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/api-reference/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneapi-reference/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/api-reference/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="api-reference/"/>
     </url>
     <url>
-        <loc>Nonezh/changelog/</loc>
+        <loc>zh/changelog/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/changelog/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonechangelog/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="changelog/"/>
     </url>
     <url>
-        <loc>Nonezh/design-insights/</loc>
+        <loc>zh/design-insights/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/design-insights/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonedesign-insights/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/design-insights/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="design-insights/"/>
     </url>
     <url>
-        <loc>Nonezh/design-philosophy/</loc>
+        <loc>zh/design-philosophy/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/design-philosophy/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonedesign-philosophy/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/design-philosophy/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="design-philosophy/"/>
     </url>
     <url>
-        <loc>Nonezh/end-to-end-workflow/</loc>
+        <loc>zh/end-to-end-workflow/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/end-to-end-workflow/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneend-to-end-workflow/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/end-to-end-workflow/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="end-to-end-workflow/"/>
     </url>
     <url>
-        <loc>Nonezh/examples/</loc>
+        <loc>zh/examples/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/examples/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneexamples/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/examples/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="examples/"/>
     </url>
     <url>
-        <loc>Nonezh/glossary/</loc>
+        <loc>zh/glossary/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/glossary/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneglossary/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/glossary/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="glossary/"/>
     </url>
     <url>
-        <loc>Nonezh/installation/</loc>
+        <loc>zh/installation/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/installation/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneinstallation/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/installation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="installation/"/>
     </url>
     <url>
-        <loc>Nonezh/quickstart/</loc>
+        <loc>zh/quickstart/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/quickstart/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonequickstart/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="quickstart/"/>
     </url>
     <url>
-        <loc>Nonezh/research-review/</loc>
+        <loc>zh/research-review/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/research-review/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresearch-review/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/research-review/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="research-review/"/>
     </url>
     <url>
-        <loc>Nonezh/roadmap/</loc>
+        <loc>zh/roadmap/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/roadmap/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneroadmap/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/roadmap/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="roadmap/"/>
     </url>
     <url>
-        <loc>Nonezh/community/contributing/</loc>
+        <loc>zh/community/contributing/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/community/contributing/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonecommunity/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/community/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="community/contributing/"/>
     </url>
     <url>
-        <loc>Nonezh/tools/designer/</loc>
+        <loc>zh/tools/designer/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/tools/designer/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonetools/designer/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/tools/designer/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="tools/designer/"/>
     </url>
     <url>
-        <loc>Nonezh/tools/processor/</loc>
+        <loc>zh/tools/processor/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/tools/processor/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonetools/processor/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/tools/processor/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="tools/processor/"/>
     </url>
 </urlset>

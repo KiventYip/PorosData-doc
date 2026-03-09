@@ -41,7 +41,7 @@ The goal of data mining is to automatically extract structured knowledge (e.g., 
 - **Anchoring of Multimodal Assets**: Mining work often requires "text-image penetration". AI-Ready requires that "Fig. 1" in the text is not just a few characters, but a hard-link anchor that can directly index to the image asset and its corresponding caption.
 
 !!! note "Case Study"
-    Check out the [End-to-End Workflow](end-to-end-workflow.md) to see the conversion process from PDF papers to AI training datasets.
+    Check out the [End-to-End Workflow](get_started/end-to-end-workflow.md) to see the conversion process from PDF papers to AI training datasets.
 
 ## PorosData-Parser
 
@@ -63,20 +63,20 @@ Recombines cleaned data into instruction datasets and experimental design plans 
 
 ## Quick Start
 
-- [Installation Guide](installation.md)
-- [Quick Start](quickstart.md)
-- [Usage Examples](examples.md)
+- [Installation Guide](get_started/installation.md)
+- [Quick Start](get_started/quickstart.md)
+- [Usage Examples](references/examples.md)
 
 ## In-Depth Reference
 
-- [Design Philosophy](design-philosophy.md)
-- [Research Review](research-review.md)
-- [Design Insights](design-insights.md)
-- [Glossary](glossary.md)
-- [API Reference](api-reference.md)
+- [Design Philosophy](concepts/design-philosophy.md)
+- [Research Review](research/research-review.md)
+- [Design Insights](research/design-insights.md)
+- [Glossary](concepts/glossary.md)
+- [API Reference](references/api-reference.md)
 
 ## Project Ecosystem
 
 - [Contributing Guide](community/contributing.md)
-- [Roadmap](roadmap.md)
-- [Changelog](changelog.md)
+- [Roadmap](community/roadmap.md)
+- [Changelog](community/changelog.md)

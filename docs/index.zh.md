@@ -41,7 +41,7 @@ PorosData 将每份数据视为不可分割的学术价值单元。在数据精�
 - **多模态资产的锚定**：挖掘工作往往需要“图文穿透”。AI-Ready 要求文中的“Fig. 1”不仅仅是几个字符，而是一个能够直接索引到图片资产和对应 Caption 的硬链接锚点。
 
 !!! note "案例研究"
-    查看 [端到端工作流](end-to-end-workflow.md) 了解从 PDF 论文到 AI 训练数据集的转换过程。
+    查看 [端到端工作流](get_started/end-to-end-workflow.md) 了解从 PDF 论文到 AI 训练数据集的转换过程。
 
 ## PorosData-Parser
 
@@ -63,20 +63,20 @@ PorosData 将每份数据视为不可分割的学术价值单元。在数据精�
 
 ## 快速上手
 
-- [安装指南](installation.md)
-- [快速开始](quickstart.md)
-- [使用示例](examples.md)
+- [安装指南](get_started/installation.md)
+- [快速开始](get_started/quickstart.md)
+- [使用示例](references/examples.md)
 
 ## 深度参考
 
-- [设计哲学](design-philosophy.md)
-- [研究综述](research-review.md)
-- [设计洞察](design-insights.md)
-- [术语表](glossary.md)
-- [API 参考](api-reference.md)
+- [设计哲学](concepts/design-philosophy.md)
+- [研究综述](research/research-review.md)
+- [设计洞察](research/design-insights.md)
+- [术语表](concepts/glossary.md)
+- [API 参考](references/api-reference.md)
 
 ## 项目生态
 
 - [贡献指南](community/contributing.md)
-- [路线图](roadmap.md)
-- [更新日志](changelog.md)
+- [路线图](community/roadmap.md)
+- [更新日志](community/changelog.md)

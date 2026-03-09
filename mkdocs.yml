@@ -69,14 +69,14 @@ nav:
 
   # 1. 新手与工作流 (Action-oriented)
   - Get Started:
-      - Installation: installation.md
-      - Quick Start: quickstart.md
-      - End-to-End Workflow: end-to-end-workflow.md
+      - Installation: get_started/installation.md
+      - Quick Start: get_started/quickstart.md
+      - End-to-End Workflow: get_started/end-to-end-workflow.md
 
   # 2. 核心原理 (Theory & Definitions)
   - Concepts & Architecture:
-      - Design Philosophy: design-philosophy.md
-      - Glossary: glossary.md
+      - Design Philosophy: concepts/design-philosophy.md
+      - Glossary: concepts/glossary.md
 
   # 3. 工具矩阵 (Toolchains)
   - Core Tools:
@@ -84,19 +84,19 @@ nav:
       - Designer: tools/designer/index.md
 
   # 4. 技术底座
-  - API Reference: api-reference.md
-  - Examples: examples.md
+  - API Reference: references/api-reference.md
+  - Examples: references/examples.md
 
   # 5. 研究与思考空间 (Research Log & Meta-Thinking)
   - Research & Thinking:
-      - Research Review: research-review.md
-      - Design Insights: design-insights.md
+      - Research Review: research/research-review.md
+      - Design Insights: research/design-insights.md
 
   # 6. 生态参与
   - Community:
       - Contributing: community/contributing.md
-      - Roadmap: roadmap.md
-      - Changelog: changelog.md
+      - Roadmap: community/roadmap.md
+      - Changelog: community/changelog.md
 
 # ---------------------------------------------------------
 # 3. 智能化多语言系统 (Zero-Friction i18n)

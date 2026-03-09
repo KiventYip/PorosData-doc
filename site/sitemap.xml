@@ -8,81 +8,11 @@
         <xhtml:link rel="alternate" hreflang="zh" href="zh/"/>
     </url>
     <url>
-        <loc>api-reference/</loc>
+        <loc>community/changelog/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="api-reference/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="zh/api-reference/"/>
-    </url>
-    <url>
-        <loc>changelog/</loc>
-        <lastmod>2026-03-09</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="changelog/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="zh/changelog/"/>
-    </url>
-    <url>
-        <loc>design-insights/</loc>
-        <lastmod>2026-03-09</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="design-insights/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="zh/design-insights/"/>
-    </url>
-    <url>
-        <loc>design-philosophy/</loc>
-        <lastmod>2026-03-09</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="design-philosophy/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="zh/design-philosophy/"/>
-    </url>
-    <url>
-        <loc>end-to-end-workflow/</loc>
-        <lastmod>2026-03-09</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="end-to-end-workflow/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="zh/end-to-end-workflow/"/>
-    </url>
-    <url>
-        <loc>examples/</loc>
-        <lastmod>2026-03-09</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="examples/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="zh/examples/"/>
-    </url>
-    <url>
-        <loc>glossary/</loc>
-        <lastmod>2026-03-09</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="glossary/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="zh/glossary/"/>
-    </url>
-    <url>
-        <loc>installation/</loc>
-        <lastmod>2026-03-09</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="installation/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="zh/installation/"/>
-    </url>
-    <url>
-        <loc>quickstart/</loc>
-        <lastmod>2026-03-09</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="quickstart/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="zh/quickstart/"/>
-    </url>
-    <url>
-        <loc>research-review/</loc>
-        <lastmod>2026-03-09</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="research-review/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="zh/research-review/"/>
-    </url>
-    <url>
-        <loc>roadmap/</loc>
-        <lastmod>2026-03-09</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="roadmap/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="zh/roadmap/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="community/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/community/changelog/"/>
     </url>
     <url>
         <loc>community/contributing/</loc>
@@ -90,6 +20,76 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="community/contributing/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="zh/community/contributing/"/>
+    </url>
+    <url>
+        <loc>community/roadmap/</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="community/roadmap/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/community/roadmap/"/>
+    </url>
+    <url>
+        <loc>concepts/design-philosophy/</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="concepts/design-philosophy/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/concepts/design-philosophy/"/>
+    </url>
+    <url>
+        <loc>concepts/glossary/</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="concepts/glossary/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/concepts/glossary/"/>
+    </url>
+    <url>
+        <loc>get_started/end-to-end-workflow/</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="get_started/end-to-end-workflow/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/get_started/end-to-end-workflow/"/>
+    </url>
+    <url>
+        <loc>get_started/installation/</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="get_started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/get_started/installation/"/>
+    </url>
+    <url>
+        <loc>get_started/quickstart/</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="get_started/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/get_started/quickstart/"/>
+    </url>
+    <url>
+        <loc>references/api-reference/</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="references/api-reference/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/references/api-reference/"/>
+    </url>
+    <url>
+        <loc>references/examples/</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="references/examples/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/references/examples/"/>
+    </url>
+    <url>
+        <loc>research/design-insights/</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="research/design-insights/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/research/design-insights/"/>
+    </url>
+    <url>
+        <loc>research/research-review/</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="research/research-review/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/research/research-review/"/>
     </url>
     <url>
         <loc>tools/designer/</loc>
@@ -113,81 +113,11 @@
         <xhtml:link rel="alternate" hreflang="en" href=""/>
     </url>
     <url>
-        <loc>zh/api-reference/</loc>
+        <loc>zh/community/changelog/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="zh/api-reference/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="api-reference/"/>
-    </url>
-    <url>
-        <loc>zh/changelog/</loc>
-        <lastmod>2026-03-09</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="zh/changelog/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="changelog/"/>
-    </url>
-    <url>
-        <loc>zh/design-insights/</loc>
-        <lastmod>2026-03-09</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="zh/design-insights/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="design-insights/"/>
-    </url>
-    <url>
-        <loc>zh/design-philosophy/</loc>
-        <lastmod>2026-03-09</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="zh/design-philosophy/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="design-philosophy/"/>
-    </url>
-    <url>
-        <loc>zh/end-to-end-workflow/</loc>
-        <lastmod>2026-03-09</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="zh/end-to-end-workflow/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="end-to-end-workflow/"/>
-    </url>
-    <url>
-        <loc>zh/examples/</loc>
-        <lastmod>2026-03-09</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="zh/examples/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="examples/"/>
-    </url>
-    <url>
-        <loc>zh/glossary/</loc>
-        <lastmod>2026-03-09</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="zh/glossary/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="glossary/"/>
-    </url>
-    <url>
-        <loc>zh/installation/</loc>
-        <lastmod>2026-03-09</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="zh/installation/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="installation/"/>
-    </url>
-    <url>
-        <loc>zh/quickstart/</loc>
-        <lastmod>2026-03-09</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="zh/quickstart/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="quickstart/"/>
-    </url>
-    <url>
-        <loc>zh/research-review/</loc>
-        <lastmod>2026-03-09</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="zh/research-review/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="research-review/"/>
-    </url>
-    <url>
-        <loc>zh/roadmap/</loc>
-        <lastmod>2026-03-09</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="zh/roadmap/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="roadmap/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/community/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="community/changelog/"/>
     </url>
     <url>
         <loc>zh/community/contributing/</loc>
@@ -195,6 +125,76 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="zh/community/contributing/"/>
         <xhtml:link rel="alternate" hreflang="en" href="community/contributing/"/>
+    </url>
+    <url>
+        <loc>zh/community/roadmap/</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/community/roadmap/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="community/roadmap/"/>
+    </url>
+    <url>
+        <loc>zh/concepts/design-philosophy/</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/concepts/design-philosophy/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="concepts/design-philosophy/"/>
+    </url>
+    <url>
+        <loc>zh/concepts/glossary/</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/concepts/glossary/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="concepts/glossary/"/>
+    </url>
+    <url>
+        <loc>zh/get_started/end-to-end-workflow/</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/get_started/end-to-end-workflow/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="get_started/end-to-end-workflow/"/>
+    </url>
+    <url>
+        <loc>zh/get_started/installation/</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/get_started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="get_started/installation/"/>
+    </url>
+    <url>
+        <loc>zh/get_started/quickstart/</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/get_started/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="get_started/quickstart/"/>
+    </url>
+    <url>
+        <loc>zh/references/api-reference/</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/references/api-reference/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="references/api-reference/"/>
+    </url>
+    <url>
+        <loc>zh/references/examples/</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/references/examples/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="references/examples/"/>
+    </url>
+    <url>
+        <loc>zh/research/design-insights/</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/research/design-insights/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="research/design-insights/"/>
+    </url>
+    <url>
+        <loc>zh/research/research-review/</loc>
+        <lastmod>2026-03-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="zh/research/research-review/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="research/research-review/"/>
     </url>
     <url>
         <loc>zh/tools/designer/</loc>

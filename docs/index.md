@@ -1,33 +1,27 @@
-# PorosData Documentation
+# PorosData
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PyPI version](https://img.shields.io/pypi/v/PorosData-Processor.svg)](https://pypi.org/project/porosdata-processor/)
 
-**PorosData: A Comprehensive End-to-End Framework for Scientific Data Orchestration**
+PorosData 是专为材料科学等实证领域设计的 AI4S 数据编排框架。它提供从解析、精炼到数据合成的全生命周期解决方案，连接原始科研文献与 AI 模型，保障科学数据的语义完整性、忠实度和端到端溯源性。
 
-PorosData is an **AI4S data orchestration framework** specifically engineered for the materials Science and related empirical fields. By providing a full-lifecycle solution - from parsing and refinement to data synthesis - it serves as the bridge between raw scientific literature and AI models, safeguarding the semantic integrity, fidelity, and end-to-end provenance of scientific data.
+## 核心特性
 
-## 框架核心特性
+- **保障数据完整性**: 维持数学公式、引用体系和科学语义的原子级完整
+- **协同模块化架构**: Parser、Processor 和 Designer 三大工具包覆盖科研数据处理全流程
+- **遵循学术规范**: 设计逻辑优先满足科研工作流需求
 
-- **数据完整性保证**: 保护数学公式、引用体系和科学语义的原子性
-- **模块化架构**: 三大核心工具包协同工作，覆盖科研数据处理全流程
-- **学术导向设计**: 优先考虑学术规范和科研工作流的需求
+## 学术原子性契约
 
-## 学术原子性宣言
+PorosData 将每份数据视为不可分割的学术价值单元。在数据精炼过程中，我们承诺：
 
-在 AI for Science 时代，数据不仅是信息载体，更是学术话语的基础。PorosData 秉持"学术原子性"原则：每份数据都承载不可分割的学术价值，我们致力于在数据精炼过程中保护数学公式、引用体系和科学语义的原子完整性。
+- **保持语义保真**: 确保数学表达式不失真，引用链条不断裂
+- **提供可追溯性**: 记录每个清洗决策的学术依据
+- **支持无缝扩展**: 允许新组件和插件继承原子性契约
 
-原子性保证包括：
-
-- **语义保真**: 数学表达式永不失真，引用链条永不断裂
-- **可追溯性**: 每个清洗决策都有明确的学术依据
-- **可扩展性**: 新组件和插件无缝集成原子性契约
-
-我们相信，真正的 AI for Science 不仅是技术创新，更是学术传统的传承。
-
-!!! note "完整工作流案例"
-    想要了解从PDF论文到AI训练数据集的完整流程？请查看 [端到端工作流](end-to-end-workflow.md)。
+!!! note "案例研究"
+    查看 [端到端工作流](end-to-end-workflow.md) 了解从 PDF 论文到 AI 训练数据集的转换过程。
 
 ## PorosData-Parser
 

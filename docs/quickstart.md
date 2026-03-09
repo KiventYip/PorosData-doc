@@ -1,14 +1,14 @@
 # Quick Start
 
-## Installation
+## Install PorosData
 
-### From PyPI (Recommended)
+Install from PyPI (Recommended):
 
 ```bash
 pip install porosdata-processor
 ```
 
-### From Source
+Install from source:
 
 ```bash
 git clone https://github.com/KiventYip/porosdata-processor.git
@@ -16,24 +16,24 @@ cd porosdata-processor
 pip install -e .
 ```
 
-### Verify Installation
+Verify installation:
 
 ```python
 import porosdata_processor
 print(f"Version: {porosdata_processor.__version__}")
 ```
 
-## Basic Usage
+## Clean Text
 
-### Simple Text Cleaning
+Use `TextCleaner` to normalize scientific text while preserving formulas:
 
 ```python
 from porosdata_processor import TextCleaner
 
-# Create a cleaner with default settings
+# Initialize cleaner with default settings
 cleaner = TextCleaner()
 
-# Clean text
+# Process text
 raw_text = "The energy equation is $E = mc^2$, involving α particles and β rays."
 cleaned_text = cleaner.clean(raw_text)
 
@@ -41,7 +41,9 @@ print(cleaned_text)
 # Output: "The energy equation is $E = mc^2$, involving \alpha particles and \beta rays."
 ```
 
-### Custom Pipeline
+## Custom Pipeline
+
+Configure a cleaner with specific plugins:
 
 ```python
 # Create a cleaner with specific plugins
@@ -56,7 +58,9 @@ result = cleaner.clean(text)
 # Output: "See reference [1] for \alpha particle data."
 ```
 
-### Advanced Options
+## Advanced Options
+
+Enable advanced LaTeX formula cleaning:
 
 ```python
 # Enable advanced LaTeX formula cleaning
@@ -69,7 +73,7 @@ result = cleaner.clean(text)
 # Output: "Formula: $\\mathbf{X} + \\frac{a}{b}$"
 ```
 
-## File Processing
+## Process Files
 
 ### Process Single File
 

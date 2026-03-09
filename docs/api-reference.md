@@ -4,7 +4,7 @@
 
 ### TextCleaner
 
-The main class for text cleaning operations.
+Main class for text cleaning operations.
 
 #### Constructor
 

@@ -1,14 +1,14 @@
 # 快速开始
 
-## 安装
+## 安装 PorosData
 
-### 从 PyPI 安装 (推荐)
+从 PyPI 安装 (推荐):
 
 ```bash
 pip install porosdata-processor
 ```
 
-### 从源码安装
+从源码安装:
 
 ```bash
 git clone https://github.com/KiventYip/porosdata-processor.git
@@ -16,24 +16,24 @@ cd porosdata-processor
 pip install -e .
 ```
 
-### 验证安装
+验证安装:
 
 ```python
 import porosdata_processor
 print(f"Version: {porosdata_processor.__version__}")
 ```
 
-## 基本用法
+## 清洗文本
 
-### 简单文本清洗
+使用 `TextCleaner` 标准化科学文本，同时保留数学公式的完整性：
 
 ```python
 from porosdata_processor import TextCleaner
 
-# 创建默认设置的清洗器
+# 初始化默认设置的清洗器
 cleaner = TextCleaner()
 
-# 清洗文本
+# 处理文本
 raw_text = "The energy equation is $E = mc^2$, involving α particles and β rays."
 cleaned_text = cleaner.clean(raw_text)
 
@@ -41,7 +41,9 @@ print(cleaned_text)
 # 输出: "The energy equation is $E = mc^2$, involving \alpha particles and \beta rays."
 ```
 
-### 自定义流水线
+## 自定义流水线
+
+配置带有特定插件的清洗器：
 
 ```python
 # 创建带有特定插件的清洗器
@@ -56,7 +58,9 @@ result = cleaner.clean(text)
 # 输出: "See reference [1] for \alpha particle data."
 ```
 
-### 高级选项
+## 高级选项
+
+启用高级 LaTeX 公式清洗功能：
 
 ```python
 # 启用高级 LaTeX 公式清洗
@@ -69,7 +73,7 @@ result = cleaner.clean(text)
 # 输出: "Formula: $\\mathbf{X} + \\frac{a}{b}$"
 ```
 
-## 文件处理
+## 处理文件
 
 ### 处理单个文件
 

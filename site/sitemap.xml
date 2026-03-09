@@ -92,13 +92,6 @@
         <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/community/contributing/"/>
     </url>
     <url>
-        <loc>Noneguides/quickstart/</loc>
-        <lastmod>2026-03-09</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneguides/quickstart/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/guides/quickstart/"/>
-    </url>
-    <url>
         <loc>Nonetools/designer/</loc>
         <lastmod>2026-03-09</lastmod>
         <changefreq>daily</changefreq>
@@ -202,13 +195,6 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/community/contributing/"/>
         <xhtml:link rel="alternate" hreflang="en" href="Nonecommunity/contributing/"/>
-    </url>
-    <url>
-        <loc>Nonezh/guides/quickstart/</loc>
-        <lastmod>2026-03-09</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="Nonezh/guides/quickstart/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneguides/quickstart/"/>
     </url>
     <url>
         <loc>Nonezh/tools/designer/</loc>

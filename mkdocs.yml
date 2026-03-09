@@ -64,34 +64,34 @@ theme:
 # 2. 智能导航架构 (Industrial Navigation)
 # ---------------------------------------------------------
 nav:
-  # 主页
   - Home: index.md
 
-  # 项目核心
-  - Project:
-      - Quick Start: quickstart.md
-      - Design Philosophy: design-philosophy.md
-      - End-to-End Workflow: end-to-end-workflow.md
-      - Research Review: research-review.md
-      - Design Insights: design-insights.md
-
-  # 技术文档
-  - Technical Docs:
-      - API Reference: api-reference.md
+  # 1. 新手与工作流 (Action-oriented)
+  - Get Started:
       - Installation: installation.md
-      - Examples: examples.md
+      - Quick Start: quickstart.md
+      - End-to-End Workflow: end-to-end-workflow.md
+
+  # 2. 核心原理 (Theory & Definitions)
+  - Concepts & Architecture:
+      - Design Philosophy: design-philosophy.md
       - Glossary: glossary.md
 
-  # 工具详情
-  - Tools:
+  # 3. 工具矩阵 (Toolchains)
+  - Core Tools:
       - Processor: tools/processor/index.md
       - Designer: tools/designer/index.md
 
-  # 指南
-  - Guides:
-      - Quick Start Guide: guides/quickstart.md
+  # 4. 技术底座
+  - API Reference: api-reference.md
+  - Examples: examples.md
 
-  # 社区生态
+  # 5. 研究与思考空间 (Research Log & Meta-Thinking)
+  - Research & Thinking:
+      - Research Review: research-review.md
+      - Design Insights: design-insights.md
+
+  # 6. 生态参与
   - Community:
       - Contributing: community/contributing.md
       - Roadmap: roadmap.md
@@ -131,6 +131,15 @@ plugins:
         - locale: zh
           name: 简体中文
           build: true
+          # 核心修复：精确的导航键值翻译映射，解决侧边栏英文硬编码问题
+          nav_translations:
+            Home: 首页
+            Get Started: 快速入门
+            Concepts & Architecture: 核心架构
+            Core Tools: 核心工具
+            API Reference: API 参考
+            Research & Thinking: 研究与思考
+            Community: 社区生态
 
 # ---------------------------------------------------------
 # 4. Markdown 增强扩展 (AI/Data Science Power Tools)

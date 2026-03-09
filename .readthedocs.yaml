@@ -1,4 +1,4 @@
-# .readthedocs.yaml - ReadTheDocs 工业级配置 (版本 2)
+# .readthedocs.yaml - ReadTheDocs MkDocs 配置 (版本 2)
 version: 2
 
 # 构建系统配置
@@ -7,7 +7,7 @@ build:
   tools:
     python: "3.11"
 
-# MkDocs 配置 (明确指定，避免被识别为 Sphinx)
+# MkDocs 配置 - 明确指定使用 MkDocs
 mkdocs:
   configuration: mkdocs.yml
   fail_on_warning: false  # 允许警告，但记录到日志
@@ -17,26 +17,12 @@ python:
   install:
     - requirements: requirements.txt
 
-# 构建配置优化
-sphinx:
-  # 禁用 Sphinx (确保使用 MkDocs)
-  builder: null
-  configuration: null
-
 # 搜索配置
 search:
   ranking:
     - title: 10
     - headers: 8
     - content: 5
-  ignore:
-    - changelog
-    - roadmap
-
-# 版本控制集成
-submodules:
-  include: all  # 如果有子模块，全都包含
-  recursive: true
 
 # 构建产物配置
 formats:

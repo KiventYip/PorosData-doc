@@ -14,7 +14,7 @@ strict: false  # 允许警告但继续构建
 theme:
   name: material
   favicon: assets/images/favicon_link.png  # 浏览器标签页小图标
-  logo: assets/images/favicon_link.png     # 网站左上角的主Logo
+  logo: assets/images/logo.png     # 网站左上角的主Logo
 
   # 字体配置：专业阅读体验 + 代码显示优化
   font:

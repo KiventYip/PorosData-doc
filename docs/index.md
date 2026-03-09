@@ -12,7 +12,7 @@ PorosData is an AI4S data orchestration framework specifically engineered for ma
 - **Synergistic Modular Architecture**: Three core toolkits (Parser, Processor, and Designer) cover the entire scientific data processing workflow.
 - **Academic-Oriented Design**: Prioritizes the requirements of academic standards and scientific workflows.
 
-## Academic Atomicity Contract
+## Academic Atomicity
 
 PorosData treats every piece of data as an indivisible unit of academic value. During the data refinement process, we commit to:
 

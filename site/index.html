@@ -12,7 +12,7 @@
       
       
       
-        <link rel="next" href="get_started/installation/">
+        <link rel="next" href="quickstart/">
       
       
         
@@ -55,8 +55,6 @@
     
       <link rel="stylesheet" href="assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="assets/stylesheets/custom.css">
-    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -82,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#porosdata" class="md-skip">
+        <a href="#porosdata-documentation" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +102,8 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="." title="PorosData" class="md-header__button md-logo" aria-label="PorosData" data-md-component="logo">
       
-  <img src="assets/images/favicon_link.png" alt="logo">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -277,11 +276,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="get_started/installation/" class="md-tabs__link">
+        <a href="quickstart/" class="md-tabs__link">
           
   
   
-  Get Started
+  Project
 
         </a>
       </li>
@@ -297,89 +296,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="concepts/design-philosophy/" class="md-tabs__link">
+        <a href="api-reference/" class="md-tabs__link">
           
   
   
-  Concepts & Architecture
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="tools/processor/" class="md-tabs__link">
-          
-  
-  
-  Core Tools
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="references/api-reference/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  API Reference
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="references/examples/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Examples
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="research/research-review/" class="md-tabs__link">
-          
-  
-  
-  Research & Thinking
+  Technical Docs
 
         </a>
       </li>
@@ -437,7 +358,8 @@
   <label class="md-nav__title" for="__drawer">
     <a href="." title="PorosData" class="md-nav__button md-logo" aria-label="PorosData" data-md-component="logo">
       
-  <img src="assets/images/favicon_link.png" alt="logo">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
     PorosData
@@ -524,10 +446,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#core-features" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core Features
+        框架核心特性
       
     </span>
   </a>
@@ -535,52 +457,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#academic-atomicity-contract" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Academic Atomicity Contract
+        学术原子性宣言
       
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ai-ready-data-standards" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        AI-Ready Data Standards
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="AI-Ready Data Standards">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-pre-training-requirements-token-purity-and-semantic-common-sense" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Pre-training Requirements: Token Purity and Semantic Common Sense
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-data-mining-requirements-entity-precision-and-logical-linking" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Data Mining Requirements: Entity Precision and Logical Linking
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -618,10 +501,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Quick Start
+        快速上手
       
     </span>
   </a>
@@ -629,10 +512,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#in-depth-reference" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        In-Depth Reference
+        深度参考
       
     </span>
   </a>
@@ -640,10 +523,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#project-ecosystem" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Project Ecosystem
+        项目生态
       
     </span>
   </a>
@@ -690,7 +573,7 @@
   <span class="md-ellipsis">
     
   
-    Get Started
+    Project
   
 
     
@@ -706,7 +589,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Get Started
+    Project
   
 
           </label>
@@ -719,35 +602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="get_started/installation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Installation
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="get_started/quickstart/" class="md-nav__link">
+      <a href="quickstart/" class="md-nav__link">
         
   
   
@@ -775,7 +630,35 @@
   
   
     <li class="md-nav__item">
-      <a href="get_started/end-to-end-workflow/" class="md-nav__link">
+      <a href="design-philosophy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Philosophy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="end-to-end-workflow/" class="md-nav__link">
         
   
   
@@ -783,6 +666,62 @@
     
   
     End-to-End Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="research-review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research Review
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="design-insights/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Insights
   
 
     
@@ -835,7 +774,7 @@
   <span class="md-ellipsis">
     
   
-    Concepts & Architecture
+    Technical Docs
   
 
     
@@ -851,7 +790,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Concepts & Architecture
+    Technical Docs
   
 
           </label>
@@ -864,14 +803,14 @@
   
   
     <li class="md-nav__item">
-      <a href="concepts/design-philosophy/" class="md-nav__link">
+      <a href="api-reference/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Design Philosophy
+    API Reference
   
 
     
@@ -892,7 +831,63 @@
   
   
     <li class="md-nav__item">
-      <a href="concepts/glossary/" class="md-nav__link">
+      <a href="installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="glossary/" class="md-nav__link">
         
   
   
@@ -952,7 +947,7 @@
   <span class="md-ellipsis">
     
   
-    Core Tools
+    Community
   
 
     
@@ -965,308 +960,6 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Core Tools
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="tools/processor/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Processor
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="tools/designer/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Designer
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="references/api-reference/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    API Reference
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="references/examples/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Examples
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
-        
-          
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Research & Thinking
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Research & Thinking
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="research/research-review/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Research Review
-  
-
-    
-  </span>
-  
-  
-    
-  
-  
-    <span class="md-status md-status--exploratory"></span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="research/design-insights/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Design Insights
-  
-
-    
-  </span>
-  
-  
-    
-  
-  
-    <span class="md-status md-status--exploratory"></span>
-  
-
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
-        
-          
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Community
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1311,7 +1004,7 @@
   
   
     <li class="md-nav__item">
-      <a href="community/roadmap/" class="md-nav__link">
+      <a href="roadmap/" class="md-nav__link">
         
   
   
@@ -1339,7 +1032,7 @@
   
   
     <li class="md-nav__item">
-      <a href="community/changelog/" class="md-nav__link">
+      <a href="changelog/" class="md-nav__link">
         
   
   
@@ -1394,10 +1087,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#core-features" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core Features
+        框架核心特性
       
     </span>
   </a>
@@ -1405,52 +1098,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#academic-atomicity-contract" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Academic Atomicity Contract
+        学术原子性宣言
       
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ai-ready-data-standards" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        AI-Ready Data Standards
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="AI-Ready Data Standards">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-pre-training-requirements-token-purity-and-semantic-common-sense" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Pre-training Requirements: Token Purity and Semantic Common Sense
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-data-mining-requirements-entity-precision-and-logical-linking" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Data Mining Requirements: Entity Precision and Logical Linking
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1488,10 +1142,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Quick Start
+        快速上手
       
     </span>
   </a>
@@ -1499,10 +1153,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#in-depth-reference" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        In-Depth Reference
+        深度参考
       
     </span>
   </a>
@@ -1510,10 +1164,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#project-ecosystem" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Project Ecosystem
+        项目生态
       
     </span>
   </a>
@@ -1540,72 +1194,59 @@
   
 
 
-<h1 id="porosdata">PorosData</h1>
+<h1 id="porosdata-documentation">PorosData Documentation</h1>
 <p><a href="https://www.python.org/downloads/"><img alt="Python 3.8+" src="https://img.shields.io/badge/python-3.8+-blue.svg" /></a>
 <a href="https://opensource.org/licenses/MIT"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" /></a>
 <a href="https://pypi.org/project/porosdata-processor/"><img alt="PyPI version" src="https://img.shields.io/pypi/v/PorosData-Processor.svg" /></a></p>
-<p>PorosData is an AI4S data orchestration framework specifically engineered for materials science and related empirical fields. It provides a full-lifecycle solution—from parsing and refinement to data synthesis—bridging raw scientific literature and AI models, and safeguarding the semantic integrity, fidelity, and end-to-end provenance of scientific data.</p>
-<h2 id="core-features">Core Features</h2>
+<p><strong>PorosData: A Comprehensive End-to-End Framework for Scientific Data Orchestration</strong></p>
+<p>PorosData is an <strong>AI4S data orchestration framework</strong> specifically engineered for the materials Science and related empirical fields. By providing a full-lifecycle solution - from parsing and refinement to data synthesis - it serves as the bridge between raw scientific literature and AI models, safeguarding the semantic integrity, fidelity, and end-to-end provenance of scientific data.</p>
+<h2 id="_1">框架核心特性</h2>
 <ul>
-<li><strong>Data Integrity Guarantee</strong>: Protects the atomic integrity of mathematical formulas, citation systems, and scientific semantics.</li>
-<li><strong>Synergistic Modular Architecture</strong>: Three core toolkits (Parser, Processor, and Designer) cover the entire scientific data processing workflow.</li>
-<li><strong>Academic-Oriented Design</strong>: Prioritizes the requirements of academic standards and scientific workflows.</li>
+<li><strong>数据完整性保证</strong>: 保护数学公式、引用体系和科学语义的原子性</li>
+<li><strong>模块化架构</strong>: 三大核心工具包协同工作，覆盖科研数据处理全流程</li>
+<li><strong>学术导向设计</strong>: 优先考虑学术规范和科研工作流的需求</li>
 </ul>
-<h2 id="academic-atomicity-contract">Academic Atomicity Contract</h2>
-<p>PorosData treats every piece of data as an indivisible unit of academic value. During the data refinement process, we commit to:</p>
+<h2 id="_2">学术原子性宣言</h2>
+<p>在 AI for Science 时代，数据不仅是信息载体，更是学术话语的基础。PorosData 秉持"学术原子性"原则：每份数据都承载不可分割的学术价值，我们致力于在数据精炼过程中保护数学公式、引用体系和科学语义的原子完整性。</p>
+<p>原子性保证包括：</p>
 <ul>
-<li><strong>Semantic Fidelity</strong>: Ensure mathematical expressions are not distorted and citation chains remain unbroken.</li>
-<li><strong>Traceability</strong>: Record the academic basis for every cleaning decision.</li>
-<li><strong>Seamless Extensibility</strong>: Allow new components and plugins to inherit the atomicity contract.</li>
+<li><strong>语义保真</strong>: 数学表达式永不失真，引用链条永不断裂</li>
+<li><strong>可追溯性</strong>: 每个清洗决策都有明确的学术依据</li>
+<li><strong>可扩展性</strong>: 新组件和插件无缝集成原子性契约</li>
 </ul>
-<h2 id="ai-ready-data-standards">AI-Ready Data Standards</h2>
-<p>To ensure data is truly suitable for large models, PorosData strictly adheres to the following AI-Ready data processing requirements:</p>
-<h3 id="1-pre-training-requirements-token-purity-and-semantic-common-sense">1. Pre-training Requirements: Token Purity and Semantic Common Sense</h3>
-<p>The goal of pre-training is to let the model learn world knowledge (e.g., laws of physics and chemistry). If the data itself contains errors, the model will suffer from "knowledge poisoning".</p>
-<ul>
-<li><strong>Token Stream Purity</strong>: The main text should not contain semantic-irrelevant control characters or indices. Such data, unrelated to semantics and grammatical structure, acts as interference noise during training, destroying the model's prediction of context probabilities.</li>
-<li><strong>Semantic Common Sense Accuracy</strong>: Core terminology must not have systematic misrecognitions. If "X-ray" is recognized as "10-ray", the model will learn incorrect scientific concepts, causing it to fail to understand the logic of ray diffraction in subsequent tasks.</li>
-<li><strong>Long-text Coherence</strong>: Word breaks caused by improper handling of line breaks (e.g., missing hyphens like "shortrange" for "short-range") increase the entropy of the model's vocabulary and reduce its ability to understand long, complex sentences.</li>
-</ul>
-<h3 id="2-data-mining-requirements-entity-precision-and-logical-linking">2. Data Mining Requirements: Entity Precision and Logical Linking</h3>
-<p>The goal of data mining is to automatically extract structured knowledge (e.g., alloy composition, transition temperature) from massive documents.</p>
-<ul>
-<li><strong>Certainty of Values and Units</strong>: Scientific mining is extremely sensitive to numbers. Numbers broken up by OCR (e.g., <span class="arithmatex">\(1 0 ^ { 5 }\)</span>) will cause mining algorithms to fail to recognize the correct order of magnitude, directly ruining automated property extraction tasks.</li>
-<li><strong>Robustness of Entity Recognition</strong>: Chemical elements (e.g., Ni, Au) must not be misrecognized as LaTeX symbols (e.g., <span class="arithmatex">\(\Delta\)</span>, \Au). Otherwise, when building a knowledge graph, entity linking will fail due to name errors.</li>
-<li><strong>Anchoring of Multimodal Assets</strong>: Mining work often requires "text-image penetration". AI-Ready requires that "Fig. 1" in the text is not just a few characters, but a hard-link anchor that can directly index to the image asset and its corresponding caption.</li>
-</ul>
+<p>我们相信，真正的 AI for Science 不仅是技术创新，更是学术传统的传承。</p>
 <div class="admonition note">
-<p class="admonition-title">Case Study</p>
-<p>Check out the <a href="get_started/end-to-end-workflow/">End-to-End Workflow</a> to see the conversion process from PDF papers to AI training datasets.</p>
+<p class="admonition-title">完整工作流案例</p>
+<p>想要了解从PDF论文到AI训练数据集的完整流程？请查看 <a href="end-to-end-workflow/">端到端工作流</a>。</p>
 </div>
 <h2 id="porosdata-parser">PorosData-Parser</h2>
-<p>🔍 Data Extraction Engine</p>
-<p>Intelligently extracts structured scientific data from unstructured literature such as PDF papers and LaTeX source code.</p>
+<p>🔍 数据提取引擎</p>
+<p>从 PDF 论文、LaTeX 源码等非结构化文献中智能提取结构化科学数据。</p>
 <h2 id="porosdata-processor">PorosData-Processor</h2>
-<p>🧹 Data Cleaning Pipeline</p>
-<p>Standardizes, controls quality, and preprocesses data based on the principle of academic atomicity.</p>
+<p>🧹 数据清洗流水线</p>
+<p>基于学术原子性原则，进行数据标准化、质量控制和预处理。</p>
 <h2 id="porosdata-designer">PorosData-Designer</h2>
-<p>🎯 Data Synthesis Designer</p>
-<p>Recombines cleaned data into instruction datasets and experimental design plans suitable for large model training.</p>
-<h2 id="quick-start">Quick Start</h2>
+<p>🎯 数据合成设计器</p>
+<p>将清洗后的数据重组为适合大模型训练的指令数据集和实验设计方案。</p>
+<h2 id="_3">快速上手</h2>
 <ul>
-<li><a href="get_started/installation/">Installation Guide</a></li>
-<li><a href="get_started/quickstart/">Quick Start</a></li>
-<li><a href="references/examples/">Usage Examples</a></li>
+<li><a href="installation/">安装指南</a></li>
+<li><a href="quickstart/">快速开始</a></li>
+<li><a href="examples/">使用示例</a></li>
 </ul>
-<h2 id="in-depth-reference">In-Depth Reference</h2>
+<h2 id="_4">深度参考</h2>
 <ul>
-<li><a href="concepts/design-philosophy/">Design Philosophy</a></li>
-<li><a href="research/research-review/">Research Review</a></li>
-<li><a href="research/design-insights/">Design Insights</a></li>
-<li><a href="concepts/glossary/">Glossary</a></li>
-<li><a href="references/api-reference/">API Reference</a></li>
+<li><a href="design-philosophy/">设计哲学</a></li>
+<li><a href="research-review/">研究综述</a></li>
+<li><a href="design-insights/">设计洞察</a></li>
+<li><a href="glossary/">术语表</a></li>
+<li><a href="api-reference/">API 参考</a></li>
 </ul>
-<h2 id="project-ecosystem">Project Ecosystem</h2>
+<h2 id="_5">项目生态</h2>
 <ul>
-<li><a href="community/contributing/">Contributing Guide</a></li>
-<li><a href="community/roadmap/">Roadmap</a></li>
-<li><a href="community/changelog/">Changelog</a></li>
+<li><a href="contributing/">贡献指南</a></li>
+<li><a href="roadmap/">路线图</a></li>
+<li><a href="changelog/">更新日志</a></li>
 </ul>
 
 

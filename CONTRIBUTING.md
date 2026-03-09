@@ -4,7 +4,7 @@ Thank you for your interest in contributing to the PorosData documentation! This
 
 ## 📖 Documentation Structure
 
-For detailed contribution guidelines, please refer to our [full contributing guide](docs_sphinx/contributing.md).
+For detailed contribution guidelines, please refer to our [full contributing guide](docs/community/contributing.md).
 
 ## 🚀 Quick Start
 
@@ -21,15 +21,13 @@ To build and test the documentation locally:
 
 ```bash
 # Install dependencies
-pip install -r docs_sphinx/requirements.txt
+pip install -r requirements.txt
 
-# Build the documentation
-cd docs_sphinx
-make html
-
-# View the built documentation
-open _build/html/index.html
+# Serve the documentation locally with live-reload
+python build_clean.py serve
 ```
+
+The site will be available at `http://127.0.0.1:8000/`.
 
 ## 📝 Guidelines
 

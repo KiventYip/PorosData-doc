@@ -1,6 +1,5 @@
-# Sphinx documentation
-docs_sphinx/_build/
-docs_sphinx/.doctrees/
+# MkDocs documentation
+site/
 
 # Python
 __pycache__/

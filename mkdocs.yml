@@ -12,7 +12,7 @@ strict: false  # 允许警告但继续构建
 # ---------------------------------------------------------
 theme:
   name: material
-  favicon: assets/images/favicon.jpg  # 使用自定义favicon
+  # favicon: assets/images/favicon.png  # 使用Material默认favicon
 
   # 字体配置：专业阅读体验 + 代码显示优化
   font:

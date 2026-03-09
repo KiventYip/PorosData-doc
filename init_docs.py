@@ -100,8 +100,8 @@ This guide is under development.
 
 ## 快速链接
 
-- [首页](../index.zh.md)
-- [快速开始](../quickstart.zh.md)
+- [首页](../index.md)
+- [快速开始](../quickstart.md)
 """,
                 'api': """# {title}
 
@@ -120,8 +120,8 @@ pass
 
 ## 快速链接
 
-- [首页](../index.zh.md)
-- [API 参考](../api-reference.zh.md)
+- [首页](../index.md)
+- [API 参考](../api-reference.md)
 """,
                 'guide': """# {title}
 
@@ -139,7 +139,7 @@ pass
 
 ## 快速链接
 
-- [首页](../index.zh.md)
+- [首页](../index.md)
 - [指南](../guides/)
 """
             }

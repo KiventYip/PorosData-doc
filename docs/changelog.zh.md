@@ -8,5 +8,5 @@
 
 ## 快速链接
 
-- [首页](index.zh.md)
-- [快速开始](quickstart.zh.md)
+- [首页](index.md)
+- [快速开始](quickstart.md)

@@ -4,59 +4,79 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PyPI version](https://img.shields.io/pypi/v/PorosData-Processor.svg)](https://pypi.org/project/porosdata-processor/)
 
-PorosData 是专为材料科学等实证领域设计的 AI4S 数据编排框架。它提供从解析、精炼到数据合成的全生命周期解决方案，连接原始科研文献与 AI 模型，保障科学数据的语义完整性、忠实度和端到端溯源性。
+PorosData is an AI4S data orchestration framework specifically engineered for materials science and related empirical fields. It provides a full-lifecycle solution—from parsing and refinement to data synthesis—bridging raw scientific literature and AI models, and safeguarding the semantic integrity, fidelity, and end-to-end provenance of scientific data.
 
-## 核心特性
+## Core Features
 
-- **保障数据完整性**: 维持数学公式、引用体系和科学语义的原子级完整
-- **协同模块化架构**: Parser、Processor 和 Designer 三大工具包覆盖科研数据处理全流程
-- **遵循学术规范**: 设计逻辑优先满足科研工作流需求
+- **Data Integrity Guarantee**: Protects the atomic integrity of mathematical formulas, citation systems, and scientific semantics.
+- **Synergistic Modular Architecture**: Three core toolkits (Parser, Processor, and Designer) cover the entire scientific data processing workflow.
+- **Academic-Oriented Design**: Prioritizes the requirements of academic standards and scientific workflows.
 
-## 学术原子性契约
+## Academic Atomicity Contract
 
-PorosData 将每份数据视为不可分割的学术价值单元。在数据精炼过程中，我们承诺：
+PorosData treats every piece of data as an indivisible unit of academic value. During the data refinement process, we commit to:
 
-- **保持语义保真**: 确保数学表达式不失真，引用链条不断裂
-- **提供可追溯性**: 记录每个清洗决策的学术依据
-- **支持无缝扩展**: 允许新组件和插件继承原子性契约
+- **Semantic Fidelity**: Ensure mathematical expressions are not distorted and citation chains remain unbroken.
+- **Traceability**: Record the academic basis for every cleaning decision.
+- **Seamless Extensibility**: Allow new components and plugins to inherit the atomicity contract.
 
-!!! note "案例研究"
-    查看 [端到端工作流](end-to-end-workflow.md) 了解从 PDF 论文到 AI 训练数据集的转换过程。
+## AI-Ready Data Standards
+
+To ensure data is truly suitable for large models, PorosData strictly adheres to the following AI-Ready data processing requirements:
+
+### 1. Pre-training Requirements: Token Purity and Semantic Common Sense
+
+The goal of pre-training is to let the model learn world knowledge (e.g., laws of physics and chemistry). If the data itself contains errors, the model will suffer from "knowledge poisoning".
+
+- **Token Stream Purity**: The main text should not contain semantic-irrelevant control characters or indices. Such data, unrelated to semantics and grammatical structure, acts as interference noise during training, destroying the model's prediction of context probabilities.
+- **Semantic Common Sense Accuracy**: Core terminology must not have systematic misrecognitions. If "X-ray" is recognized as "10-ray", the model will learn incorrect scientific concepts, causing it to fail to understand the logic of ray diffraction in subsequent tasks.
+- **Long-text Coherence**: Word breaks caused by improper handling of line breaks (e.g., missing hyphens like "shortrange" for "short-range") increase the entropy of the model's vocabulary and reduce its ability to understand long, complex sentences.
+
+### 2. Data Mining Requirements: Entity Precision and Logical Linking
+
+The goal of data mining is to automatically extract structured knowledge (e.g., alloy composition, transition temperature) from massive documents.
+
+- **Certainty of Values and Units**: Scientific mining is extremely sensitive to numbers. Numbers broken up by OCR (e.g., $1 0 ^ { 5 }$) will cause mining algorithms to fail to recognize the correct order of magnitude, directly ruining automated property extraction tasks.
+- **Robustness of Entity Recognition**: Chemical elements (e.g., Ni, Au) must not be misrecognized as LaTeX symbols (e.g., $\Delta$, \Au). Otherwise, when building a knowledge graph, entity linking will fail due to name errors.
+- **Anchoring of Multimodal Assets**: Mining work often requires "text-image penetration". AI-Ready requires that "Fig. 1" in the text is not just a few characters, but a hard-link anchor that can directly index to the image asset and its corresponding caption.
+
+!!! note "Case Study"
+    Check out the [End-to-End Workflow](end-to-end-workflow.md) to see the conversion process from PDF papers to AI training datasets.
 
 ## PorosData-Parser
 
-🔍 数据提取引擎
+🔍 Data Extraction Engine
 
-从 PDF 论文、LaTeX 源码等非结构化文献中智能提取结构化科学数据。
+Intelligently extracts structured scientific data from unstructured literature such as PDF papers and LaTeX source code.
 
 ## PorosData-Processor
 
-🧹 数据清洗流水线
+🧹 Data Cleaning Pipeline
 
-基于学术原子性原则，进行数据标准化、质量控制和预处理。
+Standardizes, controls quality, and preprocesses data based on the principle of academic atomicity.
 
 ## PorosData-Designer
 
-🎯 数据合成设计器
+🎯 Data Synthesis Designer
 
-将清洗后的数据重组为适合大模型训练的指令数据集和实验设计方案。
+Recombines cleaned data into instruction datasets and experimental design plans suitable for large model training.
 
-## 快速上手
+## Quick Start
 
-- [安装指南](installation.md)
-- [快速开始](quickstart.md)
-- [使用示例](examples.md)
+- [Installation Guide](installation.md)
+- [Quick Start](quickstart.md)
+- [Usage Examples](examples.md)
 
-## 深度参考
+## In-Depth Reference
 
-- [设计哲学](design-philosophy.md)
-- [研究综述](research-review.md)
-- [设计洞察](design-insights.md)
-- [术语表](glossary.md)
-- [API 参考](api-reference.md)
+- [Design Philosophy](design-philosophy.md)
+- [Research Review](research-review.md)
+- [Design Insights](design-insights.md)
+- [Glossary](glossary.md)
+- [API Reference](api-reference.md)
 
-## 项目生态
+## Project Ecosystem
 
-- [贡献指南](community/contributing.md)
-- [路线图](roadmap.md)
-- [更新日志](changelog.md)
+- [Contributing Guide](community/contributing.md)
+- [Roadmap](roadmap.md)
+- [Changelog](changelog.md)

@@ -20,8 +20,28 @@ PorosData 将每份数据视为不可分割的学术价值单元。在数据精�
 - **提供可追溯性**: 记录每个清洗决策的学术依据
 - **支持无缝扩展**: 允许新组件和插件继承原子性契约
 
+## AI-Ready 数据标准
+
+为了确保数据真正适用于大模型，PorosData 严格遵循以下 AI-Ready 数据处理要求：
+
+### 1. Pre-training 的要求：Token 纯净度与语义常识
+
+预训练的目标是让模型学习世界知识（如物理、化学规律）。如果数据本身包含错误，模型就会产生“知识中毒”。
+
+- **Token 流的纯净性**：正文中不应包含与语义无关的控制字符或索引。该类与语义、语法结构无关的数据在训练时属于干扰噪音，会破坏模型对上下文概率的预测。
+- **语义常识的准确性**：核心术语不能有系统性误识。如果将 X-ray 识别为 10-ray，模型会学习到错误的科学概念，导致它在后续任务中无法理解射线衍射的逻辑。
+- **长文本的连贯性**：换行符处理不当导致的单词断裂（如 shortrange 缺失连字符变为 short - range）会增加模型词表的熵，降低其对长难句的理解能力。
+
+### 2. Data Mining 的要求：实体精度与逻辑链接
+
+数据挖掘的目标是从海量文档中自动化提取结构化知识（如：合金成分、转变温度）。
+
+- **数值与单位的确定性**：科学挖掘对数字极其敏感。被 OCR 拆散的数字（如 $1 0 ^ { 5 }$）会导致挖掘算法无法识别出正确的数量级，直接废掉自动化的属性提取任务。
+- **实体识别的稳健性**：化学元素（如 Ni, Au）不能被误识为 LaTeX 符号（如 $\Delta$, \Au），否则在构建知识图谱时，实体链接（Entity Linking）会由于名称错误而失败。
+- **多模态资产的锚定**：挖掘工作往往需要“图文穿透”。AI-Ready 要求文中的“Fig. 1”不仅仅是几个字符，而是一个能够直接索引到图片资产和对应 Caption 的硬链接锚点。
+
 !!! note "案例研究"
-    查看 [端到端工作流](end-to-end-workflow.zh.md) 了解从 PDF 论文到 AI 训练数据集的转换过程。
+    查看 [端到端工作流](end-to-end-workflow.md) 了解从 PDF 论文到 AI 训练数据集的转换过程。
 
 ## PorosData-Parser
 
@@ -43,20 +63,20 @@ PorosData 将每份数据视为不可分割的学术价值单元。在数据精�
 
 ## 快速上手
 
-- [安装指南](installation.zh.md)
-- [快速开始](quickstart.zh.md)
-- [使用示例](examples.zh.md)
+- [安装指南](installation.md)
+- [快速开始](quickstart.md)
+- [使用示例](examples.md)
 
 ## 深度参考
 
-- [设计哲学](design-philosophy.zh.md)
-- [研究综述](research-review.zh.md)
-- [设计洞察](design-insights.zh.md)
-- [术语表](glossary.zh.md)
-- [API 参考](api-reference.zh.md)
+- [设计哲学](design-philosophy.md)
+- [研究综述](research-review.md)
+- [设计洞察](design-insights.md)
+- [术语表](glossary.md)
+- [API 参考](api-reference.md)
 
 ## 项目生态
 
-- [贡献指南](community/contributing.zh.md)
-- [路线图](roadmap.zh.md)
-- [更新日志](changelog.zh.md)
+- [贡献指南](community/contributing.md)
+- [路线图](roadmap.md)
+- [更新日志](changelog.md)

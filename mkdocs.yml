@@ -1,6 +1,7 @@
 # mkdocs.yml - 工业级 PorosData 文档配置
 site_name: PorosData
-site_url: "https://porosdata-doc.readthedocs.io/"
+# Read the Docs 部署在 /en/latest/ 子路径，必须包含此路径才能正确生成语言切换链接
+site_url: "https://porosdata-doc.readthedocs.io/en/latest/"
 site_description: Data-Centric AI Processing Pipeline & Toolchain
 repo_url: https://github.com/KiventYip/PorosData-doc
 edit_uri: edit/main/docs/

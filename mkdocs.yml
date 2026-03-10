@@ -125,6 +125,7 @@ plugins:
       fallback_to_default: true     # 无翻译时回退到默认语言
       reconfigure_material: true    # 拦截 Material 语言切换器，实现原地跳转
       locale_url_prefix: true
+      absolute_links: false
       languages:
         - locale: en
           default: true

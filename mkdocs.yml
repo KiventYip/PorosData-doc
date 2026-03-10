@@ -1,6 +1,6 @@
 # mkdocs.yml - 工业级 PorosData 文档配置
 site_name: PorosData
-site_url: ""
+site_url: "https://porosdata-doc.readthedocs.io/"
 site_description: Data-Centric AI Processing Pipeline & Toolchain
 repo_url: https://github.com/KiventYip/PorosData-doc
 edit_uri: edit/main/docs/
@@ -124,6 +124,7 @@ plugins:
       docs_structure: suffix        # 后缀法: index.md + index.zh.md
       fallback_to_default: true     # 无翻译时回退到默认语言
       reconfigure_material: true    # 拦截 Material 语言切换器，实现原地跳转
+      locale_url_prefix: true
       languages:
         - locale: en
           default: true

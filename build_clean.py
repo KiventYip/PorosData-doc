@@ -24,7 +24,6 @@ def run_command(cmd):
         )
 
         # 实时过滤输出
-        warning_lines = []
         in_warning = False
 
         while True:
@@ -32,18 +31,26 @@ def run_command(cmd):
             if not line:
                 break
 
-            # 检测警告开始
-            if 'WARNING – MkDocs 2.0 is incompatible with Material for MkDocs' in line:
+            # 检测警告开始（多种可能的首行格式）
+            s = line.strip()
+            if not in_warning and (
+                'WARNING' in line and 'MkDocs 2.0' in line
+                or 'MkDocs 2.0 introduces backward-incompatible' in line
+                or (s.startswith('│') and 'MkDocs 2.0' in line)
+                or s == '│'  # 块首行可能只有框线
+            ):
                 in_warning = True
                 continue
 
-            # 如果在警告块中，跳过相关行
+            # 在警告块中：跳过框线、空行及警告内容
             if in_warning:
-                if line.strip() == '' or line.startswith('│') or 'squidfunk.github.io' in line:
+                s = line.strip()
+                if s in ('', '│') or s.startswith('│'):
                     continue
-                else:
-                    # 警告块结束
-                    in_warning = False
+                if 'MkDocs 2.0' in line or '×' in line or 'squidfunk.github.io' in line or 'Our full analysis' in line:
+                    continue
+                # 遇到非警告行，结束块
+                in_warning = False
 
             # 正常输出
             print(line, end='', flush=True)

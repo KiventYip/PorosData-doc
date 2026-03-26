@@ -10,6 +10,8 @@
       
       
       
+        <link rel="canonical" href="https://porosdata-doc.readthedocs.io/en/latest/zh/tools/processor/">
+      
       
         <link rel="prev" href="../../concepts/glossary/">
       
@@ -877,19 +879,41 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        快速开始
+        定位
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="快速开始">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Processor 要交付什么
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        安装依赖
+        什么是“就绪”
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="什么是“就绪”">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ai-ready" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI-Ready
       
     </span>
   </a>
@@ -897,10 +921,93 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#data-mining-ready" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Mining Ready
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        基本使用
+        数据质量交付要求
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据质量交付要求">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 文本连续性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 实体清晰性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 数值与单位清晰性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 公式与符号保护
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 引文与参考文献结构稳定性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 元数据字段同样属于质量交付范围
       
     </span>
   </a>
@@ -913,139 +1020,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        API 参考
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="API 参考">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#dataprocessor" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        DataProcessor 类
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="DataProcessor 类">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        初始化参数
+        文本清洗标准
       
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        主要方法
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="主要方法">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#process_datasetdata-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        process_dataset(data, **options)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#process_batchdatasets-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        process_batch(datasets, **options)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validate_data_qualitydata" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        validate_data_quality(data)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        高级用法
+        符号与单位协议
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="高级用法">
+    <nav class="md-nav" aria-label="符号与单位协议">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        单位对齐原则
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        自定义处理流水线
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        领域特定处理器
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        实时数据流处理
+        符号保护原则
       
     </span>
   </a>
@@ -1058,130 +1070,85 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#designer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        数据质量控制
+        面向 Designer 的前置条件
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="数据质量控制">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        禁止破坏项
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        质量验收标准
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="质量验收标准">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        交付验收
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#designer_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        接入 Designer 的判断标准
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       
-        质量评估指标
+        拒收条件
       
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       
-        自动修复策略
+        技术路径说明
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        性能优化
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="性能优化">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        大数据集处理
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        并行处理配置
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        监控和诊断
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        输出格式
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="输出格式">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        标准输出结构
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_19" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        自定义输出处理器
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1589,19 +1556,41 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        快速开始
+        定位
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="快速开始">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Processor 要交付什么
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        安装依赖
+        什么是“就绪”
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="什么是“就绪”">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ai-ready" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI-Ready
       
     </span>
   </a>
@@ -1609,10 +1598,93 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#data-mining-ready" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Mining Ready
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        基本使用
+        数据质量交付要求
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据质量交付要求">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 文本连续性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 实体清晰性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 数值与单位清晰性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 公式与符号保护
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 引文与参考文献结构稳定性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 元数据字段同样属于质量交付范围
       
     </span>
   </a>
@@ -1625,139 +1697,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#api" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        API 参考
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="API 参考">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#dataprocessor" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        DataProcessor 类
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="DataProcessor 类">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        初始化参数
+        文本清洗标准
       
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        主要方法
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="主要方法">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#process_datasetdata-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        process_dataset(data, **options)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#process_batchdatasets-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        process_batch(datasets, **options)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validate_data_qualitydata" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        validate_data_quality(data)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        高级用法
+        符号与单位协议
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="高级用法">
+    <nav class="md-nav" aria-label="符号与单位协议">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        单位对齐原则
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        自定义处理流水线
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        领域特定处理器
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        实时数据流处理
+        符号保护原则
       
     </span>
   </a>
@@ -1770,130 +1747,85 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#designer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        数据质量控制
+        面向 Designer 的前置条件
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="数据质量控制">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        禁止破坏项
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        质量验收标准
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="质量验收标准">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        交付验收
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#designer_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        接入 Designer 的判断标准
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       
-        质量评估指标
+        拒收条件
       
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       
-        自动修复策略
+        技术路径说明
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        性能优化
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="性能优化">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        大数据集处理
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        并行处理配置
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        监控和诊断
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        输出格式
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="输出格式">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        标准输出结构
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_19" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        自定义输出处理器
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1917,218 +1849,240 @@
   
 
 
-<h1 id="porosdata-processor">PorosData-Processor 工具调用</h1>
-<h2 id="_1">快速开始</h2>
-<h3 id="_2">安装依赖</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>porosdata-processor
-</code></pre></div>
-<h3 id="_3">基本使用</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">porosdata.processor</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataProcessor</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># 初始化处理器</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">processor</span> <span class="o">=</span> <span class="n">DataProcessor</span><span class="p">()</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># 处理结构化数据</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">clean_data</span> <span class="o">=</span> <span class="n">processor</span><span class="o">.</span><span class="n">process_dataset</span><span class="p">(</span><span class="n">raw_data</span><span class="p">)</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;处理完成，质量评分: </span><span class="si">{</span><span class="n">clean_data</span><span class="o">.</span><span class="n">quality_score</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</code></pre></div>
-<h2 id="api">API 参考</h2>
-<h3 id="dataprocessor">DataProcessor 类</h3>
-<h4 id="_4">初始化参数</h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">DataProcessor</span><span class="p">(</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">domain</span><span class="o">=</span><span class="s1">&#39;materials_science&#39;</span><span class="p">,</span>  <span class="c1"># 处理领域</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">strict_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>           <span class="c1"># 严格模式：遇到错误时停止处理</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="n">enable_validation</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>     <span class="c1"># 启用数据验证</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">parallel_workers</span><span class="o">=</span><span class="mi">4</span>          <span class="c1"># 并行处理工作线程数</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">)</span>
-</code></pre></div>
-<h4 id="_5">主要方法</h4>
-<h5 id="process_datasetdata-options">process_dataset(data, **options)</h5>
-<p>处理单个数据集</p>
-<p><strong>参数:</strong>
-- <code>data</code> (dict/DataFrame): 输入数据集
-- <code>**options</code>: 处理选项</p>
-<p><strong>返回值:</strong>
-- <code>ProcessedData</code> 对象，包含处理后的数据和质量报告</p>
-<h5 id="process_batchdatasets-options">process_batch(datasets, **options)</h5>
-<p>批量处理多个数据集</p>
-<p><strong>参数:</strong>
-- <code>datasets</code> (list): 数据集列表
-- <code>**options</code>: 批处理选项</p>
-<p><strong>返回值:</strong>
-- <code>BatchProcessResult</code> 对象</p>
-<h5 id="validate_data_qualitydata">validate_data_quality(data)</h5>
-<p>验证数据质量</p>
-<p><strong>参数:</strong>
-- <code>data</code>: 待验证的数据</p>
-<p><strong>返回值:</strong>
-- 质量评估报告字典</p>
-<h2 id="_6">高级用法</h2>
-<h3 id="_7">自定义处理流水线</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">porosdata.processor</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProcessingPipeline</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">porosdata.processor.steps</span><span class="w"> </span><span class="kn">import</span> <span class="n">NormalizationStep</span><span class="p">,</span> <span class="n">OutlierDetectionStep</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># 创建自定义流水线</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">pipeline</span> <span class="o">=</span> <span class="n">ProcessingPipeline</span><span class="p">([</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="n">NormalizationStep</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;zscore&#39;</span><span class="p">),</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="n">OutlierDetectionStep</span><span class="p">(</span><span class="n">algorithm</span><span class="o">=</span><span class="s1">&#39;isolation_forest&#39;</span><span class="p">),</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="c1"># 添加更多处理步骤...</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="p">])</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1"># 配置流水线参数</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="n">pipeline</span><span class="o">.</span><span class="n">configure</span><span class="p">({</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>    <span class="s1">&#39;normalization&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;target_range&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]},</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    <span class="s1">&#39;outlier_detection&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;contamination&#39;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">}</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="p">})</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="c1"># 执行处理</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="n">result</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">raw_data</span><span class="p">)</span>
-</code></pre></div>
-<h3 id="_8">领域特定处理器</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">porosdata.processor.domains</span><span class="w"> </span><span class="kn">import</span> <span class="n">MaterialScienceProcessor</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># 材料科学专用处理器</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">processor</span> <span class="o">=</span> <span class="n">MaterialScienceProcessor</span><span class="p">()</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1"># 处理材料性能数据</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="n">material_data</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="s1">&#39;hardness&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">450</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="mi">520</span><span class="p">,</span> <span class="mi">490</span><span class="p">,</span> <span class="s1">&#39;N/A&#39;</span><span class="p">,</span> <span class="mi">550</span><span class="p">],</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="s1">&#39;temperature&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;300°C&#39;</span><span class="p">,</span> <span class="s1">&#39;400°C&#39;</span><span class="p">,</span> <span class="s1">&#39;500°C&#39;</span><span class="p">,</span> <span class="s1">&#39;室温&#39;</span><span class="p">,</span> <span class="s1">&#39;RT&#39;</span><span class="p">],</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    <span class="s1">&#39;composition&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Fe-50, Cr-25&#39;</span><span class="p">,</span> <span class="s1">&#39;Fe50Cr25&#39;</span><span class="p">,</span> <span class="s1">&#39;Fe₅₀Cr₂₅&#39;</span><span class="p">]</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="p">}</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="n">processed</span> <span class="o">=</span> <span class="n">processor</span><span class="o">.</span><span class="n">process_material_properties</span><span class="p">(</span><span class="n">material_data</span><span class="p">)</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="c1"># 自动处理：</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="c1"># - 单位标准化 (300°C → 573.15K)</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="c1"># - 格式统一化 (Fe-50, Cr-25 → {&#39;Fe&#39;: 0.5, &#39;Cr&#39;: 0.25})</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="c1"># - 异常值检测和处理</span>
-</code></pre></div>
-<h3 id="_9">实时数据流处理</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">porosdata.processor.stream</span><span class="w"> </span><span class="kn">import</span> <span class="n">StreamProcessor</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># 创建流处理器</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">stream_processor</span> <span class="o">=</span> <span class="n">StreamProcessor</span><span class="p">(</span><span class="n">batch_size</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">window_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1"># 处理实时数据流</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="nd">@stream_processor</span><span class="o">.</span><span class="n">on_batch_ready</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="k">def</span><span class="w"> </span><span class="nf">handle_batch</span><span class="p">(</span><span class="n">batch_data</span><span class="p">):</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    <span class="n">processed_batch</span> <span class="o">=</span> <span class="n">processor</span><span class="o">.</span><span class="n">process_batch</span><span class="p">(</span><span class="n">batch_data</span><span class="p">)</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    <span class="n">save_to_database</span><span class="p">(</span><span class="n">processed_batch</span><span class="p">)</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="c1"># 开始处理</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="n">stream_processor</span><span class="o">.</span><span class="n">start_processing</span><span class="p">(</span><span class="n">data_stream</span><span class="p">)</span>
-</code></pre></div>
-<h2 id="_10">数据质量控制</h2>
-<h3 id="_11">质量评估指标</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">porosdata.processor.quality</span><span class="w"> </span><span class="kn">import</span> <span class="n">QualityAssessor</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">assessor</span> <span class="o">=</span> <span class="n">QualityAssessor</span><span class="p">()</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1"># 全面质量评估</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="n">quality_report</span> <span class="o">=</span> <span class="n">assessor</span><span class="o">.</span><span class="n">evaluate_comprehensive</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;质量报告:&quot;</span><span class="p">)</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- 完整性评分: </span><span class="si">{</span><span class="n">quality_report</span><span class="o">.</span><span class="n">completeness_score</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- 准确性评分: </span><span class="si">{</span><span class="n">quality_report</span><span class="o">.</span><span class="n">accuracy_score</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- 一致性评分: </span><span class="si">{</span><span class="n">quality_report</span><span class="o">.</span><span class="n">consistency_score</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- 异常值比例: </span><span class="si">{</span><span class="n">quality_report</span><span class="o">.</span><span class="n">outlier_ratio</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="c1"># 识别问题数据</span>
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="n">issues</span> <span class="o">=</span> <span class="n">quality_report</span><span class="o">.</span><span class="n">identify_issues</span><span class="p">()</span>
-<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="k">for</span> <span class="n">issue</span> <span class="ow">in</span> <span class="n">issues</span><span class="p">:</span>
-<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;问题类型: </span><span class="si">{</span><span class="n">issue</span><span class="o">.</span><span class="n">type</span><span class="si">}</span><span class="s2">, 位置: </span><span class="si">{</span><span class="n">issue</span><span class="o">.</span><span class="n">location</span><span class="si">}</span><span class="s2">, 严重程度: </span><span class="si">{</span><span class="n">issue</span><span class="o">.</span><span class="n">severity</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</code></pre></div>
-<h3 id="_12">自动修复策略</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">porosdata.processor.repair</span><span class="w"> </span><span class="kn">import</span> <span class="n">AutoRepair</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">repair_engine</span> <span class="o">=</span> <span class="n">AutoRepair</span><span class="p">()</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1"># 配置修复策略</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">repair_engine</span><span class="o">.</span><span class="n">set_strategy</span><span class="p">({</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    <span class="s1">&#39;missing_values&#39;</span><span class="p">:</span> <span class="s1">&#39;interpolation&#39;</span><span class="p">,</span>  <span class="c1"># 缺失值：插值修复</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="s1">&#39;outliers&#39;</span><span class="p">:</span> <span class="s1">&#39;winsorize&#39;</span><span class="p">,</span>           <span class="c1"># 异常值：Winsorize 处理</span>
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    <span class="s1">&#39;inconsistencies&#39;</span><span class="p">:</span> <span class="s1">&#39;domain_rules&#39;</span>  <span class="c1"># 不一致：基于领域规则修复</span>
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="p">})</span>
-<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
-<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="c1"># 执行自动修复</span>
-<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="n">repaired_data</span> <span class="o">=</span> <span class="n">repair_engine</span><span class="o">.</span><span class="n">repair</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">quality_report</span><span class="p">)</span>
-</code></pre></div>
-<h2 id="_13">性能优化</h2>
-<h3 id="_14">大数据集处理</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># 内存优化处理</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">processor</span><span class="o">.</span><span class="n">enable_memory_optimization</span><span class="p">()</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># 分块处理大型数据集</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">processor</span><span class="o">.</span><span class="n">process_large_dataset</span><span class="p">(</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    <span class="n">large_dataset</span><span class="p">,</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    <span class="n">chunk_size</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="n">overlap</span><span class="o">=</span><span class="mi">100</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="p">):</span>
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>    <span class="n">process_chunk</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>    <span class="c1"># 中间结果保存或进一步处理</span>
-</code></pre></div>
-<h3 id="_15">并行处理配置</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">porosdata.processor.parallel</span><span class="w"> </span><span class="kn">import</span> <span class="n">ParallelProcessor</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1"># 配置并行处理</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">parallel_processor</span> <span class="o">=</span> <span class="n">ParallelProcessor</span><span class="p">(</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    <span class="n">num_workers</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="n">chunk_strategy</span><span class="o">=</span><span class="s1">&#39;adaptive&#39;</span><span class="p">,</span>  <span class="c1"># 自适应分块</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="n">load_balancing</span><span class="o">=</span><span class="kc">True</span>        <span class="c1"># 负载均衡</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="p">)</span>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="c1"># 执行并行处理</span>
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="n">results</span> <span class="o">=</span> <span class="n">parallel_processor</span><span class="o">.</span><span class="n">process_parallel</span><span class="p">(</span><span class="n">datasets</span><span class="p">)</span>
-</code></pre></div>
-<h3 id="_16">监控和诊断</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">porosdata.processor.monitor</span><span class="w"> </span><span class="kn">import</span> <span class="n">PerformanceMonitor</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">monitor</span> <span class="o">=</span> <span class="n">PerformanceMonitor</span><span class="p">()</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="k">with</span> <span class="n">monitor</span><span class="o">.</span><span class="n">track_performance</span><span class="p">():</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">processor</span><span class="o">.</span><span class="n">process_dataset</span><span class="p">(</span><span class="n">large_data</span><span class="p">)</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="c1"># 获取性能报告</span>
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="n">perf_report</span> <span class="o">=</span> <span class="n">monitor</span><span class="o">.</span><span class="n">get_report</span><span class="p">()</span>
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;处理时间: </span><span class="si">{</span><span class="n">perf_report</span><span class="o">.</span><span class="n">total_time</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;内存使用峰值: </span><span class="si">{</span><span class="n">perf_report</span><span class="o">.</span><span class="n">peak_memory</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;CPU 利用率: </span><span class="si">{</span><span class="n">perf_report</span><span class="o">.</span><span class="n">cpu_utilization</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</code></pre></div>
-<h2 id="_17">输出格式</h2>
-<h3 id="_18">标准输出结构</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">{</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="n">processed_dataframe</span><span class="p">,</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    <span class="s1">&#39;metadata&#39;</span><span class="p">:</span> <span class="p">{</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>        <span class="s1">&#39;original_shape&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>        <span class="s1">&#39;processed_shape&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">980</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>        <span class="s1">&#39;processing_steps&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;normalization&#39;</span><span class="p">,</span> <span class="s1">&#39;outlier_removal&#39;</span><span class="p">,</span> <span class="s1">&#39;validation&#39;</span><span class="p">],</span>
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>        <span class="s1">&#39;quality_metrics&#39;</span><span class="p">:</span> <span class="p">{</span>
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>            <span class="s1">&#39;completeness&#39;</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">,</span>
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>            <span class="s1">&#39;accuracy&#39;</span><span class="p">:</span> <span class="mf">0.92</span><span class="p">,</span>
-<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>            <span class="s1">&#39;processing_time&#39;</span><span class="p">:</span> <span class="mf">45.2</span>
-<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>        <span class="p">}</span>
-<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>    <span class="p">},</span>
-<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>    <span class="s1">&#39;quality_report&#39;</span><span class="p">:</span> <span class="p">{</span>
-<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>        <span class="s1">&#39;warnings&#39;</span><span class="p">:</span> <span class="p">[</span><span class="o">...</span><span class="p">],</span>
-<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>        <span class="s1">&#39;errors&#39;</span><span class="p">:</span> <span class="p">[</span><span class="o">...</span><span class="p">],</span>
-<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>        <span class="s1">&#39;recommendations&#39;</span><span class="p">:</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
-<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>    <span class="p">}</span>
-<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="p">}</span>
-</code></pre></div>
-<h3 id="_19">自定义输出处理器</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">porosdata.processor.output</span><span class="w"> </span><span class="kn">import</span> <span class="n">HDF5OutputHandler</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="c1"># 保存为 HDF5 格式</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="n">hdf5_handler</span> <span class="o">=</span> <span class="n">HDF5OutputHandler</span><span class="p">(</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;processed_data.h5&#39;</span><span class="p">,</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    <span class="n">compression</span><span class="o">=</span><span class="s1">&#39;gzip&#39;</span><span class="p">,</span>
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>    <span class="n">chunk_size</span><span class="o">=</span><span class="mi">1000</span>
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="p">)</span>
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
-<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="n">processor</span><span class="o">.</span><span class="n">set_output_handler</span><span class="p">(</span><span class="n">hdf5_handler</span><span class="p">)</span>
-<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="n">result</span> <span class="o">=</span> <span class="n">processor</span><span class="o">.</span><span class="n">process_dataset</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>  <span class="c1"># 自动保存到 HDF5 文件</span>
-</code></pre></div>
+<h1 id="porosdata-processor">PorosData-Processor</h1>
+<h2 id="_1">定位</h2>
+<p><code>Processor</code> 是 PorosData 中负责<strong>数据质量交付</strong>的模块。它不以生成最终数据库结构或知识图谱为目标，而是负责把原始 OCR / MinerU / PDF 解析输出清洗成<strong>清晰、稳定、可读、可计算</strong>的高质量文本，为 <code>Designer</code> 提供低噪音、低歧义的输入。</p>
+<p>换言之：</p>
+<ul>
+<li><code>Processor</code> 解决“数据是否干净、是否可靠、是否适合进一步处理”</li>
+<li><code>Designer</code> 解决“数据如何被建模、抽取、映射和组织成结构化结果”</li>
+</ul>
+<h2 id="processor">Processor 要交付什么</h2>
+<p><code>Processor</code> 的最低交付要求包括：</p>
+<ul>
+<li>消除 OCR 造成的非语义空格、断裂、错字和格式噪音</li>
+<li>保持材料名、物理量、单位、术语、公式和引用结构的稳定性</li>
+<li>保护文本中的上下文锚点，避免因清洗破坏实验条件、属性归属和语义关系</li>
+<li>输出适合 AI 阅读、适合规则匹配、适合后续抽取的统一文本</li>
+</ul>
+<p>典型交付对象包括但不限于：</p>
+<ul>
+<li>正文 <code>text</code></li>
+<li>图注与图脚注 <code>image_caption</code>, <code>image_footnote</code></li>
+<li>表题与表脚注 <code>table_caption</code>, <code>table_footnote</code></li>
+<li>含行内公式的文字片段</li>
+<li>后续会进入实体抽取或属性抽取的任何文本字段</li>
+</ul>
+<h2 id="_2">什么是“就绪”</h2>
+<h3 id="ai-ready">AI-Ready</h3>
+<p>AI-Ready 指文本已经足够干净，可以直接输入 LLM 或 Embedding 模型，而不会因为异常空格、乱码、错位符号或术语误识显著降低模型理解质量。</p>
+<p>其核心特征包括：</p>
+<ul>
+<li>文本足够干净，Token 不被非语义碎片污染</li>
+<li>语义主体清晰，不因 OCR 断裂而破坏科学概念</li>
+<li>数值、单位、术语、行内公式保持可读</li>
+<li>清洗过程不会引入新的歧义</li>
+</ul>
+<h3 id="data-mining-ready">Data Mining Ready</h3>
+<p>Data Mining Ready 指文本已经适合作为结构化抽取的输入。</p>
+<p>其核心特征包括：</p>
+<ul>
+<li>实体名称稳定，材料名和术语在文内尽量一致</li>
+<li>数值、单位和属性可以被规则或模型稳定识别</li>
+<li>属性与对应值、条件、上下文之间的关系未被破坏</li>
+<li>文本可以进一步构造为 JSON、表结构、知识图谱或三元组</li>
+</ul>
+<h2 id="_3">数据质量交付要求</h2>
+<h3 id="1">1. 文本连续性</h3>
+<p>必须修复 OCR 造成的非语义断裂，包括但不限于：</p>
+<ul>
+<li>数字内部空格：<code>2 0 0</code> -&gt; <code>200</code></li>
+<li>小数点断裂：<code>0 . 5</code> -&gt; <code>0.5</code></li>
+<li>数值与单位断裂：<code>0 . 0 1 0 n m</code> -&gt; <code>0.010nm</code></li>
+<li>元素符号断裂：<code>N i</code> -&gt; <code>Ni</code></li>
+<li>非语义换行碎裂：<code>110 \n s</code> -&gt; <code>110s</code></li>
+</ul>
+<h3 id="2">2. 实体清晰性</h3>
+<p>必须优先保护和修正以下内容：</p>
+<ul>
+<li>材料名称</li>
+<li>化学元素与化合物符号</li>
+<li>物理量名称</li>
+<li>实验方法与设备名称</li>
+<li>领域术语</li>
+</ul>
+<p>同一术语在同一文档内不应出现明显影响检索、聚类或识别的混乱写法，例如 <code>Zr based</code>、<code>Zr-based</code>、<code>Zr based BMG</code>。若语义相同，应尽可能输出更一致的写法。</p>
+<h3 id="3">3. 数值与单位清晰性</h3>
+<p>数值与单位必须满足以下要求：</p>
+<ul>
+<li>数值连续，不允许被 OCR 空格打断</li>
+<li>小数结构完整，不允许出现分离式小数点</li>
+<li>指数、上下标、符号尽可能保持正确结构</li>
+<li>单位采用统一协议，不得在同一语料中混乱输出</li>
+</ul>
+<h3 id="4">4. 公式与符号保护</h3>
+<p><code>Processor</code> 可以修复公式中的 OCR 冗余空格，但必须遵守“修复服从结构安全”的原则：</p>
+<ul>
+<li>行内公式优先保证结构不损坏</li>
+<li>显示公式优先保证块级结构不损坏</li>
+<li>上下标、希腊字母、引用命令与 LaTeX 命令边界必须被保护</li>
+<li>对无法确认安全的复杂公式，不应做激进改写</li>
+</ul>
+<h3 id="5">5. 引文与参考文献结构稳定性</h3>
+<p>引文规范属于数据质量交付的一部分，而不是附加功能。</p>
+<ul>
+<li>数字型引文应统一为 <code>ref[1]</code>、<code>ref[2][3]</code>、<code>ref[1][2][3]</code> 等稳定形式</li>
+<li><code>[1]</code>、<code>[2,3]</code>、<code>[1-3]</code>、<code>[1, 2, 5-7]</code> 等混用形式应规整为单一协议</li>
+<li>引文规范化后不得与前后正文粘连，禁止产生 <code>wordref[1]</code> 一类脏数据</li>
+<li>文末参考文献列表应保留原始条目结构，例如 <code>[1] Author. Title...</code></li>
+<li>罗马数字等非数字型引用只做括号与空格规范化，不应强行改写为 <code>ref[...]</code></li>
+</ul>
+<h3 id="6">6. 元数据字段同样属于质量交付范围</h3>
+<p>图注、脚注、表题、表脚注虽然不是正文，但同样必须进入清洗范围，因为它们常常包含：</p>
+<ul>
+<li>图表编号</li>
+<li>材料名称</li>
+<li>实验条件</li>
+<li>单位与数值</li>
+<li>行内公式</li>
+<li>结构化抽取的重要上下文</li>
+</ul>
+<h2 id="_4">文本清洗标准</h2>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>处理要求</th>
+<th>错误示例 (Bad)</th>
+<th>预期输出 (Good)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>物理量聚合</td>
+<td>数字、小数点、单位之间必须消除非语义空格</td>
+<td><code>0 . 0 1 0 n m</code></td>
+<td><code>0.010nm</code></td>
+</tr>
+<tr>
+<td>化学实体纠错</td>
+<td>修复断裂的元素符号，匹配领域术语表</td>
+<td><code>Z \mathbf{r}</code>, <code>N i -</code></td>
+<td><code>Zr</code>, <code>Ni</code></td>
+</tr>
+<tr>
+<td>数值连续性</td>
+<td>消除数字内部因 OCR 产生的换行或连字符</td>
+<td><code>110 \n s</code></td>
+<td><code>110s</code></td>
+</tr>
+<tr>
+<td>术语一致性</td>
+<td>同类实体在同一文档内输出尽量一致</td>
+<td><code>Zr based</code>, <code>Zr-based</code></td>
+<td><code>Zr-based</code></td>
+</tr>
+<tr>
+<td>引文整洁性</td>
+<td>数字型引文统一为稳定格式，且不与正文粘连</td>
+<td><code>1960 [1]</code>, <code>[2,3]</code>, <code>[1-3]</code></td>
+<td><code>1960 ref[1]</code>, <code>ref[2][3]</code>, <code>ref[1][2][3]</code></td>
+</tr>
+<tr>
+<td>元数据清晰性</td>
+<td>图注/表题中的数值、单位、实体不应保留明显 OCR 断裂</td>
+<td><code>Fig. 1. 1 0 n m</code></td>
+<td><code>Fig. 1. 10nm</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_5">符号与单位协议</h2>
+<h3 id="_6">单位对齐原则</h3>
+<ul>
+<li>采用统一的 <code>Value + Unit</code> 表达协议，可为无空格或统一单空格，但项目内不得混用</li>
+<li>单位写法必须稳定，例如：<code>mm</code>、<code>nm</code>、<code>°C</code>、<code>s</code>、<code>min</code>、<code>keV</code></li>
+<li>复合单位、指数单位、公式内单位必须优先保证结构正确，再进行空格修复</li>
+</ul>
+<h3 id="_7">符号保护原则</h3>
+<p>清洗过程中必须保护以下结构：</p>
+<ul>
+<li>LaTeX 行内公式</li>
+<li>LaTeX 显示公式</li>
+<li>上下标</li>
+<li>希腊字母</li>
+<li>引用命令与参考文献结构</li>
+<li>化学元素和单位白名单</li>
+</ul>
+<h2 id="designer">面向 Designer 的前置条件</h2>
+<p>为了让 <code>Designer</code> 可以稳定开展结构化重构，<code>Processor</code> 输出至少应满足：</p>
+<ul>
+<li>实体名称、实验名、关键术语在文中多次出现时保持高度一致</li>
+<li>实验条件、温度区间、设备环境等上下文锚点被保留</li>
+<li>属性与数值、单位保持合理邻近关系，如 <code>diameter = 3mm</code></li>
+<li>文本中不再保留大量断裂数字、异常空格、不一致术语或损坏公式</li>
+<li>正文引用与参考文献列表可以被稳定区分</li>
+</ul>
+<h2 id="_8">禁止破坏项</h2>
+<p>以下情况属于不可接受的质量回退：</p>
+<ul>
+<li>将材料名、物理量名、术语误改为其他词</li>
+<li>破坏公式结构、上下标结构或 LaTeX 边界</li>
+<li>破坏图注、表题、脚注中的编号信息</li>
+<li>删除属性与条件之间的关键连接文本</li>
+<li>误删参考文献列表项</li>
+<li>将参考文献列表误改写为 <code>ref[...]</code></li>
+<li>将正文引文与前后正文错误拼接，生成 <code>wordref[1]</code> 等脏数据</li>
+<li>引入新的歧义写法或新的 OCR 噪音</li>
+<li>只清洗正文而遗漏关键元数据字段</li>
+</ul>
+<h2 id="_9">质量验收标准</h2>
+<h3 id="_10">交付验收</h3>
+<p>交付结果至少应满足：</p>
+<ul>
+<li>无明显 OCR 断裂数字</li>
+<li>无明显断裂单位</li>
+<li>无明显术语碎裂</li>
+<li>无结构性公式损坏</li>
+<li>无关键元数据字段遗漏处理</li>
+<li>正文、图注、表题、脚注中的数字型引文已统一为 <code>ref[n]</code> / <code>ref[n][m]...</code></li>
+<li>引文规范化后未与正文粘连，参考文献列表保持 <code>[n] ...</code> 原始结构</li>
+<li>文本适合 AI 阅读与规则处理</li>
+</ul>
+<h3 id="designer_1">接入 Designer 的判断标准</h3>
+<p>只有当以下条件满足时，数据才应进入 <code>Designer</code>：</p>
+<ul>
+<li>文本已经完成基础质量清洗</li>
+<li>数值、单位、实体具备稳定可识别性</li>
+<li>图注、表题、脚注等关键字段达到可用状态</li>
+<li>主要噪音不会显著干扰结构化抽取</li>
+<li>引文结构已经稳定</li>
+</ul>
+<h3 id="_11">拒收条件</h3>
+<p>出现以下任一情况，可判定当前版本不满足要求：</p>
+<ul>
+<li><code>Processor</code> 输出仍存在大量可见 OCR 断裂</li>
+<li>公式、符号或编号结构被破坏</li>
+<li>图注、表题、脚注等重要字段未进入质量清洗范围</li>
+<li>数据虽可阅读，但不具备稳定抽取条件</li>
+<li>正文数字型引文仍混用多种格式，未统一为单一协议</li>
+<li>参考文献列表被误改写，或正文起始引文被误判为参考文献条目而漏处理</li>
+<li>相同类型问题在不同字段上处理标准不一致</li>
+</ul>
+<h2 id="_12">技术路径说明</h2>
+<p>本页面约束的是 <code>Processor</code> 的<strong>输出质量</strong>，而不是限定具体实现技术。实现可采用以下一种或多种方式：</p>
+<ul>
+<li>正则规则</li>
+<li>术语表与白名单</li>
+<li>结构保护与局部修复</li>
+<li>OCR 后处理策略</li>
+<li>轻量模型或语义辅助方法</li>
+</ul>
+<p>无论采用何种技术路径，最终都必须服务于以下目标：</p>
+<ul>
+<li><code>Processor</code> 负责数据质量交付</li>
+<li><code>Designer</code> 负责数据结构化表达</li>
+<li>两个包职责分离，但质量链路必须闭环</li>
+</ul>
 
 
 

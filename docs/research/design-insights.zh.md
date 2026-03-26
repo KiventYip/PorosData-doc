@@ -18,6 +18,13 @@ date: 2024-03-09
 - **大模型预训练（Pre-training）**：学习世界知识与语言结构
 - **自动化数据挖掘（Data Mining）**：从海量文献中提取结构化知识
 
+## 文档落位
+
+本页承担**研究性总览与技术路径讨论**，而具体的工程约束已分别沉淀到现有框架中的两个工具页：
+
+- `Processor`：见 [tools/processor/index.md](../tools/processor/index.md)，聚焦数据质量交付、清洗标准与接入 `Designer` 的前置条件
+- `Designer`：见 [tools/designer/index.md](../tools/designer/index.md)，聚焦结构化视图、Poros 标签契约与数据挖掘交付标准
+
 # 功能设计
 
 ## 1. 数据清洗能力（PorosData Processor）

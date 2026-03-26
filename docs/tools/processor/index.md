@@ -1,271 +1,221 @@
-# PorosData-Processor 工具调用
+# PorosData-Processor
 
-## 快速开始
+## Positioning
 
-### 安装依赖
+`Processor` is the PorosData module responsible for **data quality delivery**. Its goal is not to generate final database schemas or knowledge graphs. Instead, it transforms raw OCR, MinerU, and PDF parsing outputs into **clean, stable, readable, and computable** text, so that `Designer` receives low-noise, low-ambiguity input.
 
-```bash
-pip install porosdata-processor
-```
+In short:
 
-### 基本使用
+- `Processor` answers whether data is clean, reliable, and ready for further use
+- `Designer` answers how that data should be modeled, extracted, mapped, and organized into structured outputs
 
-```python
-from porosdata.processor import DataProcessor
+## What Processor Must Deliver
 
-# 初始化处理器
-processor = DataProcessor()
+At a minimum, `Processor` must:
 
-# 处理结构化数据
-clean_data = processor.process_dataset(raw_data)
-print(f"处理完成，质量评分: {clean_data.quality_score}")
-```
+- Remove non-semantic OCR noise, spacing errors, fragments, typos, and formatting artifacts
+- Preserve the stability of material names, physical quantities, units, terminology, formulas, and citation structures
+- Protect contextual anchors so cleaning does not break conditions, attribute ownership, or semantic relations
+- Output text that is suitable for AI consumption, rule-based matching, and downstream extraction
 
-## API 参考
+Typical delivery targets include, but are not limited to:
 
-### DataProcessor 类
+- Main body `text`
+- Figure captions and figure footnotes: `image_caption`, `image_footnote`
+- Table captions and table footnotes: `table_caption`, `table_footnote`
+- Text fragments containing inline formulas
+- Any text field that will later enter entity or attribute extraction
 
-#### 初始化参数
+## What "Ready" Means
 
-```python
-DataProcessor(
-    domain='materials_science',  # 处理领域
-    strict_mode=True,           # 严格模式：遇到错误时停止处理
-    enable_validation=True,     # 启用数据验证
-    parallel_workers=4          # 并行处理工作线程数
-)
-```
+### AI-Ready
 
-#### 主要方法
+AI-Ready means the text is clean enough to be fed directly into LLMs or embedding models without major degradation from broken spacing, garbage symbols, or term corruption.
 
-##### process_dataset(data, **options)
+Core properties include:
 
-处理单个数据集
+- The text is clean enough that the token stream is not polluted by non-semantic fragments
+- The semantic subject remains clear and is not broken by OCR fragmentation
+- Numbers, units, terms, and inline formulas remain readable
+- Cleaning does not introduce new ambiguity
 
-**参数:**
-- `data` (dict/DataFrame): 输入数据集
-- `**options`: 处理选项
+### Data Mining Ready
 
-**返回值:**
-- `ProcessedData` 对象，包含处理后的数据和质量报告
+Data Mining Ready means the text is suitable as input for structured extraction.
 
-##### process_batch(datasets, **options)
+Core properties include:
 
-批量处理多个数据集
+- Entity names remain stable, with material names and terms kept consistent within a document
+- Numbers, units, and attributes can be reliably recognized by rules or models
+- Relations among values, conditions, and context are preserved
+- The text can be transformed further into JSON, tables, knowledge graphs, or triples
 
-**参数:**
-- `datasets` (list): 数据集列表
-- `**options`: 批处理选项
+## Data Quality Delivery Requirements
 
-**返回值:**
-- `BatchProcessResult` 对象
+### 1. Text Continuity
 
-##### validate_data_quality(data)
+OCR-induced non-semantic fragmentation must be repaired, including but not limited to:
 
-验证数据质量
+- Internal spaces inside numbers: `2 0 0` -> `200`
+- Broken decimal points: `0 . 5` -> `0.5`
+- Broken values and units: `0 . 0 1 0 n m` -> `0.010nm`
+- Fragmented element symbols: `N i` -> `Ni`
+- Non-semantic line-break fragmentation: `110 \n s` -> `110s`
 
-**参数:**
-- `data`: 待验证的数据
+### 2. Entity Clarity
 
-**返回值:**
-- 质量评估报告字典
+The following classes must be explicitly protected and corrected when necessary:
 
-## 高级用法
+- Material names
+- Chemical elements and compounds
+- Physical quantity names
+- Experimental methods and instrument names
+- Domain terminology
 
-### 自定义处理流水线
+Within a single document, the same term should not appear in obviously divergent forms that harm search, clustering, or recognition, such as `Zr based`, `Zr-based`, and `Zr based BMG`. When the semantics are identical, `Processor` should normalize them toward a more consistent form.
 
-```python
-from porosdata.processor import ProcessingPipeline
-from porosdata.processor.steps import NormalizationStep, OutlierDetectionStep
+### 3. Numerical and Unit Clarity
 
-# 创建自定义流水线
-pipeline = ProcessingPipeline([
-    NormalizationStep(method='zscore'),
-    OutlierDetectionStep(algorithm='isolation_forest'),
-    # 添加更多处理步骤...
-])
+Numbers and units must satisfy these requirements:
 
-# 配置流水线参数
-pipeline.configure({
-    'normalization': {'target_range': [0, 1]},
-    'outlier_detection': {'contamination': 0.1}
-})
+- Numerical sequences must remain continuous
+- Decimal structures must remain intact
+- Exponents, subscripts, superscripts, and symbols should remain structurally correct
+- Units must follow a unified project convention
 
-# 执行处理
-result = pipeline.execute(raw_data)
-```
+### 4. Formula and Symbol Protection
 
-### 领域特定处理器
+`Processor` may remove OCR-generated redundant spaces inside formulas, but repairs must always obey structural safety:
 
-```python
-from porosdata.processor.domains import MaterialScienceProcessor
+- Inline formulas must keep their structure intact
+- Display formulas must keep block-level integrity intact
+- Subscripts, superscripts, Greek letters, citation commands, and LaTeX command boundaries must be protected
+- Complex formulas should not be aggressively rewritten when structural safety cannot be guaranteed
 
-# 材料科学专用处理器
-processor = MaterialScienceProcessor()
+### 5. Citation and Reference Stability
 
-# 处理材料性能数据
-material_data = {
-    'hardness': [450, 480, 520, 490, 'N/A', 550],
-    'temperature': ['300°C', '400°C', '500°C', '室温', 'RT'],
-    'composition': ['Fe-50, Cr-25', 'Fe50Cr25', 'Fe₅₀Cr₂₅']
-}
+Citation normalization is part of data quality delivery, not an optional extra.
 
-processed = processor.process_material_properties(material_data)
+- Numeric citations should be normalized into stable forms such as `ref[1]`, `ref[2][3]`, and `ref[1][2][3]`
+- Mixed forms such as `[1]`, `[2,3]`, `[1-3]`, and `[1, 2, 5-7]` should be normalized into one protocol
+- Normalized citations must not stick to neighboring words and create dirty outputs such as `wordref[1]`
+- Reference list entries at the end of the document must preserve their original structure, such as `[1] Author. Title...`
+- Roman numeral or non-numeric references should only receive bracket and spacing normalization, not forced rewriting into `ref[...]`
 
-# 自动处理：
-# - 单位标准化 (300°C → 573.15K)
-# - 格式统一化 (Fe-50, Cr-25 → {'Fe': 0.5, 'Cr': 0.25})
-# - 异常值检测和处理
-```
+### 6. Metadata Fields Are Also in Scope
 
-### 实时数据流处理
+Figure captions, footnotes, table titles, and table footnotes are not optional side fields. They are part of the quality delivery scope because they often contain:
 
-```python
-from porosdata.processor.stream import StreamProcessor
+- Figure or table identifiers
+- Material names
+- Experimental conditions
+- Numbers and units
+- Inline formulas
+- Critical context for downstream structured extraction
 
-# 创建流处理器
-stream_processor = StreamProcessor(batch_size=100, window_size=1000)
+## Cleaning Standards
 
-# 处理实时数据流
-@stream_processor.on_batch_ready
-def handle_batch(batch_data):
-    processed_batch = processor.process_batch(batch_data)
-    save_to_database(processed_batch)
+| Dimension | Requirement | Bad | Good |
+|------|----------|----------------|-----------------|
+| Physical value aggregation | Remove non-semantic spaces among numbers, decimal points, and units | `0 . 0 1 0 n m` | `0.010nm` |
+| Chemical entity repair | Fix fragmented element symbols with domain dictionaries | `Z \mathbf{r}`, `N i -` | `Zr`, `Ni` |
+| Numerical continuity | Remove OCR-induced breaks inside numbers | `110 \n s` | `110s` |
+| Terminology consistency | Keep equivalent entities in a document as consistent as possible | `Zr based`, `Zr-based` | `Zr-based` |
+| Citation cleanliness | Normalize numeric citations and keep them separated from text | `1960 [1]`, `[2,3]`, `[1-3]` | `1960 ref[1]`, `ref[2][3]`, `ref[1][2][3]` |
+| Metadata clarity | Figure/table metadata should not preserve obvious OCR fractures | `Fig. 1. 1 0 n m` | `Fig. 1. 10nm` |
 
-# 开始处理
-stream_processor.start_processing(data_stream)
-```
+## Symbol and Unit Protocol
 
-## 数据质量控制
+### Unit Alignment Principles
 
-### 质量评估指标
+- Use one consistent `Value + Unit` convention across the project, whether with no space or a single space
+- Unit spellings must remain stable, such as `mm`, `nm`, `°C`, `s`, `min`, and `keV`
+- Compound units, exponential units, and formula-embedded units must preserve structure before any spacing repair
 
-```python
-from porosdata.processor.quality import QualityAssessor
+### Symbol Protection Principles
 
-assessor = QualityAssessor()
+The cleaning process must protect:
 
-# 全面质量评估
-quality_report = assessor.evaluate_comprehensive(data)
-
-print("质量报告:")
-print(f"- 完整性评分: {quality_report.completeness_score}")
-print(f"- 准确性评分: {quality_report.accuracy_score}")
-print(f"- 一致性评分: {quality_report.consistency_score}")
-print(f"- 异常值比例: {quality_report.outlier_ratio}")
-
-# 识别问题数据
-issues = quality_report.identify_issues()
-for issue in issues:
-    print(f"问题类型: {issue.type}, 位置: {issue.location}, 严重程度: {issue.severity}")
-```
-
-### 自动修复策略
-
-```python
-from porosdata.processor.repair import AutoRepair
-
-repair_engine = AutoRepair()
-
-# 配置修复策略
-repair_engine.set_strategy({
-    'missing_values': 'interpolation',  # 缺失值：插值修复
-    'outliers': 'winsorize',           # 异常值：Winsorize 处理
-    'inconsistencies': 'domain_rules'  # 不一致：基于领域规则修复
-})
-
-# 执行自动修复
-repaired_data = repair_engine.repair(data, quality_report)
-```
-
-## 性能优化
-
-### 大数据集处理
-
-```python
-# 内存优化处理
-processor.enable_memory_optimization()
-
-# 分块处理大型数据集
-for chunk in processor.process_large_dataset(
-    large_dataset,
-    chunk_size=10000,
-    overlap=100
-):
-    process_chunk(chunk)
-    # 中间结果保存或进一步处理
-```
-
-### 并行处理配置
-
-```python
-from porosdata.processor.parallel import ParallelProcessor
-
-# 配置并行处理
-parallel_processor = ParallelProcessor(
-    num_workers=8,
-    chunk_strategy='adaptive',  # 自适应分块
-    load_balancing=True        # 负载均衡
-)
-
-# 执行并行处理
-results = parallel_processor.process_parallel(datasets)
-```
-
-### 监控和诊断
-
-```python
-from porosdata.processor.monitor import PerformanceMonitor
-
-monitor = PerformanceMonitor()
-
-with monitor.track_performance():
-    result = processor.process_dataset(large_data)
-
-# 获取性能报告
-perf_report = monitor.get_report()
-print(f"处理时间: {perf_report.total_time}")
-print(f"内存使用峰值: {perf_report.peak_memory}")
-print(f"CPU 利用率: {perf_report.cpu_utilization}")
-```
-
-## 输出格式
-
-### 标准输出结构
-
-```python
-{
-    'data': processed_dataframe,
-    'metadata': {
-        'original_shape': (1000, 20),
-        'processed_shape': (980, 20),
-        'processing_steps': ['normalization', 'outlier_removal', 'validation'],
-        'quality_metrics': {
-            'completeness': 0.95,
-            'accuracy': 0.92,
-            'processing_time': 45.2
-        }
-    },
-    'quality_report': {
-        'warnings': [...],
-        'errors': [...],
-        'recommendations': [...]
-    }
-}
-```
-
-### 自定义输出处理器
-
-```python
-from porosdata.processor.output import HDF5OutputHandler
-
-# 保存为 HDF5 格式
-hdf5_handler = HDF5OutputHandler(
-    filename='processed_data.h5',
-    compression='gzip',
-    chunk_size=1000
-)
-
-processor.set_output_handler(hdf5_handler)
-result = processor.process_dataset(data)  # 自动保存到 HDF5 文件
-```
+- LaTeX inline formulas
+- LaTeX display formulas
+- Subscripts and superscripts
+- Greek letters
+- Citation commands and reference structures
+- Whitelisted chemical elements and units
+
+## Preconditions for Designer
+
+Before data is handed off to `Designer`, `Processor` output should already ensure:
+
+- Entity names, experiment names, and key terms remain highly consistent within a document
+- Contextual anchors such as temperature ranges, environments, and conditions are preserved
+- Attributes remain close to their values and units, such as `diameter = 3mm`
+- Large amounts of broken numbers, abnormal spacing, inconsistent terms, and damaged formulas are no longer present
+- In-text citations and reference-list entries can be reliably distinguished
+
+## Non-Negotiable Failures
+
+The following are unacceptable regressions:
+
+- Rewriting material names, physical quantities, or domain terms into wrong words
+- Breaking formulas, subscript/superscript structures, or LaTeX boundaries
+- Damaging identifiers in captions, titles, or footnotes
+- Deleting key connective text between attributes and conditions
+- Accidentally deleting reference list items
+- Rewriting reference list items into `ref[...]`
+- Incorrectly concatenating normalized citations with neighboring text, such as `wordref[1]`
+- Introducing new ambiguous spellings or new OCR noise
+- Cleaning only the body text while ignoring critical metadata fields
+
+## Acceptance Criteria
+
+### Delivery Acceptance
+
+At minimum, accepted output should satisfy:
+
+- No obvious OCR-broken numbers
+- No obvious broken units
+- No obvious fragmented terminology
+- No structural formula corruption
+- No important metadata fields left outside the cleaning scope
+- Numeric citations in body text, captions, titles, and footnotes are normalized into `ref[n]` / `ref[n][m]...`
+- Normalized citations do not stick to surrounding text, and reference lists remain in `[n] ...` form
+- The text is ready for AI reading and rule-based processing
+
+### Entry Criteria for Designer
+
+Data should enter `Designer` only when:
+
+- Basic quality cleaning is complete
+- Numbers, units, and entities are stably recognizable
+- Key fields such as captions, titles, and footnotes are usable
+- Remaining noise no longer significantly disrupts structured extraction
+- Citation structure is already stable
+
+### Rejection Criteria
+
+Any of the following should cause rejection:
+
+- `Processor` output still contains large amounts of visible OCR fragmentation
+- Formulas, symbols, or identifiers are structurally damaged
+- Important metadata fields such as captions or footnotes are missing from the cleaning scope
+- The data is readable but still not stable enough for extraction
+- Numeric citations still mix incompatible formats instead of one unified protocol
+- The reference list has been mistakenly rewritten, or opening body citations are misclassified as bibliography items
+- Similar problems are treated inconsistently across different fields
+
+## Technical Path
+
+This page constrains **output quality**, not a single implementation strategy. Acceptable implementation paths may include:
+
+- Regular-expression rules
+- Terminology dictionaries and whitelists
+- Structural protection and local repair
+- OCR post-processing strategies
+- Lightweight models or semantic assistance
+
+Regardless of implementation, the end goals remain:
+
+- `Processor` is responsible for data quality delivery
+- `Designer` is responsible for structured expression
+- The two packages stay separated in responsibility while the quality chain remains closed

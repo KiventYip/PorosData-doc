@@ -1,79 +1,249 @@
-# PorosData-Designer 介绍
+# PorosData-Designer
 
-## 核心功能
+## Positioning
 
-PorosData-Designer 是 PorosData 框架的实验设计与数据构建模块，基于已处理的数据提供智能的实验设计建议和数据构建辅助。它结合机器学习算法与领域知识，帮助科研人员优化实验方案并构建高质量的数据集。
+`Designer` is the PorosData module responsible for **structured organization and reconstruction**. It operates on top of text that has already been quality-cleaned by `Processor`, and converts that high-quality input into **structured objects, fields, relations, and deliverables** for training views, data-mining views, and multimodal indexing.
 
-## 设计初衷
+In short:
 
-在材料科学研究中，实验设计和数据构建面临以下挑战：
+- `Processor` improves data quality
+- `Designer` expresses that data in structured form
 
-1. **实验效率优化**: 如何用最少的实验获得最多的信息
-2. **变量空间探索**: 如何系统地探索多变量参数空间
-3. **数据质量保证**: 如何确保构建的数据集具有代表性和可靠性
-4. **知识发现加速**: 如何利用现有数据指导新的实验设计
+`Designer` should not absorb large-scale OCR cleaning work. Its responsibilities center on section reconstruction, field mapping, formula and chemical-form protection, text-image anchoring, and stable export of structured outputs.
 
-传统的实验设计方法往往依赖经验或简单的统计方法，无法充分利用现代计算能力和大数据的优势。PorosData-Designer 针对这些问题提供了系统化的解决方案。
+## What Designer Must Deliver
 
-## 核心特性
+Core tasks include, but are not limited to:
 
-### 学术原子性保护
-- **推理链 (CoT) 中因果逻辑的原子性**: 确保科学推理过程中的因果关系链保持逻辑完整性和不可分割性
-- 基于机器学习的实验方案优化
-- 多目标优化算法支持
-- 自适应实验设计策略
+- Entity recognition and normalized mapping
+- Attribute-value extraction
+- Binding of conditions and context
+- Structured record generation
+- Export to JSON, tables, knowledge graphs, and related target formats
 
-### 数据构建辅助
-- 主动学习算法选择最具信息量的样本
-- 数据集平衡和多样性优化
-- 异常检测和数据验证
+At the current stage, the preferred outputs are divided into three views:
 
-### 知识图谱集成
-- 基于领域知识的推理能力
-- 实验结果的可解释性分析
-- 假设生成和验证支持
+- Structure-aware training view: tagged `content`
+- Plain-text training view: cleaned `pure_text_stream`
+- Data-mining view: `datamining` results for extraction, retrieval, and storage
 
-### 交互式设计界面
-- 直观的可视化设计工具
-- 实时反馈和建议系统
-- 协作设计环境支持
+## What "Ready" Means
 
-## 技术架构
+### Structure-Aware Training Ready
 
-Designer 模块采用智能代理架构设计：
+This means the training view may retain stable, interpretable, and properly closed structural tags as explicit semantic boundary signals for long-context training.
 
-1. **感知层**: 数据分析和模式识别
-2. **推理层**: 基于知识的推理引擎
-3. **决策层**: 多目标优化和决策算法
-4. **执行层**: 实验方案生成和执行指导
-5. **学习层**: 持续学习和模型更新
+Key requirements:
 
-### 设计流程示例
+- `section`, `title`, and `subtitle` tags should express structure, not mimic layout
+- `</poros_section_{type}>` may serve as a strong logical block boundary
+- Tags may be used as training signals only when they are stable, semantically consistent, and safely nested
 
-```
-数据输入 → 目标定义 → 约束分析 → 优化算法选择 → 候选方案生成 → 评估与筛选 → 最终方案输出
-```
+### Plain-Text Training Ready
 
-这种架构既保证了设计的智能化水平，又确保了结果的科学合理性和可解释性。
+This means the text can be fed directly into models as natural language without depending on `poros_*` structural tags for interpretation.
 
-## 核心算法组件
+Key requirements:
 
-### 实验设计优化器
-- 响应面方法 (RSM) 优化
-- 贝叶斯优化算法
-- 遗传算法和进化策略
+- `pure_text_stream` must not retain XML wrappers or structural control markers
+- Formulas, chemical expressions, and figure/table mentions must follow one stable rendering policy across the corpus
+- Structure should be conveyed through natural segmentation or agreed plain-text placeholders, not through leaked tags
 
-### 主动学习引擎
-- 不确定性采样策略
-- 代表性采样算法
-- 查询策略优化
+### Data Mining Ready
 
-### 多目标决策系统
-- Pareto 最优解搜索
-- 权重动态调整
-- 约束处理和松弛策略
+This means the structured output is suitable for entity extraction, relation extraction, attribute mapping, and downstream knowledge organization.
 
-### 知识推理模块
-- 本体论-based 的领域知识表示
-- 规则引擎和推理算法
-- 因果关系建模
+Key requirements:
+
+- Entity names remain stable
+- Numbers, units, and attributes are reliably identifiable
+- Relations between attributes and context are not broken during tagging or export
+- The output can be consumed as JSON, tables, knowledge graphs, or index objects
+
+## Output Directories and Artifacts
+
+At this stage, `Designer` delivery is based on **per-view files**, not a single aggregated file.
+
+- `structured/full_text/{doc_id}/`
+- `structured/datamining/{doc_id}/`
+- `structured/multimodal/{doc_id}/` when enabled
+
+Recommended artifacts include:
+
+- `full_text/{doc_id}_structured.txt`
+- `full_text/{doc_id}_structured.json`
+- `datamining/{doc_id}_datamining.json`
+- `multimodal/{doc_id}_index.json`
+- `multimodal/assets/` plus per-figure Markdown files
+
+Among them:
+
+- `structured.txt` is intended for readable inspection
+- `structured.json` serves training views and carries `content` and `pure_text_stream`
+- `datamining.json` serves structured extraction, retrieval, and storage
+
+## Poros Tags and Hierarchy
+
+Structured text should follow the Poros skeleton contract and use a **coarse-grained, stability-first** tag system.
+
+- The root tags `<poros_doc>` and `</poros_doc>` must be present
+- Closing `poros_section_*` tags serve as logical block-end signals
+- Stable section classes should be preferred: `header`, `abstract`, `introduction`, `experimental`, `results`, `discussion`, `conclusion`, `acknowledgements`, and `references`
+- Semantically unstable blocks should fall back to `poros_section_section`
+- Stable top-level titles may use tags such as `poros_title_header`, `poros_title_abstract`, and `poros_title_introduction`
+- Unstable sections should use `poros_title_section`
+- Subtitle layers should mainly use `poros_subtitle_level2` and `poros_subtitle_level3`
+- Inline semantic tags should remain lightweight: `poros_paragraph`, `poros_equ`, `poros_chem`, `poros_asset`, and `poros_keywords`
+- Unclosed tags, broken nesting, and illegal child structures are not allowed
+
+## View Contracts and Required Fields
+
+### `full_text/{doc_id}_structured.json`
+
+This file must contain at least:
+
+- `doc_id`
+- `content`
+- `pure_text_stream`
+
+Where:
+
+- `content` is the fully tagged Poros text for structure-aware training
+- `pure_text_stream` is the de-tagged clean text stream for plain-text training, embedding, or indexing
+
+### `datamining/{doc_id}_datamining.json`
+
+This file must contain at least:
+
+- `doc_id`
+- `title`
+- `sections`
+
+It should also preferably include:
+
+- `formulas`
+- `chemical_formulas`
+- `asset_refs`
+
+Each item in `sections` should represent section titles, paragraphs, and subtitle hierarchy. When section semantics are unstable, `section_type = "section"` is the correct fallback.
+
+## Formulas, EOS, and Chemical Semantics
+
+Training-readiness and semantic consistency require:
+
+- Inline formula delimiters such as `$...$` must remain balanced
+- The document must end with the project EOS token, such as `</s>`
+- `</poros_section_{type}>` acts as a block-level boundary signal and does not replace the global EOS
+- `datamining.chemical_formulas` should contain only chemical elements, compounds, or stable material formulas
+- Ordinary formulas, integrals, thermodynamic expressions, instrument names, and method names must not leak into `chemical_formulas`
+
+## Multimodal Indexing and Asset Consistency
+
+When multimodal outputs are produced, they must satisfy:
+
+- The index file is a JSON array
+- Each item contains at least `image_path`, `fig_id`, `caption`, `mentions`, `metadata`, `asset_copied`, and `markdown_file`
+- The number of index entries matches the number of copied assets under `assets/`
+- If figure-level Markdown files exist, their paths or identifiers must align with physical files
+
+## Structuring Standards
+
+| Dimension | Structuring Requirement | Bad | Good |
+|------|------------|----------------|-----------------|
+| Poros root tag | Entire content must be wrapped by `<poros_doc>` / `</poros_doc>` | Missing root tag | `<poros_doc>...</poros_doc>` |
+| Tag closure | All Poros tags must close correctly and nest safely | Missing or misplaced `</poros_paragraph>` | One-to-one closure with valid nesting |
+| Tag granularity | Prefer stable coarse types; unstable blocks fall back to `poros_section_section` | Inventing new tags for `Declaration` and similar blocks | Use the generic `section` container |
+| Section semantics | `section/title/subtitle` must stably encode hierarchy | Body text drifting outside section containers | Clear section boundaries |
+| EOS ending | Document must end with EOS | No EOS at the end | `...text</s>` |
+| `full_text` fields | Must include `doc_id`, `content`, `pure_text_stream` | Missing `pure_text_stream` | All three fields present |
+| `datamining` fields | Must include `doc_id`, `title`, `sections` | Missing `sections` | Fields are structurally consumable |
+| Plain-text purity | `pure_text_stream` must not retain `poros_*` tags | Structural tags remain | Natural text only |
+| Chemical semantics | `chemical_formulas` must not include non-chemical abbreviations or general formulas | Includes `TEM`, `XRD`, etc. | Only chemical elements or compounds |
+| Multimodal index | Index items must include the agreed fields | Missing `fig_id` or `asset_copied` | Complete fields aligned with assets |
+
+## Training and Data Mining Readiness
+
+The three `Designer` outputs, `content`, `pure_text_stream`, and `datamining`, must not blur their responsibilities.
+
+### 1. Separation of View Responsibilities
+
+- `content` is for structure-aware training
+- `pure_text_stream` is for plain-text training, embedding, indexing, and general language modeling
+- `datamining` is for data mining and retrieval
+
+### 2. Entity Integrity
+
+Within `content` and `datamining`, material names, experiment names, and key terms must remain highly consistent inside a document. Aggregation, tagging, or export must not introduce new mixed spellings.
+
+### 3. Contextual Anchors
+
+Experimental conditions, temperature ranges, environments, and preceding or trailing qualifiers must be preserved. They must not be deleted as if they were noise during structuring.
+
+### 4. Attribute-Value Alignment
+
+Measured attributes and their values and units must remain reasonably adjacent inside `content` or `datamining.sections`. Structuring must not separate them in ways that make downstream mapping unreliable.
+
+### 5. Minimal Structured Noise
+
+`pure_text_stream` and `datamining` must not amplify upstream noise such as broken numbers, abnormal spacing, inconsistent terms, damaged formulas, or stray citation artifacts.
+
+## Non-Negotiable Failures
+
+The following are unacceptable regressions:
+
+- Missing the root tag or breaking Poros tag closure and nesting
+- Breaking formulas, subscript/superscript structure, or LaTeX delimiter balance
+- Missing required `full_text` / `datamining` artifacts or required fields
+- Copying structural tags into `pure_text_stream`
+- Inventing overly fine-grained tags when semantics are unstable instead of falling back to generic sections
+- Mixing non-chemical abbreviations, general formulas, or engineering expressions into `datamining.chemical_formulas`
+- Missing the final EOS
+- Producing multimodal indexes with missing required fields or mismatched copied assets
+- Deleting identifiers or key semantics from captions, table titles, or footnotes during export
+
+## Acceptance Criteria
+
+### Delivery Acceptance
+
+At minimum, accepted `Designer` output should satisfy:
+
+- Poros root tags exist and close correctly with valid nesting
+- Inline formula delimiters remain balanced
+- The document ends with EOS
+- `full_text/{doc_id}_structured.json` contains `doc_id`, `content`, and `pure_text_stream`
+- `datamining/{doc_id}_datamining.json` contains at least `doc_id`, `title`, and `sections`
+- `content` tags stably represent sections, titles, subtitles, and logical block boundaries
+- `pure_text_stream` is truly de-tagged plain text
+- `datamining` can represent sections, paragraphs, formulas, chemical formulas, and asset references
+- If multimodal artifacts are produced, index fields and asset counts remain consistent
+
+### Rejection Criteria
+
+Any of the following should cause rejection:
+
+- Missing root tags or broken nesting/closure
+- Unbalanced formula delimiters or broken LaTeX structure
+- Missing EOS or missing required artifacts and fields
+- Large amounts of `poros_*` tags remain in `pure_text_stream`
+- Section, title, or subtitle boundaries are severely misplaced in `content`
+- Tagging remains over-granular even when semantics are unstable
+- `datamining.chemical_formulas` contains non-chemical abbreviations, ordinary formulas, or engineering expressions
+- The multimodal index is missing fields or assets were not copied correctly
+
+## Technical Path
+
+This page constrains **output quality**, not one implementation style. Valid implementations may include:
+
+- Rule-based Poros tagging and validation
+- Split exporters for `content`, `pure_text_stream`, and `datamining`
+- Terminology lists and whitelists for chemical formulas and units
+- Structural protection and local repair for tags and formulas
+- Tag normalization strategies based on "stable coarse classes + generic section fallback"
+- Plugin-based pipelines and exporters
+- Audit scripts and automated acceptance checks
+
+Regardless of implementation, the end goals remain:
+
+- `Processor` is responsible for data quality delivery
+- `Designer` is responsible for structured expression
+- The two packages remain separated in responsibility while the quality chain stays closed

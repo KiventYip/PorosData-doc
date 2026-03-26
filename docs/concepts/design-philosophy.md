@@ -1,51 +1,51 @@
-# 设计哲学 (Design Philosophy)
+# Design Philosophy
 
-PorosData 解决 AI for Science (AI4S) 的核心挑战：在不损失科学严谨性的前提下，将碎片化的科研文献转化为高质量的 AI 资产。
+PorosData addresses a core AI for Science challenge: how to transform fragmented scientific literature into high-quality AI assets without sacrificing scientific rigor.
 
-## 核心支柱一：学术原子性 (Academic Atomicity)
+## Pillar One: Academic Atomicity
 
-在通用 NLP 中，数据是符号集合；在实证科学中，数据是学术话语的最小单元。PorosData 秉持"学术原子性"原则：每份科研数据承载不可分割的学术价值，其语义、物理约束和逻辑关联在处理中必须保持完整。
+In general NLP, data is often treated as a collection of symbols. In empirical science, data is the smallest unit of academic discourse. PorosData follows the principle of **Academic Atomicity**: every scientific datum carries indivisible scholarly value, and its semantics, physical constraints, and logical relations must remain intact during processing.
 
-### 字符级原子性
+### Character-Level Atomicity
 
-解析器（Parser）锁定科学公式（如 $Li_7La_3Zr_2O_{12}$）和 LaTeX 符号，避免操作导致字符断裂或语义歧义。
+The parser protects scientific formulas such as $Li_7La_3Zr_2O_{12}$ and LaTeX symbols, preventing operations that would split characters or introduce semantic ambiguity.
 
-### 关联级原子性
+### Relational Atomicity
 
-清洗（Processor）防止物理量与量纲（Units）、实验条件与性能结果脱节，验证测量值、单位和上下文的逻辑一致性。
+The processor prevents physical values from being detached from their units, and prevents experimental conditions from drifting away from results. Cleaning must preserve logical consistency among quantities, units, and context.
 
-### 逻辑级原子性
+### Structural Atomicity
 
-设计（Designer）指令对时，保护推导链条（CoT）的因果完整性，引导模型学习科学推理路径而非随机关联。
+The designer must preserve section hierarchy, formula boundaries, chemical semantics, multimodal anchors, and context ownership during structured reconstruction, so that training views and data-mining views remain computationally meaningful.
 
-## 核心支柱二：知识驱动 (Domain-Driven Insights)
+## Pillar Two: Knowledge-Driven Processing
 
-PorosData 基于领域知识进行数据处理，超越传统的统计学特征预处理。
+PorosData relies on domain knowledge rather than generic statistical preprocessing alone.
 
-### 物理规律约束
+### Physical Constraints
 
-应用热力学约束、量纲一致性等物理定律验证数据合理性，将清洗转化为科学验证。
+Thermodynamic rules, dimensional consistency, and other scientific constraints are used to validate whether data remains physically meaningful.
 
-### 专家经验集成
+### Expert Knowledge Integration
 
-将非标准化学式的标准化逻辑等专家直觉转化为可计算规则，赋予工具"科学常识"。
+Expert intuition, such as how non-standard chemical formulas should be normalized, is translated into computable rules so the toolchain gains domain-specific scientific commonsense.
 
-## 核心支柱三：全生命周期流水线 (The Trinity Workflow)
+## Pillar Three: Full-Lifecycle Pipeline
 
-构建三位一体的闭环，覆盖 AI 训练集的端到端生成。
+PorosData forms a three-part closed loop that spans the end-to-end path from literature to usable AI assets.
 
-### 感知 (Parser)
+### Perception (Parser)
 
-采用"非破坏性"提取，从异构文献中营救埋没的知识，保留原始学术价值。
+The parser performs non-destructive extraction, rescuing buried knowledge from heterogeneous documents while preserving original academic value.
 
-### 提纯 (Processor)
+### Refinement (Processor)
 
-在学术原子性约束下滤除噪声，强化科学特征，萃取核心学术信息。
+The processor removes noise and raises input quality under the constraints of academic atomicity.
 
-### 合成 (Designer)
+### Structured Expression (Designer)
 
-将提纯知识重组为符合科学逻辑的指令对，形成具有教育意义的完整体系。
+The designer reconstructs high-quality text into tagged training views, plain-text views, data-mining views, and multimodal indexes, so the same knowledge can be consumed both by models and by structured downstream systems.
 
-## 愿景
+## Vision
 
-PorosData 构建文献与模型之间的桥梁，坚持学术严肃性，将人类积累的科研经验转化为数字资产，实现学术传统在数字时代的传承。
+PorosData aims to build a rigorous bridge between literature and models, preserving academic seriousness while turning accumulated scientific experience into durable digital assets for the AI era.

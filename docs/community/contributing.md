@@ -1,6 +1,7 @@
 # Contributing to PorosData
 
 We welcome contributions from the community! This guide will help you get started with contributing to the PorosData project.
+{: .lead}
 
 ## Development Setup
 
@@ -9,6 +10,7 @@ We welcome contributions from the community! This guide will help you get starte
 - Python 3.8+
 - Git
 - Virtual environment (recommended)
+{: .tight-list}
 
 ### Clone and Setup
 
@@ -41,6 +43,7 @@ Follow our coding standards:
 - Write comprehensive tests
 - Update documentation
 - Follow PEP 8 style guidelines
+{: .tight-list}
 
 ### 4. Run Tests
 
@@ -71,6 +74,7 @@ Use conventional commit format:
 - `fix:` for bug fixes
 - `docs:` for documentation changes
 - `test:` for test-related changes
+{: .tight-list}
 
 ### 7. Create Pull Request
 
@@ -79,6 +83,7 @@ Push your branch and create a pull request on GitHub. Include:
 - Reference to related issues
 - Screenshots if UI changes
 - Test results
+{: .tight-list}
 
 ## Code Standards
 
@@ -88,6 +93,7 @@ We follow PEP 8 with some modifications:
 - Line length: 88 characters (Black default)
 - Use double quotes for strings
 - Use f-strings for string formatting
+{: .tight-list}
 
 ### Testing
 
@@ -95,12 +101,14 @@ We follow PEP 8 with some modifications:
 - Aim for >90% code coverage
 - Use descriptive test names
 - Test edge cases and error conditions
+{: .tight-list}
 
 ### Documentation
 
 - Use Google-style docstrings
 - Keep README updated
 - Document breaking changes
+{: .tight-list}
 
 ## Plugin Development
 
@@ -129,6 +137,7 @@ class MyCustomPlugin(BasePlugin):
 ### Plugin Registration
 
 Register your plugin in `porosdata_processor/plugins/__init__.py`:
+{: .section-intro}
 
 ```python
 from .my_plugin import MyCustomPlugin
@@ -141,6 +150,7 @@ __all__ = ['MyCustomPlugin']
 - **Discussions**: Use [GitHub Discussions](https://github.com/KiventYip/porosdata-processor/discussions) for questions
 - **Issues**: Report bugs or request features via [GitHub Issues](https://github.com/KiventYip/porosdata-processor/issues)
 - **Discord**: Join our community Discord server
+{: .tight-list}
 
 ## Recognition
 
@@ -148,3 +158,4 @@ Contributors will be:
 - Listed in CONTRIBUTORS.md
 - Mentioned in release notes
 - Invited to join the core team for significant contributions
+{: .tight-list}

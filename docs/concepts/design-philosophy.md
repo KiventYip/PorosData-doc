@@ -1,51 +1,54 @@
 # Design Philosophy
 
-PorosData addresses a core AI for Science challenge: how to transform fragmented scientific literature into high-quality AI assets without sacrificing scientific rigor.
+The core idea behind PorosData is simple: scientific literature is not ordinary text. It carries terms, units, formulas, figures, and contextual relations that must survive processing if the result is meant to stay useful.
+{: .lead}
+
+The value of the system is not in rewriting papers into simpler language. It is in making them more stable, more structured, and easier to use downstream without losing scientific meaning.
 
 ## Pillar One: Academic Atomicity
 
-In general NLP, data is often treated as a collection of symbols. In empirical science, data is the smallest unit of academic discourse. PorosData follows the principle of **Academic Atomicity**: every scientific datum carries indivisible scholarly value, and its semantics, physical constraints, and logical relations must remain intact during processing.
+PorosData treats each piece of scientific content as a unit that should not be broken apart carelessly. Processing should preserve meaning, physical constraints, and contextual relations as much as possible.
 
-### Character-Level Atomicity
+### Character Level
 
-The parser protects scientific formulas such as $Li_7La_3Zr_2O_{12}$ and LaTeX symbols, preventing operations that would split characters or introduce semantic ambiguity.
+Formulas, chemical expressions, and special symbols should not be structurally damaged by processing steps.
 
-### Relational Atomicity
+### Relation Level
 
-The processor prevents physical values from being detached from their units, and prevents experimental conditions from drifting away from results. Cleaning must preserve logical consistency among quantities, units, and context.
+Numbers, units, experimental conditions, and conclusions should remain connected during cleaning and reorganization.
 
-### Structural Atomicity
+### Structure Level
 
-The designer must preserve section hierarchy, formula boundaries, chemical semantics, multimodal anchors, and context ownership during structured reconstruction, so that training views and data-mining views remain computationally meaningful.
+Section hierarchy, figure references, and key context should remain traceable and understandable in the final outputs.
 
-## Pillar Two: Knowledge-Driven Processing
+## Pillar Two: Knowledge-Constrained Processing
 
-PorosData relies on domain knowledge rather than generic statistical preprocessing alone.
+PorosData does not treat scientific content as plain strings alone. It applies domain-aware constraints when normalizing and organizing data.
 
-### Physical Constraints
+### Rules Should Serve Meaning
 
-Thermodynamic rules, dimensional consistency, and other scientific constraints are used to validate whether data remains physically meaningful.
+Term normalization, unit consistency, citation cleanup, and chemical-expression protection are used to keep outputs closer to the intended scientific meaning, not just to make formatting look cleaner.
 
-### Expert Knowledge Integration
+### Experience Should Become Reusable
 
-Expert intuition, such as how non-standard chemical formulas should be normalized, is translated into computable rules so the toolchain gains domain-specific scientific commonsense.
+Domain experience should be turned into reusable processing strategies so batch workflows can follow a more stable standard.
 
-## Pillar Three: Full-Lifecycle Pipeline
+## Pillar Three: Layered Delivery
 
-PorosData forms a three-part closed loop that spans the end-to-end path from literature to usable AI assets.
+PorosData uses a layered delivery chain instead of trying to solve every problem in one step.
 
-### Perception (Parser)
+### Parser
 
-The parser performs non-destructive extraction, rescuing buried knowledge from heterogeneous documents while preserving original academic value.
+Keep as much usable content and as many source assets as possible from the original literature.
 
-### Refinement (Processor)
+### Processor
 
-The processor removes noise and raises input quality under the constraints of academic atomicity.
+Resolve quality issues first so text, captions, and key fields become stable enough for further use.
 
-### Structured Expression (Designer)
+### Designer
 
-The designer reconstructs high-quality text into tagged training views, plain-text views, data-mining views, and multimodal indexes, so the same knowledge can be consumed both by models and by structured downstream systems.
+Then organize those stable inputs into full-text, structured, and multimodal outputs for final delivery.
 
 ## Vision
 
-PorosData aims to build a rigorous bridge between literature and models, preserving academic seriousness while turning accumulated scientific experience into durable digital assets for the AI era.
+PorosData aims to provide a practical delivery chain for scientific literature, so papers can move more smoothly into training, extraction, retrieval, and review workflows while preserving the rigor expected in research communication.

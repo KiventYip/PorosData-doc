@@ -15,6 +15,7 @@ TextCleaner(pipeline=None, clean_options=None)
 **参数：**
 - `pipeline` (list, 可选): 要应用的清洗插件列表
 - `clean_options` (dict, 可选): 额外的清洗选项
+{: .tight-list}
 
 #### 方法
 
@@ -24,9 +25,11 @@ TextCleaner(pipeline=None, clean_options=None)
 
 **参数：**
 - `text` (str): 要清洗的输入文本
+{: .tight-list}
 
 **返回值：**
 - `str`: 清洗后的文本
+{: .tight-list}
 
 **示例：**
 ```python
@@ -42,6 +45,7 @@ result = cleaner.clean("包含 $公式$ 的原始文本")
 - `input_path` (str): 输入文件路径
 - `output_path` (str): 输出文件路径
 - `encoding` (str): 文件编码 (默认: 'utf-8')
+{: .tight-list}
 
 ## 插件
 
@@ -51,10 +55,12 @@ result = cleaner.clean("包含 $公式$ 的原始文本")
 - `greek_to_latex`: 将希腊字母转换为 LaTeX
 - `normalize_whitespace`: 清理间距问题
 - `latex_math_spaces`: 移除数学公式中的额外空格
+{: .tight-list}
 
 ### 自定义插件
 
 创建自定义插件：
+{: .section-intro}
 
 ```python
 from porosdata_processor.plugins.base import BasePlugin
@@ -70,6 +76,7 @@ class MyPlugin(BasePlugin):
 ### ProcessingError
 
 文本处理失败时抛出。
+{: .section-intro}
 
 ```python
 try:
@@ -81,6 +88,7 @@ except ProcessingError as e:
 ### ConfigurationError
 
 配置无效时抛出。
+{: .section-intro}
 
 ```python
 try:

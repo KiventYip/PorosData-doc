@@ -1,6 +1,7 @@
 # 为 PorosData 做贡献
 
 我们欢迎社区贡献！本指南将帮助您开始为 PorosData 项目做贡献。
+{: .lead}
 
 ## 开发环境设置
 
@@ -9,6 +10,7 @@
 - Python 3.8+
 - Git
 - 虚拟环境 (推荐)
+{: .tight-list}
 
 ### 克隆和设置
 
@@ -41,6 +43,7 @@ git checkout -b fix/issue-number-description
 - 编写全面的测试
 - 更新文档
 - 遵循 PEP 8 样式指南
+{: .tight-list}
 
 ### 4. 运行测试
 
@@ -71,6 +74,7 @@ git commit -m "feat: add new feature description"
 - `fix:` 表示错误修复
 - `docs:` 表示文档更改
 - `test:` 表示测试相关更改
+{: .tight-list}
 
 ### 7. 创建拉取请求
 
@@ -79,6 +83,7 @@ git commit -m "feat: add new feature description"
 - 相关问题的引用
 - 如果是 UI 更改，请提供截图
 - 测试结果
+{: .tight-list}
 
 ## 代码标准
 
@@ -88,6 +93,7 @@ git commit -m "feat: add new feature description"
 - 行长度：88 个字符 (Black 默认)
 - 字符串使用双引号
 - 字符串格式化使用 f-string
+{: .tight-list}
 
 ### 测试
 
@@ -95,12 +101,14 @@ git commit -m "feat: add new feature description"
 - 目标代码覆盖率 >90%
 - 使用描述性的测试名称
 - 测试边界情况和错误条件
+{: .tight-list}
 
 ### 文档
 
 - 使用 Google 风格的文档字符串
 - 保持 README 更新
 - 记录破坏性更改
+{: .tight-list}
 
 ## 插件开发
 
@@ -129,6 +137,7 @@ class MyCustomPlugin(BasePlugin):
 ### 插件注册
 
 在 `porosdata_processor/plugins/__init__.py` 中注册您的插件：
+{: .section-intro}
 
 ```python
 from .my_plugin import MyCustomPlugin
@@ -141,6 +150,7 @@ __all__ = ['MyCustomPlugin']
 - **讨论**: 在 [GitHub Discussions](https://github.com/KiventYip/porosdata-processor/discussions) 中提问
 - **问题**: 通过 [GitHub Issues](https://github.com/KiventYip/porosdata-processor/issues) 报告错误或请求功能
 - **Discord**: 加入我们的社区 Discord 服务器
+{: .tight-list}
 
 ## 认可
 
@@ -148,3 +158,4 @@ __all__ = ['MyCustomPlugin']
 - 在 CONTRIBUTORS.md 中列出
 - 在发布说明中提及
 - 对于重大贡献，邀请加入核心团队
+{: .tight-list}

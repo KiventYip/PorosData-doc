@@ -3,6 +3,7 @@
 ## Install PorosData
 
 Install from PyPI (Recommended):
+{: .section-intro}
 
 ```bash
 pip install porosdata-processor
@@ -26,6 +27,7 @@ print(f"Version: {porosdata_processor.__version__}")
 ## Clean Text
 
 Use `TextCleaner` to normalize scientific text while preserving formulas:
+{: .section-intro}
 
 ```python
 from porosdata_processor import TextCleaner
@@ -44,6 +46,7 @@ print(cleaned_text)
 ## Custom Pipeline
 
 Configure a cleaner with specific plugins:
+{: .section-intro}
 
 ```python
 # Create a cleaner with specific plugins
@@ -61,6 +64,7 @@ result = cleaner.clean(text)
 ## Advanced Options
 
 Enable advanced LaTeX formula cleaning:
+{: .section-intro}
 
 ```python
 # Enable advanced LaTeX formula cleaning
@@ -103,6 +107,7 @@ processor.process_text_data(
 ### Processing Configuration
 
 Create a `config/processing_config.yaml`:
+{: .section-intro}
 
 ```yaml
 cleaning:
@@ -120,6 +125,7 @@ processing:
 ### Token Configuration
 
 For advanced tokenization settings, create `config/token_config.yaml`:
+{: .section-intro}
 
 ```yaml
 model_type: "llama"  # or "gpt", "custom"
@@ -143,3 +149,4 @@ splitting:
 - Explore [API Reference](../references/api-reference.md) for detailed method documentation
 - Check out [Examples](../references/examples.md) for real-world use cases
 - Learn about [Plugin Development](../community/contributing.md) to extend functionality
+{: .tight-list}

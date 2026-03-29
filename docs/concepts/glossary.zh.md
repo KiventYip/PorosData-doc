@@ -1,12 +1,14 @@
-# Glossary.Zh
+# 术语表
 
-This page is under development.
+本页仍在完善中。
+{: .lead}
 
-## Overview
+## 概述
 
-Content coming soon...
+内容即将补充。
 
-## Quick Links
+## 快速链接
 
-- [Home](../index.md)
-- [Quick Start](../get_started/quickstart.md)
+- [首页](../index.md)
+- [快速开始](../get_started/quickstart.md)
+{: .tight-list}

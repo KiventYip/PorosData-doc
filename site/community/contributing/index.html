@@ -996,13 +996,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--exploratory"></span>
-  
-
-  
 
       </a>
     </li>
@@ -1030,13 +1023,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--exploratory"></span>
-  
-
   
 
       </a>
@@ -1782,13 +1768,13 @@
 
 
 <h1 id="contributing-to-porosdata">Contributing to PorosData</h1>
-<p>We welcome contributions from the community! This guide will help you get started with contributing to the PorosData project.</p>
+<p class="lead">We welcome contributions from the community! This guide will help you get started with contributing to the PorosData project.</p>
 <h2 id="development-setup">Development Setup</h2>
 <h3 id="prerequisites">Prerequisites</h3>
 <ul>
 <li>Python 3.8+</li>
 <li>Git</li>
-<li>Virtual environment (recommended)</li>
+<li class="tight-list">Virtual environment (recommended)</li>
 </ul>
 <h3 id="clone-and-setup">Clone and Setup</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/KiventYip/porosdata-processor.git
@@ -1806,7 +1792,7 @@
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>fix/issue-number-description
 </code></pre></div>
 <h3 id="3-make-changes">3. Make Changes</h3>
-<p>Follow our coding standards:
+<p class="tight-list">Follow our coding standards:
 - Use type hints
 - Write comprehensive tests
 - Update documentation
@@ -1827,20 +1813,20 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git<span class="w"> </span>add<span class="w"> </span>.
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;feat: add new feature description&quot;</span>
 </code></pre></div>
-<p>Use conventional commit format:
+<p class="tight-list">Use conventional commit format:
 - <code>feat:</code> for new features
 - <code>fix:</code> for bug fixes
 - <code>docs:</code> for documentation changes
 - <code>test:</code> for test-related changes</p>
 <h3 id="7-create-pull-request">7. Create Pull Request</h3>
-<p>Push your branch and create a pull request on GitHub. Include:
+<p class="tight-list">Push your branch and create a pull request on GitHub. Include:
 - Clear description of changes
 - Reference to related issues
 - Screenshots if UI changes
 - Test results</p>
 <h2 id="code-standards">Code Standards</h2>
 <h3 id="python-style">Python Style</h3>
-<p>We follow PEP 8 with some modifications:
+<p class="tight-list">We follow PEP 8 with some modifications:
 - Line length: 88 characters (Black default)
 - Use double quotes for strings
 - Use f-strings for string formatting</p>
@@ -1849,13 +1835,13 @@
 <li>Write unit tests for all new functions</li>
 <li>Aim for &gt;90% code coverage</li>
 <li>Use descriptive test names</li>
-<li>Test edge cases and error conditions</li>
+<li class="tight-list">Test edge cases and error conditions</li>
 </ul>
 <h3 id="documentation">Documentation</h3>
 <ul>
 <li>Use Google-style docstrings</li>
 <li>Keep README updated</li>
-<li>Document breaking changes</li>
+<li class="tight-list">Document breaking changes</li>
 </ul>
 <h2 id="plugin-development">Plugin Development</h2>
 <h3 id="plugin-structure">Plugin Structure</h3>
@@ -1878,7 +1864,7 @@
 <a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>        <span class="k">pass</span>
 </code></pre></div>
 <h3 id="plugin-registration">Plugin Registration</h3>
-<p>Register your plugin in <code>porosdata_processor/plugins/__init__.py</code>:</p>
+<p class="section-intro">Register your plugin in <code>porosdata_processor/plugins/__init__.py</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">.my_plugin</span><span class="w"> </span><span class="kn">import</span> <span class="n">MyCustomPlugin</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;MyCustomPlugin&#39;</span><span class="p">]</span>
@@ -1887,10 +1873,10 @@
 <ul>
 <li><strong>Discussions</strong>: Use <a href="https://github.com/KiventYip/porosdata-processor/discussions">GitHub Discussions</a> for questions</li>
 <li><strong>Issues</strong>: Report bugs or request features via <a href="https://github.com/KiventYip/porosdata-processor/issues">GitHub Issues</a></li>
-<li><strong>Discord</strong>: Join our community Discord server</li>
+<li class="tight-list"><strong>Discord</strong>: Join our community Discord server</li>
 </ul>
 <h2 id="recognition">Recognition</h2>
-<p>Contributors will be:
+<p class="tight-list">Contributors will be:
 - Listed in CONTRIBUTORS.md
 - Mentioned in release notes
 - Invited to join the core team for significant contributions</p>

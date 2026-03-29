@@ -3,6 +3,7 @@
 ## 安装 PorosData
 
 从 PyPI 安装 (推荐):
+{: .section-intro}
 
 ```bash
 pip install porosdata-processor
@@ -26,6 +27,7 @@ print(f"Version: {porosdata_processor.__version__}")
 ## 清洗文本
 
 使用 `TextCleaner` 标准化科学文本，同时保留数学公式的完整性：
+{: .section-intro}
 
 ```python
 from porosdata_processor import TextCleaner
@@ -44,6 +46,7 @@ print(cleaned_text)
 ## 自定义流水线
 
 配置带有特定插件的清洗器：
+{: .section-intro}
 
 ```python
 # 创建带有特定插件的清洗器
@@ -61,6 +64,7 @@ result = cleaner.clean(text)
 ## 高级选项
 
 启用高级 LaTeX 公式清洗功能：
+{: .section-intro}
 
 ```python
 # 启用高级 LaTeX 公式清洗
@@ -103,6 +107,7 @@ processor.process_text_data(
 ### 处理配置
 
 创建 `config/processing_config.yaml`：
+{: .section-intro}
 
 ```yaml
 cleaning:
@@ -120,6 +125,7 @@ processing:
 ### Token 配置
 
 对于高级分词设置，创建 `config/token_config.yaml`：
+{: .section-intro}
 
 ```yaml
 model_type: "llama"  # 或 "gpt", "custom"
@@ -143,3 +149,4 @@ splitting:
 - 查看 [API 参考](../references/api-reference.md) 了解详细的方法文档
 - 查看 [示例](../references/examples.md) 了解实际使用案例
 - 了解 [插件开发](../community/contributing.md) 来扩展功能
+{: .tight-list}

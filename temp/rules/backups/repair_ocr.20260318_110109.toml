@@ -1,0 +1,154 @@
+schema = "rule-pack.v1"
+version = 1
+description = "Declarative OCR repair rules executed inside the protected pipeline."
+
+[defaults]
+enabled = true
+kind = "repair"
+phase = "in_pipeline"
+scope = "formula_safe"
+target = "scientific_ocr_repair"
+risk_level = "medium"
+owner = "processor"
+source_audit = "docs/audit/ocr_noise_audit_report.md"
+
+[[rules]]
+id = "ocr.xray"
+priority = "P0"
+pattern = '\b10-ray\b(?!\s+(?:year|fold|times|folded|years|times|meter|bit|byte|page|point|inch))'
+replacement = "X-ray"
+
+[[rules]]
+id = "ocr.bv"
+priority = "P0"
+pattern = 'B\.5\.(?=\s|$|[.,;:)])'
+replacement = "B.V."
+
+[[rules]]
+id = "latex.au"
+priority = "P1"
+pattern = '\\mathrm\{\\Au\}'
+replacement = '\\mathrm{Au}'
+
+[[rules]]
+id = "latex.k"
+priority = "P1"
+pattern = '\\mathrm\{\\K\}'
+replacement = '\\mathrm{K}'
+
+[[rules]]
+id = "unit.k_per_min"
+priority = "P1"
+pattern = '(?<![A-Za-z])K\s*/\s*m\s*i\s*n(?![A-Za-z])'
+replacement = "K/min"
+
+[[rules]]
+id = "unit.ml"
+priority = "P1"
+pattern = '(?<![A-Za-z])m\s*l(?![A-Za-z])'
+replacement = "ml"
+
+[[rules]]
+id = "unit.at_percent"
+priority = "P1"
+pattern = '(?<![A-Za-z])a\s*t\s*\.\s*%(?![A-Za-z])'
+replacement = "at.%"
+
+[[rules]]
+id = "unit.mass_percent"
+priority = "P1"
+pattern = '(?<![A-Za-z])m\s*a\s*s\s*s\s*%(?![A-Za-z])'
+replacement = "mass%"
+
+[[rules]]
+id = "alloy.in_split_braced"
+priority = "P0"
+pattern = '(?<![A-Za-z])1\s*n(?=\s*(?:\})?\s*_(?:\{|[A-Za-z0-9]))'
+replacement = "In"
+
+[[rules]]
+id = "alloy.in_split_compact"
+priority = "P0"
+pattern = '(?<![A-Za-z])1n(?=\s*(?:\})?\s*_(?:\{|[A-Za-z0-9]))'
+replacement = "In"
+
+[[rules]]
+id = "alloy.al_in"
+priority = "P0"
+pattern = '\b(Al[-–])1n\b'
+replacement = '\1In'
+replacement_mode = "expand"
+
+[[rules]]
+id = "semantic.zr_gamma"
+priority = "P0"
+pattern = 'Z\s*\\Gamma\s*-'
+replacement = "Zr-"
+
+[[rules]]
+id = "semantic.ni_mathrm"
+priority = "P0"
+pattern = '\\mathrm\{Ii\}'
+replacement = '\\mathrm{Ni}'
+
+[[rules]]
+id = "semantic.n_mathrm_ni"
+priority = "P0"
+pattern = '(?<![A-Za-z])N\s*\$\\mathrm\{Ii\}'
+replacement = 'N$\mathrm{Ni}'
+
+[[rules]]
+id = "semantic.ni_standalone"
+priority = "P0"
+pattern = '\bN\s+\$\\mathrm\{Ii\}\$'
+replacement = "Ni"
+
+[[rules]]
+id = "semantic.cu_textsf"
+priority = "P0"
+pattern = 'C\s*\$\\textsf\s*\{\s*u\s*\}\$'
+replacement = "Cu"
+
+[[rules]]
+id = "semantic.sf_to_mathrm"
+priority = "P1"
+pattern = '\{\s*\\sf\s+([A-Z])\s*\}'
+replacement = '\\mathrm{\1}'
+replacement_mode = "expand"
+
+[[rules]]
+id = "semantic.tt_fe"
+priority = "P1"
+pattern = '\\tt\s+F\s*e'
+replacement = "Fe"
+
+[[rules]]
+id = "semantic.tt_element"
+priority = "P1"
+pattern = '\\tt\s+([A-Z][a-z]?)'
+replacement = '\1'
+replacement_mode = "expand"
+
+[[rules]]
+id = "ocr.crystalline"
+priority = "P2"
+pattern = '\bcry\s+talline\b'
+replacement = "crystalline"
+
+[[rules]]
+id = "ocr.intermetallic"
+priority = "P2"
+pattern = '\bin\s+termetallic\b'
+replacement = "intermetallic"
+
+[[rules]]
+id = "ocr.ti_content"
+priority = "P2"
+pattern = '\bTicontent\b'
+replacement = "Ti-content"
+
+[[rules]]
+id = "ocr.be_free"
+priority = "P2"
+pattern = '\bBefree\b'
+replacement = "Be-free"

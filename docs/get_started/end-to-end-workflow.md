@@ -1,126 +1,112 @@
-# PorosData Workflow: From 500 PDFs to Structured Training and Mining Views
+# PorosData Workflow: From Raw Papers to Final Deliverables
 
-This guide demonstrates how to use PorosData to process unstructured academic papers in the high-entropy alloy (HEA) domain and convert them into structured outputs that can be directly consumed by training and data-mining pipelines.
+This page explains how PorosData turns scientific literature into outputs that are ready for training, structured extraction, retrieval, and human review. The focus here is the delivery path, not a single code example.
+{: .lead}
 
-## Stage 1: Parsing (Parser)
+## Pipeline Overview
 
-Use `DocumentParser` to extract processable content from PDF papers while preserving formulas and citation structure.
+```text
+Raw Literature -> Parser -> Processor -> Designer -> Final Delivery Package
+```
+{: .section-intro}
 
-```python
-from porosdata.parser import DocumentParser
+| Stage | Main Task | Output |
+|------|------|------|
+| `Parser` | Extract text blocks, figures, captions, and basic metadata | Reusable raw content and image assets |
+| `Processor` | Remove noise, repair fragmentation, and normalize expressions | Quality-ready intermediate results and reports |
+| `Designer` | Organize sections and export structured views and indexes | Full-text outputs, structured JSON, and multimodal assets |
 
-# Initialize a domain-specific parser with academic atomicity protection
-parser = DocumentParser(
-    domain='materials_science',
-    preserve_semantics=True,
-    extract_references=True
-)
+## Input and Output Layout
 
-# Batch-process PDF papers
-pdf_files = [f"HEA_paper_{i}.pdf" for i in range(1, 501)]
-parsed_results = parser.parse_batch(pdf_files)
+PorosData works best with a three-layer directory structure:
+{: .section-intro}
+
+```text
+data/
+├── raw/          # upstream parser results
+├── processed/    # cleaned intermediate results
+└── structured/   # final delivery package
 ```
 
-**Example parser output:**
+The standard data flow is `raw -> processed -> structured`.
 
-```json
-{
-  "document_id": "HEA_paper_123",
-  "alloy_composition": {
-    "formula": "FeCoNiCrMn",
-    "standardized_notation": "Fe₂₀Co₂₀Ni₂₀Cr₂₀Mn₂₀"
-  },
-  "mechanical_properties": {
-    "hardness": {"value": 485, "unit": "HV", "temperature": 298}
-  }
-}
+## Stage 1: Raw Inputs in `raw`
+
+The `raw` layer keeps the upstream source package intact. Typical contents include:
+{: .section-intro}
+
+- Original PDF files
+- Parser-generated Markdown or content lists
+- Page-level intermediate files
+- Extracted image assets
+{: .tight-list}
+
+This layer is preserved for traceability and review rather than for direct downstream delivery.
+
+## Stage 2: `Processor` Builds `processed`
+
+`Processor` turns raw parser results into stable intermediate inputs. Typical issues handled at this stage include:
+{: .section-intro}
+
+- Numbers, decimal points, and units broken by spacing noise
+- Fragmented or corrupted terms, material names, and chemical expressions
+- Noisy captions, table titles, and footnotes
+- Long text blocks polluted by control characters or formatting artifacts
+{: .tight-list}
+
+Standard outputs at this stage usually include:
+
+- Cleaned `*_content_list.json`
+- Reusable copies of image assets
+- A processing report such as `processing_report.json`
+{: .tight-list}
+
+## Stage 3: `Designer` Builds `structured`
+
+`Designer` converts quality-ready inputs into final delivery outputs. A typical result layout is:
+{: .section-intro}
+
+```text
+data/structured/
+├── full_text/
+├── datamining/
+└── multimodal/
 ```
 
-## Stage 2: Cleaning and Quality Delivery (Processor)
+These three output groups serve different downstream needs:
 
-Before any structuring step, `Processor` removes OCR noise, protects scientific terms and formula boundaries, and delivers text that is AI-Ready and Data Mining Ready.
+| Directory | Purpose | Common Files |
+|------|------|------|
+| `full_text/` | Readable and reviewable full-text delivery | `_structured.json`, `_structured.txt` |
+| `datamining/` | Extraction-ready and retrieval-ready structured outputs | `_datamining.json` |
+| `multimodal/` | Indexed image assets linked back to the text | `_index.json`, `fig_*.md`, `assets/` |
 
-```python
-from porosdata.processor.domains import MaterialScienceProcessor
+## What Users Receive
 
-# Initialize the processor and run quality cleaning
-processor = MaterialScienceProcessor(
-    domain_knowledge_base='hea_research',
-    atomicity_preservation=True
-)
+After a standard run, users typically receive:
+{: .section-intro}
 
-quality_ready_data = processor.process_material_properties(
-    parsed_results,
-    strict_mode=True
-)
+1. A delivery directory organized by document ID
+2. Plain-text outputs suitable for training use
+3. Structured outputs suitable for extraction and retrieval
+4. Multimodal indexes that connect text references to image assets
+5. Reports that support batch review and delivery tracking
+{: .tight-list}
 
-# Validate quality and contextual consistency
-validator = processor.get_validator('mechanical_properties')
-validation = validator.validate_range(
-    hardness_value=485,
-    material_type='high_entropy_alloy',
-    temperature=298
-)
-```
+## Recommended Reading Order
 
-## Stage 3: Structured Expression (Designer)
+For batch projects, the easiest way to review results is:
+{: .section-intro}
 
-`Designer` turns quality-ready text into tagged training views, plain-text views, and `datamining` outputs that can be consumed by retrieval and extraction systems.
+1. Start with `raw/` and confirm the source package is complete
+2. Check `processed/` and its report to confirm the cleaning stage completed cleanly
+3. Open `structured/` and choose the full-text, structured, or multimodal outputs based on your downstream task
+{: .tight-list}
 
-```python
-from porosdata.designer import StructuredDocumentDesigner
+## Typical Use Cases
 
-# Initialize the designer
-designer = StructuredDocumentDesigner(
-    section_policy='stable-coarse-types',
-    export_views=['full_text', 'datamining']
-)
-
-# Export structure-aware training views and data-mining views
-structured_outputs = designer.export_views(
-    quality_ready_data,
-    doc_id='HEA_paper_123'
-)
-```
-
-**Example structured outputs:**
-
-```json
-{
-  "full_text": {
-    "doc_id": "HEA_paper_123",
-    "content": [
-      "<poros_doc>",
-      "<poros_section_abstract>...</poros_section_abstract>",
-      "<poros_section_results>...</poros_section_results>",
-      "</s>"
-    ],
-    "pure_text_stream": [
-      "FeCoNiCrMn alloy shows ...",
-      "The hardness at room temperature is 485 HV.",
-      "</s>"
-    ]
-  },
-  "datamining": {
-    "doc_id": "HEA_paper_123",
-    "title": "Mechanical properties of FeCoNiCrMn alloy",
-    "sections": [
-      {
-        "section_type": "results",
-        "paragraphs": [
-          "The hardness at room temperature is 485 HV."
-        ]
-      }
-    ],
-    "formulas": [],
-    "chemical_formulas": ["FeCoNiCrMn"],
-    "asset_refs": []
-  }
-}
-```
-
-## Workflow Outcome
-
-- **Transformation**: 500 PDFs -> structured views for training and mining
-- **Processing Time**: ~4 hours using `parser.parse_batch` and parallel processing
-- **Quality Guarantee**: preserves LaTeX formulas, citation chains, physical units, and section structure
+- Prepare high-quality text for training workflows
+- Provide stable inputs for structured extraction
+- Create indexable links between figures and body text
+- Deliver one consistent package for database building and knowledge organization
+{: .tight-list}

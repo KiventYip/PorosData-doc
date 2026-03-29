@@ -4,10 +4,11 @@ author: KiventYip
 date: 2024-03-09
 hide:
   - toc
+{: .tight-list}
 ---
 
 !!! abstract "Research Note"
-    This page belongs to the **PorosData Research & Thinking** series. It records architectural evolution, unfinished algorithmic explorations, and open questions around data-centric AI. It should not be interpreted as a final or stable product commitment.
+    This page belongs to the **PorosData Research & Thinking** series. It records architectural evolution, unfinished algorithmic explorations, and open questions around scientific data processing. It should not be interpreted as a final or stable product commitment.
 
 # Research Review
 
@@ -15,12 +16,13 @@ hide:
 
 - [Home](../index.md)
 - [Quick Start](../get_started/quickstart.md)
+{: .tight-list}
 
 ## What Kind of Data Quality Do We Need?
 
-This page reviews data quality requirements from two perspectives: **AI-Ready** and **Data Mining Ready**.
+This page reviews data quality requirements from two perspectives: training preparation and data mining.
 
-### 1. AI-Ready Standards: Pre-training Requires Token Purity and Semantic Common Sense
+### 1. Training Preparation Standards: Pre-training Requires Token Purity and Semantic Accuracy
 
 Pre-training enables models to acquire general-purpose representations, semantic and syntactic understanding, and world knowledge by consuming large-scale natural text. If the data itself is wrong, the model can absorb false knowledge.
 
@@ -33,6 +35,7 @@ For that reason, pre-training data must preserve token purity.
 ### 2. Data Mining Requirements: Entity Precision and Logical Linking
 
 The goal of data mining is to extract structured knowledge from large document collections, such as alloy composition or transition temperature.
+{: .section-intro}
 
 - **Certainty of Values and Units**: Scientific mining is highly sensitive to numerical form. OCR-broken expressions such as `$1 0 ^ { 5 }$` can destroy magnitude recognition and downstream attribute extraction.
 - **Robustness of Entity Recognition**: Chemical elements such as `Ni` and `Au` must not be mistaken for LaTeX-like symbols. Otherwise, entity linking and graph construction fail because names are no longer reliable.

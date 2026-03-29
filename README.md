@@ -16,7 +16,7 @@ Complete documentation is available at: [https://porosdata-doc.readthedocs.io/en
 
 ## 🚀 Quick Start
 
-Please refer to the [Installation Guide](docs/installation.md) and [Quick Start](docs/quickstart.md).
+Please refer to the [Installation Guide](docs/get_started/installation.md) and [Quick Start](docs/get_started/quickstart.md).
 
 ## 🏗️ Documentation Repository Structure
 
@@ -27,7 +27,7 @@ This guide explains the MkDocs-based documentation repository architecture, help
 | Path | Responsibility | Key Files |
 |------|----------------|-----------|
 | `docs/` | **Content Root** - All documentation source files | `*.md`, `*.zh.md`, `index.md` |
-| `docs/assets/` | **Assets Layer** - CSS, JS, images, and custom resources | `custom.css`, `mathjax.js`, logos |
+| `docs/assets/` | **Assets Layer** - CSS, JS, images, and custom resources | `custom.css`, `mathjax.js`, `logo.png`, `DESIGN.jpg` |
 | `mkdocs.yml` | **Configuration Engine** - Controls themes, extensions, navigation, and i18n | MkDocs settings, material config |
 | `site/` | **Output Layer** - Generated HTML (auto-created, don't edit) | `html/` output |
 

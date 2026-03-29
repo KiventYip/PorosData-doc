@@ -2,220 +2,147 @@
 
 ## Positioning
 
-`Processor` is the PorosData module responsible for **data quality delivery**. Its goal is not to generate final database schemas or knowledge graphs. Instead, it transforms raw OCR, MinerU, and PDF parsing outputs into **clean, stable, readable, and computable** text, so that `Designer` receives low-noise, low-ambiguity input.
+`Processor` is the quality-preparation module in PorosData. It does not create the final structured delivery package. Instead, it turns upstream parser outputs into cleaner, more stable intermediate data that downstream workflows can trust.
 
 In short:
 
-- `Processor` answers whether data is clean, reliable, and ready for further use
-- `Designer` answers how that data should be modeled, extracted, mapped, and organized into structured outputs
+- `Processor` answers whether the source content is clean and stable enough to keep moving
+- `Designer` answers how that content should be organized into final deliverables
+{: .tight-list}
 
-## What Processor Must Deliver
+## What It Handles
 
-At a minimum, `Processor` must:
+`Processor` is designed for recurring issues such as:
+{: .section-intro}
 
-- Remove non-semantic OCR noise, spacing errors, fragments, typos, and formatting artifacts
-- Preserve the stability of material names, physical quantities, units, terminology, formulas, and citation structures
-- Protect contextual anchors so cleaning does not break conditions, attribute ownership, or semantic relations
-- Output text that is suitable for AI consumption, rule-based matching, and downstream extraction
+- OCR noise, broken spacing, and fragmented numbers
+- Corrupted terms, material names, units, and chemical expressions
+- Noisy captions, table titles, and footnotes
+- Citation, formula, and context boundaries that became unstable after parsing
+{: .tight-list}
 
-Typical delivery targets include, but are not limited to:
+## Inputs and Outputs
 
-- Main body `text`
-- Figure captions and figure footnotes: `image_caption`, `image_footnote`
-- Table captions and table footnotes: `table_caption`, `table_footnote`
-- Text fragments containing inline formulas
-- Any text field that will later enter entity or attribute extraction
+### Typical Inputs
 
-## What "Ready" Means
+`Processor` usually works from upstream parser results such as:
+{: .section-intro}
 
-### AI-Ready
+- body text blocks
+- figure captions and table titles
+- image-related metadata
+- content-list style files such as `*_content_list.json`
+{: .tight-list}
 
-AI-Ready means the text is clean enough to be fed directly into LLMs or embedding models without major degradation from broken spacing, garbage symbols, or term corruption.
+### Typical Outputs
 
-Core properties include:
+Standard outputs are usually written to `data/processed/`, including:
+{: .section-intro}
 
-- The text is clean enough that the token stream is not polluted by non-semantic fragments
-- The semantic subject remains clear and is not broken by OCR fragmentation
-- Numbers, units, terms, and inline formulas remain readable
-- Cleaning does not introduce new ambiguity
+- cleaned content lists
+- reusable copies of image assets
+- a batch report such as `processing_report.json`
+- review-oriented quality checks and suspicious-pattern clues
+{: .tight-list}
 
-### Data Mining Ready
+This layer is still an intermediate stage, but it strongly determines how reliable later structured outputs will be.
 
-Data Mining Ready means the text is suitable as input for structured extraction.
+## What Users Gain
 
-Core properties include:
+After `Processor`, users typically get:
+{: .section-intro}
 
-- Entity names remain stable, with material names and terms kept consistent within a document
-- Numbers, units, and attributes can be reliably recognized by rules or models
-- Relations among values, conditions, and context are preserved
-- The text can be transformed further into JSON, tables, knowledge graphs, or triples
+- clearer numbers, units, and formula boundaries
+- more stable terms and material names
+- captions and footnotes that are easier to extract from
+- text that is better suited for training, retrieval, and rule-based processing
+{: .tight-list}
 
-## Data Quality Delivery Requirements
+## Scope of Cleaning
 
-### 1. Text Continuity
+`Processor` is not limited to main body text. It also covers key metadata fields such as:
+{: .section-intro}
 
-OCR-induced non-semantic fragmentation must be repaired, including but not limited to:
+- `text`
+- `image_caption`
+- `image_footnote`
+- `table_caption`
+- `table_footnote`
+{: .tight-list}
 
-- Internal spaces inside numbers: `2 0 0` -> `200`
-- Broken decimal points: `0 . 5` -> `0.5`
-- Broken values and units: `0 . 0 1 0 n m` -> `0.010nm`
-- Fragmented element symbols: `N i` -> `Ni`
-- Non-semantic line-break fragmentation: `110 \n s` -> `110s`
+This helps keep the main text and figure-related content under the same quality standard before the next stage.
 
-### 2. Entity Clarity
+## Typical Repairs
 
-The following classes must be explicitly protected and corrected when necessary:
+| Type | Common Problem | Target Result |
+|------|------|------|
+| Numerical repair | `0 . 0 1 0 n m` | `0.010nm` |
+| Element repair | `N i` | `Ni` |
+| Line-break repair | `110 \\n s` | `110s` |
+| Term normalization | `Zr based` / `Zr-based` | keep one stable form within the document |
+| Citation normalization | `[2,3]`, `[1-3]` | normalize into one stable protocol |
 
-- Material names
-- Chemical elements and compounds
-- Physical quantity names
-- Experimental methods and instrument names
-- Domain terminology
+## Runtime and Deployment Guidance
 
-Within a single document, the same term should not appear in obviously divergent forms that harm search, clustering, or recognition, such as `Zr based`, `Zr-based`, and `Zr based BMG`. When the semantics are identical, `Processor` should normalize them toward a more consistent form.
+### Recommended Environment
 
-### 3. Numerical and Unit Clarity
+- Linux is preferred for long-running batch jobs
+- Python `3.8+`
+- SSD or NVMe is recommended for routine batch runs
+- No GPU is required
+{: .tight-list}
 
-Numbers and units must satisfy these requirements:
+### Reference Sizing
 
-- Numerical sequences must remain continuous
-- Decimal structures must remain intact
-- Exponents, subscripts, superscripts, and symbols should remain structurally correct
-- Units must follow a unified project convention
+| Scenario | Suggested Setup |
+|------|------|
+| Small validation | 4 vCPU / 16 GB RAM |
+| Routine batch processing | 8 vCPU / 32 GB RAM |
+| Large long-running jobs | 16 vCPU / 64 GB RAM |
 
-### 4. Formula and Symbol Protection
+### Usage Recommendations
 
-`Processor` may remove OCR-generated redundant spaces inside formulas, but repairs must always obey structural safety:
+- Prioritize stability for routine batch cleaning
+- Run extra evaluation features separately when needed for spot checks or audits
+- Reduce concurrency when many very long documents are involved
+{: .tight-list}
 
-- Inline formulas must keep their structure intact
-- Display formulas must keep block-level integrity intact
-- Subscripts, superscripts, Greek letters, citation commands, and LaTeX command boundaries must be protected
-- Complex formulas should not be aggressively rewritten when structural safety cannot be guaranteed
+## Runtime Expectations
 
-### 5. Citation and Reference Stability
+`Processor` is typically CPU-bound. Overall runtime is mostly affected by:
+{: .section-intro}
 
-Citation normalization is part of data quality delivery, not an optional extra.
+- document length and formula complexity
+- worker count
+- optional evaluation features
+- whether the environment is Windows or Linux
+{: .tight-list}
 
-- Numeric citations should be normalized into stable forms such as `ref[1]`, `ref[2][3]`, and `ref[1][2][3]`
-- Mixed forms such as `[1]`, `[2,3]`, `[1-3]`, and `[1, 2, 5-7]` should be normalized into one protocol
-- Normalized citations must not stick to neighboring words and create dirty outputs such as `wordref[1]`
-- Reference list entries at the end of the document must preserve their original structure, such as `[1] Author. Title...`
-- Roman numeral or non-numeric references should only receive bracket and spacing normalization, not forced rewriting into `ref[...]`
+If logs continue to show progress and reports keep updating, the job is usually still healthy even when a few files take longer than expected.
 
-### 6. Metadata Fields Are Also in Scope
+## Review and Acceptance Loop
 
-Figure captions, footnotes, table titles, and table footnotes are not optional side fields. They are part of the quality delivery scope because they often contain:
+For external delivery projects, `Processor` should support more than one cleaning pass. A practical quality loop looks like this:
+{: .section-intro}
 
-- Figure or table identifiers
-- Material names
-- Experimental conditions
-- Numbers and units
-- Inline formulas
-- Critical context for downstream structured extraction
+1. run the batch and produce standard intermediate outputs
+2. review the outputs and identify suspicious patterns or residual issues
+3. improve the correction strategy for recurring problems
+4. rerun and review again until the results are stable enough for delivery
+{: .tight-list}
 
-## Cleaning Standards
+This makes the product easier to use in real delivery scenarios and helps reduce repeated noise over time.
 
-| Dimension | Requirement | Bad | Good |
-|------|----------|----------------|-----------------|
-| Physical value aggregation | Remove non-semantic spaces among numbers, decimal points, and units | `0 . 0 1 0 n m` | `0.010nm` |
-| Chemical entity repair | Fix fragmented element symbols with domain dictionaries | `Z \mathbf{r}`, `N i -` | `Zr`, `Ni` |
-| Numerical continuity | Remove OCR-induced breaks inside numbers | `110 \n s` | `110s` |
-| Terminology consistency | Keep equivalent entities in a document as consistent as possible | `Zr based`, `Zr-based` | `Zr-based` |
-| Citation cleanliness | Normalize numeric citations and keep them separated from text | `1960 [1]`, `[2,3]`, `[1-3]` | `1960 ref[1]`, `ref[2][3]`, `ref[1][2][3]` |
-| Metadata clarity | Figure/table metadata should not preserve obvious OCR fractures | `Fig. 1. 1 0 n m` | `Fig. 1. 10nm` |
+## Known Boundaries
 
-## Symbol and Unit Protocol
+When using `Processor`, keep in mind:
+{: .section-intro}
 
-### Unit Alignment Principles
+- it does not build the final structured schema
+- it does not replace business-level field design
+- for highly complex formulas or layouts, it favors structural safety over aggressive rewriting
+{: .tight-list}
 
-- Use one consistent `Value + Unit` convention across the project, whether with no space or a single space
-- Unit spellings must remain stable, such as `mm`, `nm`, `°C`, `s`, `min`, and `keV`
-- Compound units, exponential units, and formula-embedded units must preserve structure before any spacing repair
+## Relationship with `Designer`
 
-### Symbol Protection Principles
-
-The cleaning process must protect:
-
-- LaTeX inline formulas
-- LaTeX display formulas
-- Subscripts and superscripts
-- Greek letters
-- Citation commands and reference structures
-- Whitelisted chemical elements and units
-
-## Preconditions for Designer
-
-Before data is handed off to `Designer`, `Processor` output should already ensure:
-
-- Entity names, experiment names, and key terms remain highly consistent within a document
-- Contextual anchors such as temperature ranges, environments, and conditions are preserved
-- Attributes remain close to their values and units, such as `diameter = 3mm`
-- Large amounts of broken numbers, abnormal spacing, inconsistent terms, and damaged formulas are no longer present
-- In-text citations and reference-list entries can be reliably distinguished
-
-## Non-Negotiable Failures
-
-The following are unacceptable regressions:
-
-- Rewriting material names, physical quantities, or domain terms into wrong words
-- Breaking formulas, subscript/superscript structures, or LaTeX boundaries
-- Damaging identifiers in captions, titles, or footnotes
-- Deleting key connective text between attributes and conditions
-- Accidentally deleting reference list items
-- Rewriting reference list items into `ref[...]`
-- Incorrectly concatenating normalized citations with neighboring text, such as `wordref[1]`
-- Introducing new ambiguous spellings or new OCR noise
-- Cleaning only the body text while ignoring critical metadata fields
-
-## Acceptance Criteria
-
-### Delivery Acceptance
-
-At minimum, accepted output should satisfy:
-
-- No obvious OCR-broken numbers
-- No obvious broken units
-- No obvious fragmented terminology
-- No structural formula corruption
-- No important metadata fields left outside the cleaning scope
-- Numeric citations in body text, captions, titles, and footnotes are normalized into `ref[n]` / `ref[n][m]...`
-- Normalized citations do not stick to surrounding text, and reference lists remain in `[n] ...` form
-- The text is ready for AI reading and rule-based processing
-
-### Entry Criteria for Designer
-
-Data should enter `Designer` only when:
-
-- Basic quality cleaning is complete
-- Numbers, units, and entities are stably recognizable
-- Key fields such as captions, titles, and footnotes are usable
-- Remaining noise no longer significantly disrupts structured extraction
-- Citation structure is already stable
-
-### Rejection Criteria
-
-Any of the following should cause rejection:
-
-- `Processor` output still contains large amounts of visible OCR fragmentation
-- Formulas, symbols, or identifiers are structurally damaged
-- Important metadata fields such as captions or footnotes are missing from the cleaning scope
-- The data is readable but still not stable enough for extraction
-- Numeric citations still mix incompatible formats instead of one unified protocol
-- The reference list has been mistakenly rewritten, or opening body citations are misclassified as bibliography items
-- Similar problems are treated inconsistently across different fields
-
-## Technical Path
-
-This page constrains **output quality**, not a single implementation strategy. Acceptable implementation paths may include:
-
-- Regular-expression rules
-- Terminology dictionaries and whitelists
-- Structural protection and local repair
-- OCR post-processing strategies
-- Lightweight models or semantic assistance
-
-Regardless of implementation, the end goals remain:
-
-- `Processor` is responsible for data quality delivery
-- `Designer` is responsible for structured expression
-- The two packages stay separated in responsibility while the quality chain remains closed
+The more stable the `Processor` output is, the more reliable the `Designer` delivery becomes. It should be treated as the quality gate of the delivery chain, not as the final product layer.

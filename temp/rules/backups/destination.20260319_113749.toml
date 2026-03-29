@@ -1,0 +1,23 @@
+schema = "rule-pack.v1"
+version = 1
+description = "destination"
+
+[[rules]]
+id = "term.short-range"
+priority = "P1"
+kind = "normalize"
+phase = "in_pipeline"
+scope = "text"
+target = "term_consistency_mapping"
+pattern = '\bshortrange\b'
+replacement = "short range"
+
+[[rules]]
+id = "term.la-based"
+priority = "P2"
+kind = "normalize"
+phase = "in_pipeline"
+scope = "text"
+target = "term_consistency_mapping"
+pattern = '\bLa based\b'
+replacement = "La-based"

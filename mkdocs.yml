@@ -125,8 +125,6 @@ plugins:
       docs_structure: suffix        # 后缀法: index.md + index.zh.md
       fallback_to_default: true     # 无翻译时回退到默认语言
       reconfigure_material: true    # 拦截 Material 语言切换器，实现原地跳转
-      locale_url_prefix: true
-      absolute_links: false
       languages:
         - locale: en
           default: true
@@ -139,11 +137,24 @@ plugins:
           nav_translations:
             Home: 首页
             Get Started: 快速入门
+            Installation: 安装指南
+            Quick Start: 快速开始
+            End-to-End Workflow: 端到端工作流
             Concepts & Architecture: 核心架构
+            Design Philosophy: 设计哲学
+            Glossary: 术语表
             Core Tools: 核心工具
+            Processor: Processor
+            Designer: Designer
             API Reference: API 参考
+            Examples: 使用示例
             Research & Thinking: 研究与思考
+            Research Review: 研究综述
+            Design Insights: 设计洞察
             Community: 社区生态
+            Contributing: 贡献指南
+            Roadmap: 路线图
+            Changelog: 更新日志
 
 # ---------------------------------------------------------
 # 4. Markdown 增强扩展 (AI/Data Science Power Tools)

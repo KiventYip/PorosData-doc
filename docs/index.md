@@ -6,46 +6,68 @@
 
 ## Introduction
 
-In the data-centric AI paradigm, the upper bound of model capability is often determined by data quality. Scientific literature in materials science and related fields, especially PDFs, LaTeX sources, and OCR outputs, is not naturally ready for model pipelines. Control characters, page-shadow artifacts, broken words, term corruption, fragmented numerical expressions, and broken figure references can all become structural problems during training or data mining.
+PorosData is a scientific document processing and structured delivery framework. It turns PDFs, OCR outputs, and parser results into data assets that are easier to review, reuse, and deliver downstream.
+{: .lead}
 
-**PorosData** addresses this gap. It is an AI4S data orchestration framework designed for empirical science, turning unstructured or semi-structured scientific literature into semantically reliable, structurally consistent, and traceable AI-Ready and Data Mining Ready assets, across the full lifecycle from parsing to quality delivery and structured expression.
+In empirical research domains such as materials science, source documents often contain broken numbers, spacing noise, term corruption, damaged formulas, and disconnected figure references. These issues quickly affect model training, structured extraction, retrieval workflows, and manual review. PorosData is designed to reduce that noise and produce stable, traceable deliverables.
+
+## Where It Fits
+
+PorosData fits the stage between raw literature inputs and delivery-ready data assets.
+{: .section-intro}
+
+- Prepare research literature for model training
+- Provide stable inputs for structured extraction, rule-based processing, and semantic retrieval
+- Organize body text, captions, tables, and image assets into one delivery layout
+- Support downstream database building, knowledge organization, and multimodal use
+{: .tight-list}
 
 ## Core Value
 
-PorosData is built on **Academic Atomicity**, which treats each piece of scientific data as an indivisible unit of scholarly value.
+PorosData follows **Academic Atomicity**, which means improving usability without stripping away the scientific meaning of the source material.
+{: .section-intro}
 
-| Dimension | Commitment |
+| Dimension | Value |
 |------|------|
-| **Semantic Fidelity** | Mathematical expressions and citation chains stay intact during processing |
-| **Traceability** | Each cleaning decision can be audited and traced back to academic rationale |
-| **Task Awareness** | Pre-training emphasizes token purity and semantic commonsense, while data mining emphasizes entity precision and multimodal anchoring |
-
-No matter whether the target is large-scale pre-training or scientific knowledge extraction, the framework follows the same rule: **improve usability without sacrificing scientific rigor**.
+| **Reliable Content** | Formulas, citations, units, and terms are kept as intact as possible |
+| **Clear Structure** | Sections, text blocks, figures, and fields become easier for both systems and reviewers to follow |
+| **Traceable Process** | The path from raw input to delivered output remains inspectable |
+| **Reusable Delivery** | One output set can support training, extraction, retrieval, and storage workflows |
 
 ## Quick Start
+
+If you want to understand the full flow before choosing a module entry point, start with these three pages.
+{: .section-intro}
 
 - [Installation Guide](get_started/installation.md)
 - [Quick Start](get_started/quickstart.md)
 - [Usage Examples](references/examples.md)
+{: .tight-list}
 
 !!! tip "End-to-End Example"
-    See the [End-to-End Workflow](get_started/end-to-end-workflow.md) for a complete walkthrough from PDF papers to training and mining views.
+    See the [End-to-End Workflow](get_started/end-to-end-workflow.md) for a full walkthrough from raw papers to final delivery outputs.
 
-## Key Capabilities
+## Product Framework
 
-### For Pre-training: Token Purity and Semantic Common Sense
+PorosData uses a three-stage pipeline for scientific documents:
+{: .section-intro}
 
-At the pre-training stage, models learn world knowledge and language structure. If the source data is noisy or semantically broken, the resulting model absorbs false correlations or even incorrect scientific concepts.
+![PorosData functional architecture](assets/images/DESIGN.jpg)
 
-PorosData improves token purity and term stability through cleaning, normalization, and scientific terminology protection.
+The diagram below shows how storage, processing modules, and delivery-facing outputs are connected in one end-to-end system.
+{: .section-intro}
 
-### For Data Mining: Entity Precision and Multimodal Anchoring
+```text
+[Raw Literature] -> Parser -> Processor -> Designer -> [Training Text / Structured Outputs / Multimodal Index]
+```
 
-Data mining aims to extract structured knowledge from scientific documents, such as material compositions, transition temperatures, or processing conditions. This requires reliable values and units, stable entity recognition, and hard links between text references and multimodal assets.
+| Module | What It Delivers |
+|------|------|
+| **Parser** | Extracts reusable text blocks and assets from PDFs and parser outputs |
+| **Processor** | Cleans noise, repairs fragmentation, and stabilizes terms and numerical expressions |
+| **Designer** | Reorganizes quality-ready text into full-text views, extraction-ready outputs, and multimodal indexes |
 
-PorosData provides numerical repair, entity stabilization, and text-image anchoring so that NER, entity linking, structured extraction, and knowledge graph construction can operate on a reliable substrate.
-
-### Capability Overview
+## Capability Overview
 
 | Capability | Problem It Solves |
 |------|------------|
@@ -55,32 +77,36 @@ PorosData provides numerical repair, entity stabilization, and text-image anchor
 | Entity stabilization | Chemical elements and material names misread as LaTeX or symbols |
 | Asset anchoring | Cross-modal indexing between figure references, images, and captions |
 
-## Architecture Overview
+## Final Deliverables
 
-PorosData uses a three-part modular architecture that covers the full scientific data pipeline:
+PorosData does not stop at producing cleaner text. A standard delivery package typically includes:
+{: .section-intro}
 
-```
-[Literature] -> Parser (Extraction) -> Processor (Quality Delivery) -> Designer (Structured Expression) -> [Training / Mining Views]
-```
-
-| Module | Responsibility |
-|------|------|
-| **PorosData-Parser** | Extract processable base text and assets from PDFs, LaTeX, and other unstructured scientific sources |
-| **PorosData-Processor** | Deliver high-quality text under academic atomicity, making input AI-Ready and Data Mining Ready |
-| **PorosData-Designer** | Reconstruct high-quality text into `content`, `pure_text_stream`, `datamining`, and related indexable artifacts |
-
-The modules can be used independently or chained as one end-to-end workflow. Extensions and plugins inherit the same atomicity contract so that quality remains consistent from parsing through cleaning and structured export.
+- Full-text outputs for reading and review
+- Plain-text streams for training use
+- Structured JSON outputs for extraction and retrieval
+- Multimodal indexes that connect text references with image assets
+- Reports and logs for batch review and delivery traceability
+{: .tight-list}
 
 ## In-Depth Reference
+
+These pages explain the design decisions, research background, and terminology behind the framework.
+{: .section-intro}
 
 - [Design Philosophy](concepts/design-philosophy.md)
 - [Research Review](research/research-review.md)
 - [Design Insights](research/design-insights.md)
 - [Glossary](concepts/glossary.md)
 - [API Reference](references/api-reference.md)
+{: .tight-list}
 
 ## Project Ecosystem
+
+These links are most useful once you start trying the framework or tracking how the project evolves.
+{: .section-intro}
 
 - [Contributing Guide](community/contributing.md)
 - [Roadmap](community/roadmap.md)
 - [Changelog](community/changelog.md)
+{: .tight-list}

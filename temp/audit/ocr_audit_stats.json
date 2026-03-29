@@ -1,0 +1,42 @@
+{
+  "counts": {
+    "term_drift_10_ray_latex": 7,
+    "term_drift_10_ray_plain": 4,
+    "term_drift_B5": 1,
+    "symbol_copyright": 1,
+    "hallucination_Au": 1,
+    "hallucination_Delta": 5,
+    "hallucination_K": 3,
+    "linebreak_shortrange": 1,
+    "space_unit_mathrm": 63,
+    "space_unit_mathrm_ll": 17,
+    "space_subscript_num": 86,
+    "space_number_in_formula": 41,
+    "space_nm": 11,
+    "space_mm": 6,
+    "space_GPa": 1
+  },
+  "doc_stats": {
+    "00001": {
+      "term_drift_10_ray_latex": 7,
+      "term_drift_10_ray_plain": 4,
+      "term_drift_B5": 1,
+      "symbol_copyright": 1,
+      "hallucination_Au": 1,
+      "hallucination_Delta": 5,
+      "hallucination_K": 3,
+      "linebreak_shortrange": 1,
+      "space_unit_mathrm": 63,
+      "space_unit_mathrm_ll": 17,
+      "space_subscript_num": 86,
+      "space_number_in_formula": 21,
+      "space_nm": 11,
+      "space_mm": 6,
+      "space_GPa": 1
+    },
+    "00004": {
+      "space_number_in_formula": 20
+    },
+    "00005": {}
+  }
+}

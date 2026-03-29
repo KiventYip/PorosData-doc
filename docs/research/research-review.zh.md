@@ -2,40 +2,44 @@
 status: exploratory
 author: KiventYip
 date: 2024-03-09
+hide:
+  - toc
+{: .tight-list}
 ---
 
 !!! abstract "Research Note / 研发手记"
-    本篇文档属于 **PorosData 研究与思考** 系列，主要记录架构演进的心路历程、尚未正式落地的算法推演或对特定 Data-centric AI 难题的探索。它不代表框架最终的稳定功能承诺。
-### Quick Links
-
-- [Home](../index.md)
-- [Quick Start](../get_started/quickstart.md)
-
+    本页属于 **PorosData 研究与思考** 系列，记录架构演进、尚未完成的算法探索，以及科学数据处理中的开放问题。它不应被理解为最终或稳定的产品承诺。
 
 # 研究综述
 
-## 数据的质量要求？ AI -ready 与 Data Mining 视角下，数据质量的清洗要求。
+## 快速链接
 
-### 1. AI - Ready 数据标准, 用以 **Pre-training 的要求：Token 纯净度与语义常识**
+- [首页](../index.md)
+- [快速开始](../get_started/quickstart.md)
+{: .tight-list}
 
-Pre - training: The capacity of these models to generate coherent text comes from their training, in which they are exposed to massive amounts of natural text mined form the internet.
+## 我们需要什么样的数据质量？
 
-处于Pre - training 阶段的模型往往不擅长直接回答问题，更倾向于补全问题。 通过Pre-training，通常期望模型获得三种能力：**General - purpose representation, Understanding of semantics and syntas, World Knowledge**.
+本页从两个角度回顾数据质量要求：训练准备与数据挖掘。
 
-- **general-purpose representations** 通用的表征，表达特征的能力
+### 1. 训练准备标准：预训练需要 Token 纯净度与语义准确性
 
-如果数据本身包含错误，模型就会产生知识中毒。所以对于用以全训练的数据就要求其Token的纯净度。  
+预训练让模型通过消费大规模自然文本获得通用表征、语义与句法理解，以及世界知识。如果数据本身有误，模型就会吸收错误知识。
 
-- **Token 流的纯净性**：正文中不应包含与语义无关的控制字符或索引。该类与语义、语法结构无关的数据在训练时属于干扰噪音，会破坏模型对上下文概率的预测。
-- **语义常识的准确性**：核心术语不能有系统性误识。如果将 X-ray 识别为 10-ray，模型会学习到错误的科学概念，导致它在后续任务中无法理解射线衍射的逻辑。
-- **长文本的连贯性**：换行符处理不当导致的单词断裂（如 shortrange 缺失连字符变为 short - range）会增加模型词表的熵，降低其对长难句的理解能力。
+因此，预训练数据必须保持 token 纯净。
 
+- **Token 流纯净度**：正文中不应包含控制字符、索引残留或其他非语义碎片。这类伪影会浪费 token，并干扰上下文学习。
+- **语义常识准确性**：核心科学术语不能被系统性破坏。如果 `X-ray` 变成 `10-ray`，模型学习到的就是错误的科学概念。
+- **长文本连贯性**：断词和缺失连字符这类由换行损伤引起的问题，会提高词汇熵，并削弱模型理解长而复杂科学句子的能力。
+{: .tight-list}
 
-### 2. Data Mining 的要求：实体精度与逻辑链接
+### 2. 数据挖掘要求：实体精度与逻辑链接
 
-数据挖掘的目标是从海量文档中自动化提取结构化知识（如：合金成分、转变温度）。
+数据挖掘的目标，是从大规模文档集合中提取结构化知识，例如合金成分或相变温度。
+{: .section-intro}
 
-- **数值与单位的确定性**：科学挖掘对数字极其敏感。被 OCR 拆散的数字（如 $1 0 ^ { 5 }$）会导致挖掘算法无法识别出正确的数量级，直接废掉自动化的属性提取任务。
-- **实体识别的稳健性**：化学元素（如 Ni, Au）不能被误识为 LaTeX 符号（如 $\Delta$, \Au），否则在构建知识图谱时，实体链接（Entity Linking）会由于名称错误而失败。
-- **多模态资产的锚定**：挖掘工作往往需要“图文穿透”。AI-Ready 要求文中的“Fig. 1”不仅仅是几个字符，而是一个能够直接索引到图片资产和对应 Caption 的硬链接锚点。
+- **数值与单位的确定性**：科学挖掘对数值形式极为敏感。像 `$1 0 ^ { 5 }$` 这样被 OCR 拆坏的表达，会破坏数量级识别和后续属性抽取。
+- **实体识别的稳健性**：像 `Ni` 和 `Au` 这样的化学元素不能被误判成类似 LaTeX 的符号。否则名称不再可靠，实体链接和图谱构建就会失败。
+- **多模态资产的锚定**：像 `Fig. 1` 这样的引用不能只是普通字符串，它们应成为可以直接指向对应图片资产和图注的硬锚点。
+{: .tight-list}
 

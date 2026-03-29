@@ -1,0 +1,268 @@
+{
+  "audit_standard": "docs/ai_ready_and_data_mining_delivery_standard.md",
+  "timestamp": "2026-03-17T21:07:40.625696",
+  "processed_data_root": "D:\\Kivent_Folder\\Working Folder\\Material\\Repo\\datapreprocessing\\data\\processed_data",
+  "summary": {
+    "total_files": 19,
+    "total_segments": 1070,
+    "segments_with_ocr_issues": 0,
+    "segments_with_quality_issues": 3,
+    "segments_with_unbalanced_dollar": 0,
+    "normalized_ref_count": 378,
+    "raw_citation_count": 0,
+    "bibliography_ref_count": 0,
+    "image_count": 131,
+    "table_count": 18,
+    "image_with_caption": 115,
+    "image_with_footnote": 0,
+    "table_with_caption": 18,
+    "table_with_footnote": 3
+  },
+  "global_ocr_by_type": {},
+  "task_list": [
+    {
+      "task_id": "DQ-001",
+      "issue_type": "formula_hyphen_spacing",
+      "priority": "P1",
+      "issue_count": 5,
+      "document_count": 3,
+      "documents": [
+        "00001",
+        "00006",
+        "00013"
+      ],
+      "action": "统一公式与术语之间的连字符收紧规则，避免 Zr-based / X-ray 再次碎裂"
+    }
+  ],
+  "doc_results": [
+    {
+      "doc_id": "00001",
+      "path": "D:\\Kivent_Folder\\Working Folder\\Material\\Repo\\datapreprocessing\\data\\processed_data\\00001\\mineru_2.1.10_output\\00001\\auto\\00001_content_list.json",
+      "error": null,
+      "ocr_by_type": {},
+      "ocr_sample": {},
+      "quality_by_type": {
+        "formula_hyphen_spacing": 2
+      },
+      "quality_sample": {
+        "formula_hyphen_spacing": [
+          "$Zr$-m",
+          "$Zr$-n"
+        ]
+      },
+      "unbalanced_dollar_segments": [],
+      "item_count": 74
+    },
+    {
+      "doc_id": "00002",
+      "path": "D:\\Kivent_Folder\\Working Folder\\Material\\Repo\\datapreprocessing\\data\\processed_data\\00002\\mineru_2.1.10_output\\00002\\auto\\00002_content_list.json",
+      "error": null,
+      "ocr_by_type": {},
+      "ocr_sample": {},
+      "quality_by_type": {},
+      "quality_sample": {},
+      "unbalanced_dollar_segments": [],
+      "item_count": 62
+    },
+    {
+      "doc_id": "00003",
+      "path": "D:\\Kivent_Folder\\Working Folder\\Material\\Repo\\datapreprocessing\\data\\processed_data\\00003\\mineru_2.1.10_output\\00003\\auto\\00003_content_list.json",
+      "error": null,
+      "ocr_by_type": {},
+      "ocr_sample": {},
+      "quality_by_type": {},
+      "quality_sample": {},
+      "unbalanced_dollar_segments": [],
+      "item_count": 44
+    },
+    {
+      "doc_id": "00004",
+      "path": "D:\\Kivent_Folder\\Working Folder\\Material\\Repo\\datapreprocessing\\data\\processed_data\\00004\\mineru_2.1.10_output\\00004\\auto\\00004_content_list.json",
+      "error": null,
+      "ocr_by_type": {},
+      "ocr_sample": {},
+      "quality_by_type": {},
+      "quality_sample": {},
+      "unbalanced_dollar_segments": [],
+      "item_count": 49
+    },
+    {
+      "doc_id": "00005",
+      "path": "D:\\Kivent_Folder\\Working Folder\\Material\\Repo\\datapreprocessing\\data\\processed_data\\00005\\mineru_2.1.10_output\\00005\\auto\\00005_content_list.json",
+      "error": null,
+      "ocr_by_type": {},
+      "ocr_sample": {},
+      "quality_by_type": {},
+      "quality_sample": {},
+      "unbalanced_dollar_segments": [],
+      "item_count": 34
+    },
+    {
+      "doc_id": "00006",
+      "path": "D:\\Kivent_Folder\\Working Folder\\Material\\Repo\\datapreprocessing\\data\\processed_data\\00006\\mineru_2.1.10_output\\00006\\auto\\00006_content_list.json",
+      "error": null,
+      "ocr_by_type": {},
+      "ocr_sample": {},
+      "quality_by_type": {
+        "formula_hyphen_spacing": 1
+      },
+      "quality_sample": {
+        "formula_hyphen_spacing": [
+          "$\\mathrm{cu}$-b"
+        ]
+      },
+      "unbalanced_dollar_segments": [],
+      "item_count": 35
+    },
+    {
+      "doc_id": "00007",
+      "path": "D:\\Kivent_Folder\\Working Folder\\Material\\Repo\\datapreprocessing\\data\\processed_data\\00007\\mineru_2.1.10_output\\00007\\auto\\00007_content_list.json",
+      "error": null,
+      "ocr_by_type": {},
+      "ocr_sample": {},
+      "quality_by_type": {},
+      "quality_sample": {},
+      "unbalanced_dollar_segments": [],
+      "item_count": 45
+    },
+    {
+      "doc_id": "00008",
+      "path": "D:\\Kivent_Folder\\Working Folder\\Material\\Repo\\datapreprocessing\\data\\processed_data\\00008\\mineru_2.1.10_output\\00008\\auto\\00008_content_list.json",
+      "error": null,
+      "ocr_by_type": {},
+      "ocr_sample": {},
+      "quality_by_type": {},
+      "quality_sample": {},
+      "unbalanced_dollar_segments": [],
+      "item_count": 35
+    },
+    {
+      "doc_id": "00009",
+      "path": "D:\\Kivent_Folder\\Working Folder\\Material\\Repo\\datapreprocessing\\data\\processed_data\\00009\\mineru_2.1.10_output\\00009\\auto\\00009_content_list.json",
+      "error": null,
+      "ocr_by_type": {},
+      "ocr_sample": {},
+      "quality_by_type": {},
+      "quality_sample": {},
+      "unbalanced_dollar_segments": [],
+      "item_count": 34
+    },
+    {
+      "doc_id": "00010",
+      "path": "D:\\Kivent_Folder\\Working Folder\\Material\\Repo\\datapreprocessing\\data\\processed_data\\00010\\mineru_2.1.10_output\\00010\\auto\\00010_content_list.json",
+      "error": null,
+      "ocr_by_type": {},
+      "ocr_sample": {},
+      "quality_by_type": {},
+      "quality_sample": {},
+      "unbalanced_dollar_segments": [],
+      "item_count": 78
+    },
+    {
+      "doc_id": "00011",
+      "path": "D:\\Kivent_Folder\\Working Folder\\Material\\Repo\\datapreprocessing\\data\\processed_data\\00011\\mineru_2.1.10_output\\00011\\auto\\00011_content_list.json",
+      "error": null,
+      "ocr_by_type": {},
+      "ocr_sample": {},
+      "quality_by_type": {},
+      "quality_sample": {},
+      "unbalanced_dollar_segments": [],
+      "item_count": 41
+    },
+    {
+      "doc_id": "00012",
+      "path": "D:\\Kivent_Folder\\Working Folder\\Material\\Repo\\datapreprocessing\\data\\processed_data\\00012\\mineru_2.1.10_output\\00012\\auto\\00012_content_list.json",
+      "error": null,
+      "ocr_by_type": {},
+      "ocr_sample": {},
+      "quality_by_type": {},
+      "quality_sample": {},
+      "unbalanced_dollar_segments": [],
+      "item_count": 97
+    },
+    {
+      "doc_id": "00013",
+      "path": "D:\\Kivent_Folder\\Working Folder\\Material\\Repo\\datapreprocessing\\data\\processed_data\\00013\\mineru_2.1.10_output\\00013\\auto\\00013_content_list.json",
+      "error": null,
+      "ocr_by_type": {},
+      "ocr_sample": {},
+      "quality_by_type": {
+        "formula_hyphen_spacing": 2
+      },
+      "quality_sample": {
+        "formula_hyphen_spacing": [
+          "$\\mathrm{Cu}_{10} \\mathrm{Zr}_{7}$-J",
+          "$\\mathrm{Cu}_{51} \\mathrm{Zr}_{14}$-J"
+        ]
+      },
+      "unbalanced_dollar_segments": [],
+      "item_count": 101
+    },
+    {
+      "doc_id": "00014",
+      "path": "D:\\Kivent_Folder\\Working Folder\\Material\\Repo\\datapreprocessing\\data\\processed_data\\00014\\mineru_2.1.10_output\\00014\\auto\\00014_content_list.json",
+      "error": null,
+      "ocr_by_type": {},
+      "ocr_sample": {},
+      "quality_by_type": {},
+      "quality_sample": {},
+      "unbalanced_dollar_segments": [],
+      "item_count": 103
+    },
+    {
+      "doc_id": "00015",
+      "path": "D:\\Kivent_Folder\\Working Folder\\Material\\Repo\\datapreprocessing\\data\\processed_data\\00015\\mineru_2.1.10_output\\00015\\auto\\00015_content_list.json",
+      "error": null,
+      "ocr_by_type": {},
+      "ocr_sample": {},
+      "quality_by_type": {},
+      "quality_sample": {},
+      "unbalanced_dollar_segments": [],
+      "item_count": 40
+    },
+    {
+      "doc_id": "00017",
+      "path": "D:\\Kivent_Folder\\Working Folder\\Material\\Repo\\datapreprocessing\\data\\processed_data\\00017\\mineru_2.1.10_output\\00017\\auto\\00017_content_list.json",
+      "error": null,
+      "ocr_by_type": {},
+      "ocr_sample": {},
+      "quality_by_type": {},
+      "quality_sample": {},
+      "unbalanced_dollar_segments": [],
+      "item_count": 39
+    },
+    {
+      "doc_id": "00019",
+      "path": "D:\\Kivent_Folder\\Working Folder\\Material\\Repo\\datapreprocessing\\data\\processed_data\\00019\\mineru_2.1.10_output\\00019\\auto\\00019_content_list.json",
+      "error": null,
+      "ocr_by_type": {},
+      "ocr_sample": {},
+      "quality_by_type": {},
+      "quality_sample": {},
+      "unbalanced_dollar_segments": [],
+      "item_count": 52
+    },
+    {
+      "doc_id": "00020",
+      "path": "D:\\Kivent_Folder\\Working Folder\\Material\\Repo\\datapreprocessing\\data\\processed_data\\00020\\mineru_2.1.10_output\\00020\\auto\\00020_content_list.json",
+      "error": null,
+      "ocr_by_type": {},
+      "ocr_sample": {},
+      "quality_by_type": {},
+      "quality_sample": {},
+      "unbalanced_dollar_segments": [],
+      "item_count": 45
+    },
+    {
+      "doc_id": "00021",
+      "path": "D:\\Kivent_Folder\\Working Folder\\Material\\Repo\\datapreprocessing\\data\\processed_data\\00021\\mineru_2.1.10_output\\00021\\auto\\00021_content_list.json",
+      "error": null,
+      "ocr_by_type": {},
+      "ocr_sample": {},
+      "quality_by_type": {},
+      "quality_sample": {},
+      "unbalanced_dollar_segments": [],
+      "item_count": 75
+    }
+  ]
+}

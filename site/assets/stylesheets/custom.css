@@ -216,3 +216,158 @@ table.docutils th {
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+
+/* ---------------------------------------------------------
+ * Material typography enhancements
+ * Keep the document structure unchanged and only improve
+ * emphasis, rhythm, and scanability in the content area.
+ * --------------------------------------------------------- */
+
+.md-content__inner {
+    max-width: 56rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.md-typeset {
+    font-size: 0.8rem;
+    line-height: 1.75;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+}
+
+.md-typeset h1 {
+    margin: 0 0 1rem;
+    padding-bottom: 0.45rem;
+    font-weight: 800;
+    font-size: 2rem;
+    border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-typeset h2 {
+    margin: 2.4rem 0 0.9rem;
+    font-weight: 750;
+    font-size: 1.4rem;
+}
+
+.md-typeset h3 {
+    margin: 1.8rem 0 0.7rem;
+    font-weight: 700;
+    font-size: 1.08rem;
+}
+
+.md-typeset h4 {
+    margin: 1.4rem 0 0.55rem;
+    font-weight: 650;
+}
+
+.md-typeset p,
+.md-typeset li,
+.md-typeset td,
+.md-typeset blockquote {
+    line-height: 1.78;
+}
+
+.md-typeset p {
+    margin: 0 0 0.95rem;
+}
+
+.md-typeset strong {
+    font-weight: 700;
+}
+
+.md-typeset .lead {
+    margin: 0.6rem 0 1.4rem;
+    max-width: 52rem;
+    font-size: 1.04rem;
+    line-height: 1.85;
+    color: var(--md-default-fg-color--light);
+}
+
+.md-typeset .section-intro {
+    margin: 0 0 0.9rem;
+    color: var(--md-default-fg-color--light);
+}
+
+.md-typeset ul,
+.md-typeset ol {
+    margin-top: 0.6rem;
+    margin-bottom: 1.1rem;
+}
+
+.md-typeset li {
+    margin-bottom: 0.45rem;
+}
+
+.md-typeset li > p {
+    margin-bottom: 0.45rem;
+}
+
+.md-typeset .tight-list li {
+    margin-bottom: 0.2rem;
+}
+
+.md-typeset table:not([class]) {
+    display: table;
+    width: 100%;
+    margin: 1.2rem 0 1.5rem;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.md-typeset table:not([class]) th,
+.md-typeset table:not([class]) td {
+    padding: 0.75rem 0.9rem;
+    vertical-align: top;
+}
+
+.md-typeset table:not([class]) th {
+    font-weight: 700;
+    color: var(--md-default-fg-color);
+    background-color: var(--md-code-bg-color);
+}
+
+.md-typeset table:not([class]) tr:hover {
+    background-color: var(--md-default-fg-color--lightest);
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+    margin: 1.2rem 0 1.4rem;
+    border-radius: 0.7rem;
+    box-shadow: 0 0.2rem 0.8rem rgba(15, 23, 42, 0.06);
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+    font-weight: 700;
+}
+
+.md-typeset code {
+    border-radius: 0.3rem;
+}
+
+.md-typeset hr {
+    margin: 1.8rem 0;
+}
+
+@media (max-width: 768px) {
+    .md-typeset h1 {
+        font-size: 1.75rem;
+    }
+
+    .md-typeset h2 {
+        font-size: 1.25rem;
+    }
+
+    .md-typeset .lead {
+        font-size: 0.98rem;
+    }
+}

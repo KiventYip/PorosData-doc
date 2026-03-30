@@ -1,14 +1,14 @@
 # .github/workflows/deploy.yml
 name: Deploy Documentation
 
+# 不使用 paths 过滤：此前仅匹配 docs/**、mkdocs.yml 时，只改 requirements.txt、
+# build_clean.py、.readthedocs.yaml 等不会触发部署，GitHub Pages 会长期停留在旧构建
+# （表现为源码已更新但 Examples 等页面仍旧）。文档仓每次 main 推送执行一次部署可接受。
 on:
   push:
     branches:
-      - main  # 监听 main 分支的更新
-    paths:
-      - 'docs/**'
-      - 'mkdocs.yml'
-      - '.github/workflows/deploy.yml'
+      - main
+  workflow_dispatch: {}
 
 permissions:
   contents: write

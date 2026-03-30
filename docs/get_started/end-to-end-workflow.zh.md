@@ -110,3 +110,12 @@ data/structured/
 - 为图表与正文联动准备可索引资产
 - 为后续数据库建设或知识组织提供统一交付目录
 {: .tight-list}
+
+## 相关页面
+
+- [安装指南](installation.md)
+- [快速开始](quickstart.md)
+- [使用示例](../references/examples.md)
+- [Processor](../tools/processor/index.md)
+- [Designer](../tools/designer/index.md)
+{: .tight-list}

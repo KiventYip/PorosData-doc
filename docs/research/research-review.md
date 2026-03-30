@@ -18,26 +18,83 @@ hide:
 - [Quick Start](../get_started/quickstart.md)
 {: .tight-list}
 
+## Problem Background
+
+Scientific literature is rich in terminology, numbers, formulas, figures, and contextual qualifiers. Once papers are converted from PDF or OCR outputs into machine-readable text, small formatting errors quickly become downstream data problems.
+
+Typical failures include:
+
+- broken numbers and units
+- corrupted scientific terms
+- damaged formula boundaries
+- captions and figure references losing their links
+- context such as temperature, condition, or method drifting away from the value it describes
+
+Because of this, scientific data preparation needs a different quality standard from general-purpose text processing.
+
+## Why Training Preparation and Data Mining Need Different Standards
+
+The two major downstream scenarios care about different failure modes.
+
+### 1. Training Preparation
+
+Training preparation is sensitive to sequence quality and semantic continuity.
+
+- **Token purity** matters because control characters, page residue, and non-semantic fragments waste sequence budget and disturb learning.
+- **Terminology accuracy** matters because corrupted terms such as `X-ray -> 10-ray` teach the wrong concept.
+- **Long-text coherence** matters because broken words and damaged punctuation reduce the stability of long scientific passages.
+
+### 2. Data Mining
+
+Data mining is sensitive to structural precision and contextual binding.
+
+- **Values and units** must stay determinate, or downstream extraction cannot recover the right magnitude.
+- **Entity names** must stay stable, or matching, linking, and normalization become unreliable.
+- **Text-image anchors** must remain explicit, or figures and captions cannot be reused in structured delivery.
+
+## Where PorosData Fits
+
+PorosData addresses these two scenarios through a layered delivery chain:
+
+| Stage | Main Responsibility | Why It Matters |
+|------|------|------|
+| `Parser` | preserve usable source content and assets | keeps the source package intact enough for later recovery |
+| `Processor` | remove noise and stabilize text quality | prepares content for reliable downstream use |
+| `Designer` | export delivery-ready structures | turns stable inputs into full-text, structured, and multimodal outputs |
+
+In other words, PorosData does not treat cleaning and delivery as separate concerns. It treats them as one connected path from source material to reusable outputs.
+
 ## What Kind of Data Quality Do We Need?
 
-This page reviews data quality requirements from two perspectives: training preparation and data mining.
+The target quality profile can be summarized in two views.
 
-### 1. Training Preparation Standards: Pre-training Requires Token Purity and Semantic Accuracy
+### Training Preparation View
 
-Pre-training enables models to acquire general-purpose representations, semantic and syntactic understanding, and world knowledge by consuming large-scale natural text. If the data itself is wrong, the model can absorb false knowledge.
+- the text should be readable and structurally continuous
+- scientific terms should stay semantically correct
+- formulas and inline references should remain intact enough for downstream use
 
-For that reason, pre-training data must preserve token purity.
+### Data Mining View
 
-- **Token Stream Purity**: The main text should not contain control characters, index residues, or other non-semantic fragments. Such artifacts waste tokens and disturb contextual learning.
-- **Semantic Common Sense Accuracy**: Core scientific terminology must not be systematically corrupted. If `X-ray` becomes `10-ray`, the model learns a false scientific concept.
-- **Long-Text Coherence**: Broken words and missing hyphens caused by line-break damage increase vocabulary entropy and reduce the model's ability to understand long and complex scientific sentences.
+- values, units, and attributes should remain identifiable
+- entities should stay stable within and across documents
+- figure references, captions, and other metadata should remain connected to the main text
 
-### 2. Data Mining Requirements: Entity Precision and Logical Linking
+## Current Limits and Open Questions
 
-The goal of data mining is to extract structured knowledge from large document collections, such as alloy composition or transition temperature.
-{: .section-intro}
+Even with a stable processing pipeline, several questions remain open:
 
-- **Certainty of Values and Units**: Scientific mining is highly sensitive to numerical form. OCR-broken expressions such as `$1 0 ^ { 5 }$` can destroy magnitude recognition and downstream attribute extraction.
-- **Robustness of Entity Recognition**: Chemical elements such as `Ni` and `Au` must not be mistaken for LaTeX-like symbols. Otherwise, entity linking and graph construction fail because names are no longer reliable.
-- **Anchoring of Multimodal Assets**: Mentions such as `Fig. 1` must not remain plain strings. They should become hard anchors that can point directly to the corresponding image asset and caption.
+- how far should automatic repair go before it risks changing source meaning
+- how should highly irregular formulas be normalized without damaging structure
+- how much domain dictionary coverage is enough before maintenance cost becomes too high
+- how should multimodal anchoring be kept stable across different parser outputs
+
+These are not just implementation details. They directly affect whether a delivery package remains reusable across projects.
+
+## Further Reading
+
+- [Design Insights](design-insights.md)
+- [Processor](../tools/processor/index.md)
+- [Designer](../tools/designer/index.md)
+- [API Reference](../references/api-reference.md)
 

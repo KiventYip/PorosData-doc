@@ -1,161 +1,88 @@
-# 为 PorosData 做贡献
+# 为 PorosData 文档做贡献
 
-我们欢迎社区贡献！本指南将帮助您开始为 PorosData 项目做贡献。
+本页说明如何为 `PorosData-doc` 文档站点做贡献。
 {: .lead}
 
-## 开发环境设置
+如果你要修改运行时代码或处理逻辑，可能需要前往单独的代码仓库。本页只针对当前文档仓库中的内容贡献。
 
-### 前置要求
+## 你可以贡献什么
 
-- Python 3.8+
-- Git
-- 虚拟环境 (推荐)
-{: .tight-list}
+外部贡献者可以优先从以下内容开始：
 
-### 克隆和设置
+- 优化文案和说明清晰度
+- 修复失效链接或导航问题
+- 补充示例和参考说明
+- 对齐中英文页面内容
+- 调整页面结构，让外部读者更容易理解
+
+## 最小文档贡献流程
+
+### 1. 克隆文档仓库
 
 ```bash
-git clone https://github.com/KiventYip/porosdata-processor.git
-cd porosdata-processor
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-pip install -e .[dev]
+git clone https://github.com/KiventYip/PorosData-doc.git
+cd PorosData-doc
 ```
-
-## 开发工作流
-
-### 1. 选择问题
-
-访问我们的 [GitHub Issues](https://github.com/KiventYip/porosdata-processor/issues) 页面，选择一个要处理的问题。如果您是新手，请寻找标记为 `good first issue` 的问题。
 
 ### 2. 创建分支
 
 ```bash
-git checkout -b feature/your-feature-name
-# 或
-git checkout -b fix/issue-number-description
+git checkout -b docs/your-change-name
 ```
 
-### 3. 进行更改
+### 3. 修改文档
 
-遵循我们的编码标准：
-- 使用类型提示
-- 编写全面的测试
-- 更新文档
-- 遵循 PEP 8 样式指南
-{: .tight-list}
+常见修改包括：
 
-### 4. 运行测试
+- 编辑 `docs/` 下的 Markdown 页面
+- 同步优化中英文内容
+- 修复指南页、参考页和研究页之间的跳转关系
 
-```bash
-# 运行所有测试
-pytest
+### 4. 提交前预览
 
-# 运行特定测试文件
-pytest tests/test_specific_feature.py
+如果本地环境已准备好，建议先在本地预览文档站点，再发起拉取请求。
 
-# 运行覆盖率测试
-pytest --cov=porosdata_processor
-```
+至少应检查：
 
-### 5. 更新文档
+- 页面结构是否清楚
+- 标题层级是否合理
+- 链接是否可达
+- 中英文页面结构是否一致
 
-如果您的更改影响 API 或添加新功能，请更新相关文档文件。
+### 5. 发起 Pull Request
 
-### 6. 提交更改
+建议在拉取请求中说明：
 
-```bash
-git add .
-git commit -m "feat: add new feature description"
-```
+- 改了什么
+- 为什么要改
+- 影响了哪些页面
+- 如果涉及版式变化，可附上截图
 
-使用约定式提交格式：
-- `feat:` 表示新功能
-- `fix:` 表示错误修复
-- `docs:` 表示文档更改
-- `test:` 表示测试相关更改
-{: .tight-list}
+## 写作要求
 
-### 7. 创建拉取请求
+文档贡献建议遵循以下原则：
 
-推送您的分支并在 GitHub 上创建拉取请求。包括：
-- 更改的清晰描述
-- 相关问题的引用
-- 如果是 UI 更改，请提供截图
-- 测试结果
-{: .tight-list}
+- 优先面向外部读者写作
+- 优先使用产品视角解释，而不是内部缩写表达
+- 中英文同时存在时，尽量保持章节结构一致
+- 不要把过时的内部路径、脚本名或临时材料直接写入公开页面
 
-## 代码标准
+## 推荐切入点
 
-### Python 样式
+如果你想从较清晰的任务开始，通常可以优先关注：
 
-我们遵循 PEP 8 及一些修改：
-- 行长度：88 个字符 (Black 默认)
-- 字符串使用双引号
-- 字符串格式化使用 f-string
-{: .tight-list}
+- 内容偏薄的参考页
+- 术语表补充
+- 可直接运行的示例页
+- 路线图和更新日志的表述优化
+- 中英文不一致的问题
 
-### 测试
+## 需要帮助时
 
-- 为所有新函数编写单元测试
-- 目标代码覆盖率 >90%
-- 使用描述性的测试名称
-- 测试边界情况和错误条件
-{: .tight-list}
+如果你发现文档问题或有改进建议，建议直接通过当前文档仓库的 Issue 或 Pull Request 讨论提出。
 
-### 文档
+## 相关页面
 
-- 使用 Google 风格的文档字符串
-- 保持 README 更新
-- 记录破坏性更改
-{: .tight-list}
-
-## 插件开发
-
-### 插件结构
-
-```python
-from porosdata_processor.plugins.base import BasePlugin
-
-class MyCustomPlugin(BasePlugin):
-    """插件描述。"""
-
-    def __init__(self, config=None):
-        super().__init__(config)
-
-    def process(self, text: str) -> str:
-        """处理输入文本。"""
-        # 实现代码
-        return processed_text
-
-    def validate_config(self):
-        """验证插件配置。"""
-        # 验证逻辑
-        pass
-```
-
-### 插件注册
-
-在 `porosdata_processor/plugins/__init__.py` 中注册您的插件：
-{: .section-intro}
-
-```python
-from .my_plugin import MyCustomPlugin
-
-__all__ = ['MyCustomPlugin']
-```
-
-## 获取帮助
-
-- **讨论**: 在 [GitHub Discussions](https://github.com/KiventYip/porosdata-processor/discussions) 中提问
-- **问题**: 通过 [GitHub Issues](https://github.com/KiventYip/porosdata-processor/issues) 报告错误或请求功能
-- **Discord**: 加入我们的社区 Discord 服务器
-{: .tight-list}
-
-## 认可
-
-贡献者将：
-- 在 CONTRIBUTORS.md 中列出
-- 在发布说明中提及
-- 对于重大贡献，邀请加入核心团队
-{: .tight-list}
+- [首页](../index.md)
+- [路线图](roadmap.md)
+- [更新日志](changelog.md)

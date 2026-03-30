@@ -1,161 +1,88 @@
-# Contributing to PorosData
+# Contributing to PorosData Documentation
 
-We welcome contributions from the community! This guide will help you get started with contributing to the PorosData project.
+This page explains how to contribute to the `PorosData-doc` documentation site.
 {: .lead}
 
-## Development Setup
+If you want to improve runtime code or processing behavior, you may need to contribute to a separate code repository. This page is specifically for documentation work in this repository.
 
-### Prerequisites
+## What You Can Contribute
 
-- Python 3.8+
-- Git
-- Virtual environment (recommended)
-{: .tight-list}
+External contributors are welcome to help with:
 
-### Clone and Setup
+- wording and clarity improvements
+- broken links or navigation issues
+- missing examples or reference details
+- bilingual consistency between English and Chinese pages
+- structure and readability fixes for external readers
+
+## Minimal Documentation Workflow
+
+### 1. Clone the Documentation Repository
 
 ```bash
-git clone https://github.com/KiventYip/porosdata-processor.git
-cd porosdata-processor
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -e .[dev]
+git clone https://github.com/KiventYip/PorosData-doc.git
+cd PorosData-doc
 ```
-
-## Development Workflow
-
-### 1. Choose an Issue
-
-Visit our [GitHub Issues](https://github.com/KiventYip/porosdata-processor/issues) page and pick an issue to work on. Look for issues labeled `good first issue` if you're new to the project.
 
 ### 2. Create a Branch
 
 ```bash
-git checkout -b feature/your-feature-name
-# or
-git checkout -b fix/issue-number-description
+git checkout -b docs/your-change-name
 ```
 
-### 3. Make Changes
+### 3. Edit the Documentation
 
-Follow our coding standards:
-- Use type hints
-- Write comprehensive tests
-- Update documentation
-- Follow PEP 8 style guidelines
-{: .tight-list}
+Typical changes include:
 
-### 4. Run Tests
+- revising `.md` files under `docs/`
+- improving wording in both English and Chinese pages
+- updating links among guide, reference, and research pages
 
-```bash
-# Run all tests
-pytest
+### 4. Preview Before You Submit
 
-# Run specific test file
-pytest tests/test_specific_feature.py
+If your local environment is ready, use a local preview workflow for this documentation site before opening a pull request.
 
-# Run with coverage
-pytest --cov=porosdata_processor
-```
+At minimum, check:
 
-### 5. Update Documentation
+- page structure
+- heading order
+- link targets
+- English and Chinese page alignment
 
-If your changes affect the API or add new features, update the relevant documentation files.
+### 5. Submit a Pull Request
 
-### 6. Commit Changes
+Your pull request should include:
 
-```bash
-git add .
-git commit -m "feat: add new feature description"
-```
+- a short summary of what changed
+- why the change is needed
+- the pages affected
+- screenshots when layout or rendering is involved
 
-Use conventional commit format:
-- `feat:` for new features
-- `fix:` for bug fixes
-- `docs:` for documentation changes
-- `test:` for test-related changes
-{: .tight-list}
+## Writing Expectations
 
-### 7. Create Pull Request
+Documentation contributions should follow these expectations:
 
-Push your branch and create a pull request on GitHub. Include:
-- Clear description of changes
-- Reference to related issues
-- Screenshots if UI changes
-- Test results
-{: .tight-list}
+- write for external readers first
+- prefer product-facing explanations over internal shorthand
+- keep English and Chinese page structures aligned when both exist
+- avoid exposing outdated internal paths, scripts, or temporary materials in public pages
 
-## Code Standards
+## Suggested Contribution Areas
 
-### Python Style
+If you are looking for a good first contribution, these areas usually provide clear value:
 
-We follow PEP 8 with some modifications:
-- Line length: 88 characters (Black default)
-- Use double quotes for strings
-- Use f-strings for string formatting
-{: .tight-list}
+- filling thin reference pages
+- improving glossary entries
+- adding runnable examples
+- tightening roadmap and changelog wording
+- fixing bilingual mismatches
 
-### Testing
+## Need Help
 
-- Write unit tests for all new functions
-- Aim for >90% code coverage
-- Use descriptive test names
-- Test edge cases and error conditions
-{: .tight-list}
+For documentation issues or suggestions, use the repository issue tracker or pull request discussion in the documentation repository.
 
-### Documentation
+## Related Reading
 
-- Use Google-style docstrings
-- Keep README updated
-- Document breaking changes
-{: .tight-list}
-
-## Plugin Development
-
-### Plugin Structure
-
-```python
-from porosdata_processor.plugins.base import BasePlugin
-
-class MyCustomPlugin(BasePlugin):
-    """Plugin description."""
-
-    def __init__(self, config=None):
-        super().__init__(config)
-
-    def process(self, text: str) -> str:
-        """Process the input text."""
-        # Implementation here
-        return processed_text
-
-    def validate_config(self):
-        """Validate plugin configuration."""
-        # Validation logic here
-        pass
-```
-
-### Plugin Registration
-
-Register your plugin in `porosdata_processor/plugins/__init__.py`:
-{: .section-intro}
-
-```python
-from .my_plugin import MyCustomPlugin
-
-__all__ = ['MyCustomPlugin']
-```
-
-## Getting Help
-
-- **Discussions**: Use [GitHub Discussions](https://github.com/KiventYip/porosdata-processor/discussions) for questions
-- **Issues**: Report bugs or request features via [GitHub Issues](https://github.com/KiventYip/porosdata-processor/issues)
-- **Discord**: Join our community Discord server
-{: .tight-list}
-
-## Recognition
-
-Contributors will be:
-- Listed in CONTRIBUTORS.md
-- Mentioned in release notes
-- Invited to join the core team for significant contributions
-{: .tight-list}
+- [Home](../index.md)
+- [Roadmap](roadmap.md)
+- [Changelog](changelog.md)

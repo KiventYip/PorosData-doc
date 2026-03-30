@@ -108,3 +108,33 @@ Third, multimodal assets must be anchorable. Important information in scientific
 | OCR model selection | Medium to high | High | High for academic PDFs | Restore structural content such as formulas and tables |
 | Small-model finetuning | High | Very high | Very high with semantic context | Final semantic-level correction |
 
+## Current Limits
+
+Even under a layered processing strategy, some questions remain unresolved:
+
+- how to repair difficult formulas without over-correcting them
+- how to keep terminology dictionaries broad enough without making them too expensive to maintain
+- how to preserve stable anchors across different parser outputs
+- how to balance throughput, precision, and review cost in large delivery batches
+
+## Further Reading
+
+- [Research Review](research-review.md)
+- [Processor](../tools/processor/index.md)
+- [Designer](../tools/designer/index.md)
+
+## Current Limits
+
+Even under a layered processing strategy, some questions remain unresolved:
+
+- how to repair difficult formulas without over-correcting them
+- how to keep terminology dictionaries broad enough without making them too expensive to maintain
+- how to preserve stable anchors across different parser outputs
+- how to balance throughput, precision, and review cost in large delivery batches
+
+## Further Reading
+
+- [Research Review](research-review.md)
+- [Processor](../tools/processor/index.md)
+- [Designer](../tools/designer/index.md)
+

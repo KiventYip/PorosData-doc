@@ -1,7 +1,6 @@
 ---
 hide:
   - toc
-{: .tight-list}
 ---
 
 # PorosData

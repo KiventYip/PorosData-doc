@@ -4,7 +4,6 @@ author: KiventYip
 date: 2024-03-09
 hide:
   - toc
-{: .tight-list}
 ---
 
 !!! abstract "Research Note"

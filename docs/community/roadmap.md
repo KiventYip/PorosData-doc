@@ -1,91 +1,20 @@
 # Roadmap
 
-This page explains the PorosData roadmap from an external delivery perspective. It focuses on two questions:
+This roadmap is written for **external delivery and adoption**: what already ships, how the delivery package is expected to grow, and who the narrative is for.
 {: .lead}
 
-- what the product can already deliver today
-- how the final delivery package will be expanded over time
-{: .tight-list}
+PorosData is organised as **one continuous chain** — preserve sources, stabilise text, then export structured and multimodal views:
 
-## Product Framework
+| Module | Role today | Principal outputs |
+|--------|------------|-------------------|
+| Parser | Ingest papers and parser artefacts | Text blocks, images, basic metadata |
+| Processor | Raise content quality | Cleaned intermediates, reports, stable inputs for the next stage |
+| Designer | Produce delivery layouts | Full-text views, structured JSON, multimodal indexes |
 
-PorosData is organized around one continuous delivery chain:
-{: .section-intro}
+The **target package** remains consistent across phases: a per-document result tree, plain-text streams for training preparation, structured artefacts for extraction and storage, multimodal indexes that preserve text–figure links, and reporting for review and traceability.
 
-| Module | Current Role | Main Output |
-|------|------|------|
-| `Parser` | receives raw papers and upstream parser results | reusable text blocks, image assets, and basic metadata |
-| `Processor` | prepares content quality | cleaned intermediate outputs, processing reports, stable inputs |
-| `Designer` | builds delivery-ready structure | full-text outputs, structured JSON, multimodal indexes |
+**Delivery phases (intent, not a dated contract)** — **Current focus:** end-to-end batch paths, the `raw -> processed -> structured` layout, core full-text / datamining / multimodal groups, baseline audit and reporting, and an iterative loop of process → review → adjust → re-run. **Near term:** tighter consistency for terms, units, citations, and section layout; better behaviour on long documents, heavy formulas, and large batches; richer external-facing guides; stronger figure–text review; gradual formalisation of suspicious-pattern feedback into rules. **Longer term:** clearer acceptance standards for batch delivery, one coherent model across all output views, dependable reuse for training and retrieval, and improved project-level tracking and iteration.
 
-These layers are designed to work together as one delivery system: preserve the source package, stabilize content quality, and then organize the final outputs.
+**Audience** — teams building scientific literature datasets, engineering groups preparing corpora, application teams doing extraction or semantic retrieval, and product or data roles that need **reviewable** handoffs rather than opaque dumps.
 
-## Final Delivery Package
-
-The target delivery package includes:
-{: .section-intro}
-
-- a result directory organized by document ID
-- plain-text outputs for training preparation
-- structured outputs for extraction, retrieval, and storage
-- multimodal indexes that keep text and image references connected
-- reports that support review and traceability
-{: .tight-list}
-
-## Delivery Timeline
-
-### Phase 1: Current Deliverables
-
-The current stage focuses on making the full pipeline operational for batch use:
-{: .section-intro}
-
-- end-to-end processing from raw literature to final delivery directories
-- three core output groups: full-text, structured results, and multimodal indexes
-- a standard `raw -> processed -> structured` directory model
-- baseline audit, validation, and batch reporting support
-- an early delivery loop of process -> review -> correction -> rerun
-{: .tight-list}
-
-### Phase 2: Near-Term Improvements
-
-The near-term goal is to make outputs more stable and easier to adopt in production projects:
-{: .section-intro}
-
-- further unify terms, units, citations, and section organization
-- improve stability for long documents, complex formulas, and larger batch jobs
-- expand deployment guides, usage guides, and result interpretation documents for external users
-- strengthen figure-text linking and review workflows
-- gradually formalize suspicious-pattern feedback and rule updates
-{: .tight-list}
-
-### Phase 3: Final Product Shape
-
-The final goal is a more complete scientific document delivery product:
-{: .section-intro}
-
-- clearer standards for batch delivery and result acceptance
-- one consistent delivery model across full-text, structured, and multimodal outputs
-- stable reuse of outputs for training, extraction, retrieval, and storage
-- better project-level tracking, review, and iterative improvement
-{: .tight-list}
-
-## Who This Roadmap Serves
-
-This roadmap is mainly intended for:
-{: .section-intro}
-
-- project teams preparing scientific literature datasets
-- engineering teams building training corpora
-- application teams working on structured extraction and semantic retrieval
-- product or data teams that need reviewable delivery outputs
-{: .tight-list}
-
-## Quick Links
-
-If you want to continue from the roadmap into concrete usage material, start with these pages.
-{: .section-intro}
-
-- [Home](../index.md)
-- [Quick Start](../get_started/quickstart.md)
-- [End-to-End Workflow](../get_started/end-to-end-workflow.md)
-{: .tight-list}
+**Continue from here:** [Home](../index.md) · [Quick Start](../get_started/quickstart.md) · [End-to-End Workflow](../get_started/end-to-end-workflow.md)

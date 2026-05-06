@@ -6,6 +6,8 @@ build:
   os: ubuntu-22.04
   tools:
     python: "3.11"
+  apt_packages:
+    - pngquant
 
 # MkDocs 配置 - 明确指定使用 MkDocs
 mkdocs:

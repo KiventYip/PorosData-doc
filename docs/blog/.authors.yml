@@ -1,0 +1,11 @@
+authors:
+  porosdata:
+    name: PorosData Team
+    description: Project maintainers
+    avatar: assets/images/author-avatar-default.svg
+    url: https://github.com/KiventYip/PorosData-doc
+  kiventyip:
+    name: Kivent Yip
+    description: PorosData maintainer and technical writing
+    avatar: assets/images/author-avatar-default.svg
+    url: https://github.com/KiventYip

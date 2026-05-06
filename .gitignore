@@ -1,6 +1,12 @@
 # MkDocs documentation
 site/
 
+# MkDocs / Material plugin caches
+.cache/
+
+# Cursor IDE local config (rules, skills, plans)
+.cursor/
+
 # Python
 __pycache__/
 *.pyc
@@ -29,7 +35,6 @@ Thumbs.db
 .Spotlight-V100
 .Trashes
 ehthumbs.db
-Thumbs.db
 
 # Temporary files
 *.tmp
@@ -41,7 +46,6 @@ node_modules/
 npm-debug.log*
 
 # Distribution / packaging
-.Python
 build/
 develop-eggs/
 dist/

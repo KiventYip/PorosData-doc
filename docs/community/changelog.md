@@ -1,43 +1,18 @@
 # Changelog
 
-This page records externally visible documentation and delivery milestones for PorosData. It is intended for readers who want to track how the product-facing guidance evolves over time.
+This log records **documentation and delivery-facing milestones** for PorosData: changes that affect how external readers understand scope, workflow, or outputs. Internal experiments stay out unless they alter public guidance.
 {: .lead}
 
-## Change Policy
+**What belongs here** — updates to site structure, recommended workflows, how deliveries should be interpreted, or major additions to user-facing guides. Ephemeral internal notes and historical audit-only material are omitted unless they change what the public docs assert.
 
-This page focuses on changes that affect external understanding or delivery usage, such as:
+**2026-05 — Documentation tree and URL realignment** — Markdown sources now sit in product folders under `docs/parser/`, `docs/processor/`, `docs/designer/`, together with expanded `docs/get_started/` (including [Examples](../get_started/examples.md)) and `docs/community/` ([Glossary](../community/glossary.md), [API Reference](../community/api-reference.md), [Design Philosophy](../community/design-philosophy.md), …). Legacy URL prefixes such as `/concepts/`, `/references/`, `/tools/`, and `/research/` are **not** published; refresh bookmarks and inbound links. Overlapping prose was trimmed while preserving contractual facts. Long-form research narrative remains on the [Blog index](../blog/index.md).
 
-- documentation structure updates
-- changes in recommended workflow
-- changes in delivery scope or output interpretation
-- major additions to externally relevant guides
+**2026-05 — Top-level navigation restructure** — Sidebar moved from abstract categories (**Tools** / **Concepts** / **Reference**) to a workflow order: **Home → Getting Started → PorosData-Parser → PorosData-Processor → PorosData-Designer → Community → Blog**. Introduced [PorosData-Parser overview](../parser/index.md); grouped Examples with Getting Started and reference-style pages with Community. Physical paths were later aligned with this model (see **Documentation tree and URL realignment**).
 
-Internal experiments, temporary notes, and historical audit artifacts are not listed here unless they change the public guidance.
+**2026-05 — Concepts consolidation and tool depth** — Internal `archive/` material was folded into the live site. Notable additions include [Dataset layout](../parser/dataset-layout.md), [Delivery standards](../designer/delivery-standards.md), [Data governance](../processor/data-governance.md); expanded [Processor](../processor/index.md) (architecture, workers, formula repair zones, token-evaluation strategy); expanded [Designer](../designer/index.md) (layout, CLI, deployment, full-text contract, section wrapping); and [Examples](../get_started/examples.md) with a fine-tuning primer. Retired mirror files and duplicate language copies are not republished; history remains in Git for traceability.
 
-## Current Documentation Milestone
+**2026-03 — Documentation refresh** — Home and overview rewritten from a delivery perspective; roles of Parser, Processor, and Designer clarified; roadmap added; placeholders replaced with installation, glossary, examples, and this changelog; vocabulary aligned around training preparation, extraction, and packaged outputs.
 
-### 2026-03 Documentation Refresh
+**How to use this page** — New readers should still begin at [Home](../index.md) and [Quick Start](../get_started/quickstart.md); return here when you need a concise record of how **published guidance** has moved.
 
-The current documentation set has been updated to provide a clearer external view of the product:
-
-- rewritten home and overview pages from a delivery perspective
-- clarified the roles of `Parser`, `Processor`, and `Designer`
-- added a product-facing roadmap with delivery phases and framework
-- replaced placeholder pages with installation, glossary, examples, and changelog content
-- aligned wording around training preparation, structured extraction, and delivery outputs
-
-## How to Read This Page
-
-If you are new to the project:
-
-1. start from [Home](../index.md)
-2. continue with [Quick Start](../get_started/quickstart.md)
-3. use this page later to track documentation-level changes
-
-If you are returning to the project after a gap, this page can help you quickly identify what changed in the public guidance.
-
-## Quick Links
-
-- [Home](../index.md)
-- [Quick Start](../get_started/quickstart.md)
-{: .tight-list}
+**Links:** [Home](../index.md) · [Quick Start](../get_started/quickstart.md)

@@ -1,21 +1,15 @@
 # Installation
 
-Install PorosData in the way that best fits your workflow: quick local evaluation, source-based development, or long-running server execution.
+Choose an install path that matches how you intend to use PorosData: a quick check from PyPI, a source checkout for development, or a server-style batch environment.
 {: .lead}
 
-## Recommended Method
-
-For most users, start with the published package:
+**PyPI (recommended for most users)** — install the published package to confirm behaviour and run small experiments:
 
 ```bash
 pip install porosdata-processor
 ```
 
-This is the fastest way to verify the basic text-processing capability and run small local tests.
-
-## Install from Source
-
-If you need to inspect the codebase, adjust processing behavior, or test local changes, install from source:
+**Source checkout** — use when you need to read or change implementation details, or to test unpublished fixes:
 
 ```bash
 git clone https://github.com/KiventYip/porosdata-processor.git
@@ -23,49 +17,21 @@ cd porosdata-processor
 pip install -e .
 ```
 
-For development environments, you can install the extended dependency set if it is available in the repository configuration.
+If the repository documents an optional “full” or development extra, install it in the same environment when you run tests or CI locally.
 
-## Environment Notes
+**Environment** — use Python 3.8 or newer, preferably inside a virtual environment with enough disk space for raw, intermediate, and structured outputs. For sustained batch work, Linux on SSD or NVMe is usually more predictable than a laptop disk under heavy I/O.
 
-Before installation, make sure the environment meets these basic requirements:
-
-- Python `3.8+`
-- a writable local environment or virtual environment
-- enough disk space for raw, processed, and structured outputs
-
-For larger batch projects, Linux plus SSD or NVMe storage is recommended.
-
-## Verify the Installation
-
-After installation, confirm that the package is available:
+**Sanity checks** — after install, confirm the package imports and, if you rely on the CLI, that the module entry responds:
 
 ```python
 import porosdata_processor
 print(porosdata_processor.__version__)
 ```
 
-If you plan to run batch jobs, also verify the command-line entry:
-
 ```bash
 python -m porosdata_processor --help
 ```
 
-## What to Prepare Next
+**Before the first real run** — line up (1) source documents or parser artefacts, (2) a writable output root, and (3) a small sample you can reprocess until results look stable.
 
-After installation, prepare three things before your first run:
-
-1. raw source documents or upstream parser results
-2. a target output location for processed results
-3. a small validation sample before launching a full batch
-
-## Recommended Next Steps
-
-- Continue with [Quick Start](quickstart.md)
-- Review the [End-to-End Workflow](end-to-end-workflow.md)
-- See [Examples](../references/examples.md) for common usage patterns
-
-## Quick Links
-
-- [Home](../index.md)
-- [Quick Start](../get_started/quickstart.md)
-{: .tight-list}
+**Next:** [Quick Start](quickstart.md) · [End-to-End Workflow](end-to-end-workflow.md) · [Examples](examples.md) · [Home](../index.md)

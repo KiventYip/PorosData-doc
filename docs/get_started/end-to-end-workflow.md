@@ -1,70 +1,34 @@
 # PorosData Workflow: From Raw Papers to Final Deliverables
 
-This page explains how PorosData turns scientific literature into outputs that are ready for training, structured extraction, retrieval, and human review. The focus here is the delivery path, not a single code example.
+This page describes the **delivery path** from literature inputs to packages suitable for training, structured extraction, retrieval, and review. It complements step-by-step commands on other pages by keeping the focus on stages, directories, and what to inspect.
 {: .lead}
 
-## Pipeline Overview
+**Pipeline in one line** — raw sources and parser output are stabilised by the processor, then shaped into delivery views by the designer:
 
 ```text
 Raw Literature -> Parser -> Processor -> Designer -> Final Delivery Package
 ```
-{: .section-intro}
 
-| Stage | Main Task | Output |
-|------|------|------|
-| `Parser` | Extract text blocks, figures, captions, and basic metadata | Reusable raw content and image assets |
-| `Processor` | Remove noise, repair fragmentation, and normalize expressions | Quality-ready intermediate results and reports |
-| `Designer` | Organize sections and export structured views and indexes | Full-text outputs, structured JSON, and multimodal assets |
+| Stage | Primary work | What you get |
+|-------|----------------|---------------|
+| Parser | Extract blocks, figures, captions, light metadata | Reusable raw text and image assets |
+| Processor | Remove noise, repair fragmentation, normalise expressions | Intermediate results and batch reports under `processed/` |
+| Designer | Organise sections and export views | Full-text, structured JSON, and multimodal indexes under `structured/` |
 
-## Input and Output Layout
-
-PorosData works best with a three-layer directory structure:
-{: .section-intro}
+**Directory contract** — PorosData assumes a three-layer tree; the usual flow is `raw -> processed -> structured`:
 
 ```text
 data/
-├── raw/          # upstream parser results
-├── processed/    # cleaned intermediate results
+├── raw/          # upstream parser packages
+├── processed/    # cleaned intermediates
 └── structured/   # final delivery package
 ```
 
-The standard data flow is `raw -> processed -> structured`.
+**`raw/`** holds the upstream bundle per document: PDFs, parser-generated Markdown or lists, page-level intermediates, and extracted images. The layer is for **traceability and re-run**, not for handing off as final product.
 
-## Stage 1: Raw Inputs in `raw`
+**`processed/`** is where the processor writes cleaned `*_content_list.json`, mirrored images where configured, and a batch summary such as `processing_report.json`. Typical repairs address broken numerals and units, corrupted terms, noisy captions or footnotes, and unstable citation or formula boundaries.
 
-The `raw` layer keeps the upstream source package intact. Typical contents include:
-{: .section-intro}
-
-- Original PDF files
-- Parser-generated Markdown or content lists
-- Page-level intermediate files
-- Extracted image assets
-{: .tight-list}
-
-This layer is preserved for traceability and review rather than for direct downstream delivery.
-
-## Stage 2: `Processor` Builds `processed`
-
-`Processor` turns raw parser results into stable intermediate inputs. Typical issues handled at this stage include:
-{: .section-intro}
-
-- Numbers, decimal points, and units broken by spacing noise
-- Fragmented or corrupted terms, material names, and chemical expressions
-- Noisy captions, table titles, and footnotes
-- Long text blocks polluted by control characters or formatting artifacts
-{: .tight-list}
-
-Standard outputs at this stage usually include:
-
-- Cleaned `*_content_list.json`
-- Reusable copies of image assets
-- A processing report such as `processing_report.json`
-{: .tight-list}
-
-## Stage 3: `Designer` Builds `structured`
-
-`Designer` converts quality-ready inputs into final delivery outputs. A typical result layout is:
-{: .section-intro}
+**`structured/`** is the designer output. A common shape is:
 
 ```text
 data/structured/
@@ -73,49 +37,16 @@ data/structured/
 └── multimodal/
 ```
 
-These three output groups serve different downstream needs:
+| Directory | Role | Typical files |
+|-----------|------|----------------|
+| `full_text/` | Reading, review, structure-aware training | `_structured.json`, `_structured.txt` |
+| `datamining/` | Extraction and retrieval | `_datamining.json` |
+| `multimodal/` | Figure–text linkage | `_index.json`, `fig_*.md`, `assets/` |
 
-| Directory | Purpose | Common Files |
-|------|------|------|
-| `full_text/` | Readable and reviewable full-text delivery | `_structured.json`, `_structured.txt` |
-| `datamining/` | Extraction-ready and retrieval-ready structured outputs | `_datamining.json` |
-| `multimodal/` | Indexed image assets linked back to the text | `_index.json`, `fig_*.md`, `assets/` |
+**What a completed run should provide** — per-document folders under `structured/`, plain-text streams where configured, structured JSON for mining, multimodal indexes that resolve figure mentions to assets, and reports that support batch review and traceability.
 
-## What Users Receive
+**How to review results efficiently** — (1) confirm `raw/` is complete for each `doc_id`, (2) read `processing_report.json` and spot-check `processed/` for regressions, (3) open the appropriate subtree under `structured/` for your downstream task (reading vs mining vs multimodal).
 
-After a standard run, users typically receive:
-{: .section-intro}
+**Typical motivations** — high-quality training text, stable inputs for rule-based or learned extraction, explicit links between body text and figures, and a single package shape for storage or knowledge organisation.
 
-1. A delivery directory organized by document ID
-2. Plain-text outputs suitable for training use
-3. Structured outputs suitable for extraction and retrieval
-4. Multimodal indexes that connect text references to image assets
-5. Reports that support batch review and delivery tracking
-{: .tight-list}
-
-## Recommended Reading Order
-
-For batch projects, the easiest way to review results is:
-{: .section-intro}
-
-1. Start with `raw/` and confirm the source package is complete
-2. Check `processed/` and its report to confirm the cleaning stage completed cleanly
-3. Open `structured/` and choose the full-text, structured, or multimodal outputs based on your downstream task
-{: .tight-list}
-
-## Typical Use Cases
-
-- Prepare high-quality text for training workflows
-- Provide stable inputs for structured extraction
-- Create indexable links between figures and body text
-- Deliver one consistent package for database building and knowledge organization
-{: .tight-list}
-
-## Related Reading
-
-- [Installation](installation.md)
-- [Quick Start](quickstart.md)
-- [Examples](../references/examples.md)
-- [Processor](../tools/processor/index.md)
-- [Designer](../tools/designer/index.md)
-{: .tight-list}
+**Related:** [Installation](installation.md) · [Quick Start](quickstart.md) · [Examples](examples.md) · [Parser](../parser/index.md) · [Processor](../processor/index.md) · [Designer](../designer/index.md)

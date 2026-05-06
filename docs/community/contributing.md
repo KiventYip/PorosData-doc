@@ -1,88 +1,48 @@
 # Contributing to PorosData Documentation
 
-This page explains how to contribute to the `PorosData-doc` documentation site.
+This page describes how to contribute to the `PorosData-doc` site: prose, structure, navigation, and examples in this repository only.
 {: .lead}
 
-If you want to improve runtime code or processing behavior, you may need to contribute to a separate code repository. This page is specifically for documentation work in this repository.
+Changes to runtime behaviour or processing code usually belong in another repository; restrict pull requests here to documentation and site configuration.
 
-## What You Can Contribute
+## What we welcome
 
-External contributors are welcome to help with:
+Contributions that improve the experience of external readers are especially valuable: clearer wording, fixed or updated internal links, missing examples or reference detail, more consistent structure across English pages, and corrections to navigation or cross-references.
 
-- wording and clarity improvements
-- broken links or navigation issues
-- missing examples or reference details
-- bilingual consistency between English and Chinese pages
-- structure and readability fixes for external readers
+## Contribution workflow
 
-## Minimal Documentation Workflow
-
-### 1. Clone the Documentation Repository
+**1. Clone and enter the repository**
 
 ```bash
 git clone https://github.com/KiventYip/PorosData-doc.git
 cd PorosData-doc
 ```
 
-### 2. Create a Branch
+**2. Use a dedicated branch**
 
 ```bash
 git checkout -b docs/your-change-name
 ```
 
-### 3. Edit the Documentation
+**3. Edit sources under `docs/`**  
+Revise Markdown, tighten links between guides and reference material, and keep filenames and paths aligned with `mkdocs.yml`.
 
-Typical changes include:
+**4. Preview locally**  
+Before opening a pull request, build or serve the site in your environment and check heading hierarchy, link targets, and whether new pages appear correctly in the nav.
 
-- revising `.md` files under `docs/`
-- improving wording in both English and Chinese pages
-- updating links among guide, reference, and research pages
+**5. Open a pull request**  
+Include a concise summary, the reason for the change, the paths affected, and screenshots if layout or theme behaviour changes.
 
-### 4. Preview Before You Submit
+## Style and substance
 
-If your local environment is ready, use a local preview workflow for this documentation site before opening a pull request.
+Write for someone encountering the project without insider context; prefer stable, product-facing language over temporary internal names. Keep section structure predictable so readers and search can rely on headings, and avoid publishing obsolete scripts, private paths, or draft-only material on public pages.
 
-At minimum, check:
+## Good first tasks
 
-- page structure
-- heading order
-- link targets
-- English and Chinese page alignment
+Thin reference pages, glossary entries, runnable examples, tighter roadmap and changelog wording, and repair of stale cross-references all tend to merge cleanly and help readers immediately.
 
-### 5. Submit a Pull Request
+## Support
 
-Your pull request should include:
+Raise documentation issues or suggestions via the repository issue tracker or the discussion on your pull request.
 
-- a short summary of what changed
-- why the change is needed
-- the pages affected
-- screenshots when layout or rendering is involved
-
-## Writing Expectations
-
-Documentation contributions should follow these expectations:
-
-- write for external readers first
-- prefer product-facing explanations over internal shorthand
-- keep English and Chinese page structures aligned when both exist
-- avoid exposing outdated internal paths, scripts, or temporary materials in public pages
-
-## Suggested Contribution Areas
-
-If you are looking for a good first contribution, these areas usually provide clear value:
-
-- filling thin reference pages
-- improving glossary entries
-- adding runnable examples
-- tightening roadmap and changelog wording
-- fixing bilingual mismatches
-
-## Need Help
-
-For documentation issues or suggestions, use the repository issue tracker or pull request discussion in the documentation repository.
-
-## Related Reading
-
-- [Home](../index.md)
-- [Roadmap](roadmap.md)
-- [Changelog](changelog.md)
+**Related pages:** [Home](../index.md) · [Roadmap](roadmap.md) · [Changelog](changelog.md)

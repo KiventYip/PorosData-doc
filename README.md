@@ -4,61 +4,39 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Documentation Status](https://readthedocs.org/projects/porosdata-doc/badge/?version=latest)](https://porosdata-doc.readthedocs.io/en/latest/)
 
-**PorosData** is a comprehensive scientific data processing suite for AI for Science applications. Our ecosystem includes:
+**PorosData** is a scientific data-processing stack aimed at AI-for-science workflows. The ecosystem currently centres on:
 
-- **PorosData-Parser**: High-quality parsing for PDF, HTML, and scientific documents
-- **PorosData-Processor**: Intelligent text cleaning with LaTeX protection and academic standardization
-- **PorosData-Designer**: Data annotation, fine-tuning, and training data generation
+- **PorosData-Parser** — parsing for PDF, HTML, and scientific documents  
+- **PorosData-Processor** — text cleaning with LaTeX-aware handling and academic normalisation  
+- **PorosData-Designer** — annotation, fine-tuning support, and training-data preparation  
 
-## 📖 Documentation
+The published manual lives at [porosdata-doc.readthedocs.io](https://porosdata-doc.readthedocs.io/en/latest/).
 
-Complete documentation is available at: [https://porosdata-doc.readthedocs.io/en/latest/](https://porosdata-doc.readthedocs.io/en/latest/)
+## Local setup and preview
 
-## 🚀 Quick Start
+Read the [Installation Guide](docs/get_started/installation.md) and [Quick Start](docs/get_started/quickstart.md) for content-oriented onboarding.
 
-Please refer to the [Installation Guide](docs/get_started/installation.md) and [Quick Start](docs/get_started/quickstart.md).
+Install **all** dependencies from the repository root into the **same** Python environment you use for `mkdocs serve` or `mkdocs build`; a split environment commonly surfaces errors such as a missing `rss` plugin.
 
-## 🏗️ Documentation Repository Structure
+```bash
+pip install -r requirements.txt
+```
 
-This guide explains the MkDocs-based documentation repository architecture, helping contributors understand file responsibilities and modification workflows.
+## Repository layout
 
-### 🗺️ File System Mapping
+| Path | Role |
+|------|------|
+| `docs/` | Authoritative Markdown sources (`*.md`) |
+| `docs/assets/` | Styles, scripts, images (e.g. `custom.css`, `mathjax.js`, branding) |
+| `mkdocs.yml` | Theme, plugins, and navigation; includes `mkdocs-static-i18n` for Material blog integration |
+| `site/` | Generated output (do not edit by hand) |
 
-| Path | Responsibility | Key Files |
-|------|----------------|-----------|
-| `docs/` | **Content Root** - All documentation source files | `*.md`, `*.zh.md`, `index.md` |
-| `docs/assets/` | **Assets Layer** - CSS, JS, images, and custom resources | `custom.css`, `mathjax.js`, `logo.png`, `DESIGN.jpg` |
-| `mkdocs.yml` | **Configuration Engine** - Controls themes, extensions, navigation, and i18n | MkDocs settings, material config |
-| `site/` | **Output Layer** - Generated HTML (auto-created, don't edit) | `html/` output |
+**Adding a page:** create the `.md` file under `docs/`, register it in the `nav` section of `mkdocs.yml`, then run `python build_clean.py serve` (or `mkdocs serve`) to confirm navigation and rendering.
 
-### ✍️ Developer Modification Guide
+**Adjusting appearance:** edit `docs/assets/stylesheets/custom.css` and ensure that file remains listed under `extra_css` in `mkdocs.yml`.
 
-#### **Scenario A: Adding New Documentation**
-- **Create**: New `.md` file in appropriate directory (e.g., `docs/tools/parser/index.md`)
-- **Register**: Add to `mkdocs.yml` under the `nav` section
-- **Build**: Run `python build_clean.py serve` to verify navigation and preview locally
+**Day-to-day workflow:** content changes reload with the dev server; structural edits to `mkdocs.yml` may require a restart. Running `python build_clean.py serve` before you commit helps catch formatting and plugin issues early.
 
-#### **Scenario B: Modifying Theme Styling**
-- **Edit**: `docs/assets/stylesheets/custom.css` for color, font, and layout changes
-- **Register**: Ensure `custom.css` is listed in `mkdocs.yml` `extra_css` array
-- **Apply**: Changes take effect immediately via live reload
+## Contributing and licence
 
-#### **Scenario C: Multi-language Support (i18n)**
-- **Create Translation**: For `file.md`, create a sibling file `file.zh.md`
-- **Link Rule**: All internal links in BOTH `.md` and `.zh.md` MUST point to the base `.md` format. The i18n plugin handles the routing automatically.
-
-### 🔧 Quick Workflow Reference
-
-1. **Content Changes**: Edit `.md` files → live reload handles it → commit
-2. **Style Changes**: Edit `custom.css` → live reload handles it → commit
-3. **Structure Changes**: Edit `mkdocs.yml` → restart server if necessary → commit
-
-**Pro Tip**: Always run `python build_clean.py serve` locally before committing to catch formatting errors early!
-
-## 🤝 Contributing
-
-We welcome contributions! Please read our [Contributing Guide](docs/community/contributing.md).
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Contributions are welcome; see [docs/community/contributing.md](docs/community/contributing.md). This project is released under the MIT Licence — refer to [LICENSE](LICENSE) for the full text.

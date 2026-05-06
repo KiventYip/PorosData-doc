@@ -1,28 +1,25 @@
 """
-English-only site note: mkdocs-static-i18n remains enabled for Material blog integration;
-this hook is still required so posts render with the correct template and sidebar metadata.
+Material blog build helper (English-only site; mkdocs-static-i18n is not used).
 
-mkdocs-static-i18n 在 on_files 中克隆 File 时，会保留 material/blog 为帖子设置的
-InclusionLevel.EXCLUDED；blog 插件随后在 on_nav 里把 NOT_IN_NAV 写回的是克隆前的引用，
-最终构建集合里的帖子仍是 EXCLUDED，导致文章页与摘要都不输出。
+Historically, mkdocs-static-i18n cloned `File` objects in `on_files` in a way that
+left Material blog posts at `InclusionLevel.EXCLUDED`, dropped category pages with
+`Unhandled file case`, and broke `file.page` / `Post` wiring. This hook remains so
+we still:
 
-此外：i18n 的 create_i18n_file 会新建 File 实例且不复制 file.page。blog 插件的 on_files
-（-50）先于 i18n（-100）执行，已为旧 File 挂上 Post；导航阶段 get_navigation 若发现
-file.page 为空会再建普通 Page，导致丢失 blog-post.html 模板与侧栏元信息。本 hook 在
-i18n 之后对当前 files 中的帖子重新 _resolve_post，并写回 blog.blog.posts。
-重建的 Post 不含分类引用时，需清空 Category 视图的 posts 并再次执行 _generate_categories，
-否则 blog-post.html 侧栏「in &lt;Category&gt;」不渲染。i18n 克隆 File 后，post.categories 中的
-Category 可能与初次 on_files 时不同，需对其实际实例 read_source 并写入 meta["title"]，避免链文字为 None。
+- Promote `docs/blog/posts/*.md` from `EXCLUDED` to `NOT_IN_NAV` so they are built
+  but do not appear in the main nav.
+- Re-resolve posts, sort them, and refresh `blog.blog.posts`.
+- When categories are enabled, clear stale category views, re-run `_generate_categories`,
+  and ensure category titles are populated for sidebar links.
 
-本 hook 在 on_files 末尾（优先级低于 i18n 的 -100）将 docs 内 blog 帖子改回 NOT_IN_NAV，
-使其参与 mkdocs build，且不进入主导航（与 Material blog 行为一致）。
+`on_pre_page` re-attaches the `Post` instance before population so author/read-time
+metadata and `blog-post.html` behave correctly.
 
-勿去掉 Post 自带的 meta.hide「navigation」：若显示全站 md-sidebar--primary，会占满最左列，
-博客专用的 md-sidebar--post（Back to index、作者、Metadata、文内 TOC）会被挤到中间，观感上像
-「左侧没有博客索引栏」。文内目录依赖 toc.integrate，由 blog-post.html 在 md-sidebar--post 内渲染。
+Do not remove `meta.hide: navigation` from posts: exposing the primary sidebar on
+post pages breaks the dedicated `md-sidebar--post` layout (back link, metadata, TOC).
 
-说明：由 blog 生成且不在 docs_dir 下的归档/分类虚拟页仍可能被 i18n 丢弃（Unhandled file case），
-见 mkdocs-static-i18n 与 material/blog 的已知限制。
+Priority `-101` on `on_files` runs late enough to run after the blog plugin’s own
+`on_files` pass; adjust only if plugin order changes upstream.
 """
 
 from __future__ import annotations

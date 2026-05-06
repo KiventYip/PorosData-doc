@@ -41,7 +41,7 @@ theme:
         name: Switch to light mode
 
   features:
-    # Navigation: keep navigation.instant off while mkdocs-static-i18n is enabled (verify before re-enabling)
+    # navigation.instant: optional; this site no longer uses mkdocs-static-i18n—re-enable only after verifying Material behaviour locally.
     # - navigation.instant
     # - navigation.instant.prefetch
     # - navigation.instant.progress
@@ -102,6 +102,7 @@ nav:
 
   - Community:
       - Glossary: community/glossary.md
+      - Abbreviations: includes/abbreviations.md
       - API Reference: community/api-reference.md
       - Design Philosophy: community/design-philosophy.md
       - Contributing: community/contributing.md
@@ -114,7 +115,7 @@ nav:
       - blog/index.md
 
 # ---------------------------------------------------------
-# 3. Plugins (English-only; i18n framework kept for Material blog + future locales)
+# 3. Plugins (English-only site; no mkdocs-static-i18n)
 # ---------------------------------------------------------
 plugins:
   - search:
@@ -122,7 +123,7 @@ plugins:
         - en
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
 
-  # Directory-level default front matter; blog + i18n: see reconfigure_material_blog
+  # Directory-level default front matter; coordinates with Material blog where needed
   - meta
 
   - tags
@@ -133,7 +134,7 @@ plugins:
       post_date_format: medium
       post_url_format: "posts/{slug}"
       post_readtime: true
-      # Archive off: temp paths can be dropped by mkdocs-static-i18n (Unhandled file case). See hooks/material_blog_i18n_posts.py
+      # Archive off by site policy (index + categories cover discovery)
       archive: false
       categories: true
       authors: true
@@ -158,17 +159,7 @@ plugins:
         background_color: "#1a1a2e"
         color: "#ffffff"
 
-  - i18n:
-      docs_structure: suffix        # Reserved for future translated files (e.g. page.<locale>.md)
-      fallback_to_default: true
-      reconfigure_material: true    # Material + static-i18n integration
-      languages:
-        - locale: en
-          default: true
-          name: English
-          build: true
-
-  # Must run after i18n (plugin order requirement for page locale)
+  # After blog so post pages exist when git metadata runs
   - git-revision-date-localized:
       enabled: !ENV [CI, false]
       enable_creation_date: true
@@ -267,10 +258,8 @@ copyright: |
   <a href="https://github.com/KiventYip/PorosData-doc/blob/main/LICENSE">MIT License</a>
 
 extra:
-  version:
-    provider: mike
-    default: latest
-
+  # Version switcher: only enable with `mike deploy` (generates versions.json).
+  # Without mike, Material would request /en/versions.json and spam 404s in `mkdocs serve`.
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/KiventYip/PorosData-doc
@@ -307,6 +296,8 @@ extra:
     new: Recently added
     deprecated: Deprecated
 
-# Material blog + mkdocs-static-i18n post inclusion (see hook docstring)
+# Material blog: ensure posts are included in the build set (see hook docstring).
+# normalize_markdown_code_fences: trims redundant blank lines inside ``` fenced blocks.
 hooks:
   - hooks/material_blog_i18n_posts.py
+  - hooks/normalize_markdown_code_fences.py

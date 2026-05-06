@@ -28,7 +28,7 @@ pip install -r requirements.txt
 |------|------|
 | `docs/` | Authoritative Markdown sources (`*.md`) |
 | `docs/assets/` | Styles, scripts, images (e.g. `custom.css`, `mathjax.js`, branding) |
-| `mkdocs.yml` | Theme, plugins, and navigation; includes `mkdocs-static-i18n` for Material blog integration |
+| `mkdocs.yml` | Theme, plugins, and navigation (English-only; Material blog + hooks) |
 | `site/` | Generated output (do not edit by hand) |
 
 **Adding a page:** create the `.md` file under `docs/`, register it in the `nav` section of `mkdocs.yml`, then run `python build_clean.py serve` (or `mkdocs serve`) to confirm navigation and rendering.

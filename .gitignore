@@ -1,6 +1,10 @@
 # MkDocs documentation
 site/
 
+# Local no-i18n experiment output (do not commit)
+site_noi18n_test/
+_mkdocs_noi18n_test.yml
+
 # MkDocs / Material plugin caches
 .cache/
 

@@ -1,9 +1,9 @@
 # Design Philosophy
 
-Scientific literature is not generic prose: it encodes terms, units, notation, figures, and cross-references that must survive processing if downstream training, extraction, or review is to remain trustworthy. PorosData is built around that constraint rather than around “simplifying” papers into informal language.
+Scientific writing is not ordinary prose. It encodes specialised terms, units, notation, figures, and cross-references that must survive transformation if downstream training, extraction, or peer review is to stay trustworthy. PorosData is designed around that constraint instead of treating papers as informal text to be simplified away.
 {: .lead}
 
-The aim is to make sources **more stable and more structurally usable** while **losing as little scientific meaning as the task allows**. Three commitments follow from that aim.
+The objective is to make sources **more stable and easier to reuse structurally**, while **sacrificing as little scientific meaning as the workload permits**. Three design commitments follow.
 
 **Academic atomicity** — content is treated as a unit that should not be torn apart casually. At character level, formulas, chemistry, and symbols should not be structurally damaged by cleaning. At relation level, numbers, units, conditions, and claims should stay linked. At structure level, section hierarchy, figure references, and surrounding context should remain traceable in delivered artefacts.
 

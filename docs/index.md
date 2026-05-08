@@ -9,14 +9,14 @@ hide:
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PyPI version](https://img.shields.io/pypi/v/PorosData-Processor.svg)](https://pypi.org/project/porosdata-processor/)
 
-PorosData is a framework for processing scientific documents and delivering structured, reviewable outputs. It takes PDFs, OCR output, and parser artefacts and turns them into data assets that are easier to validate, reuse, and hand off downstream.
+PorosData is a document-processing framework that turns PDFs, OCR output, and parser artefacts into structured, review-ready assets. The goal is to make scientific content easier to validate, reuse, and hand off without rewriting the underlying research.
 {: .lead}
 
-In fields such as materials science, source documents routinely carry corrupted numerals, spacing noise, damaged terms, broken formulas, and figure references that no longer line up with captions. Those defects propagate into training data, extraction pipelines, retrieval, and manual review. PorosData is intended to suppress that noise while preserving scientific meaning and leaving a traceable path from input to delivery.
+In domains such as materials science, source files often arrive with corrupted numerals, irregular spacing, damaged terminology, fractured formulas, and figure references that no longer align with captions. Those issues travel quickly into training corpora, extraction workflows, retrieval indexes, and human review queues. PorosData targets that class of noise: it stabilises text and structure while preserving meaning and maintaining an auditable path from raw input to delivered output.
 
 ## Overview and scope
 
-PorosData sits between raw literature and delivery-ready assets. Typical uses include preparing corpora for model training, supplying stable inputs for structured extraction and semantic retrieval, and packaging body text, captions, tables, and images into a single delivery layout for databases, knowledge organisation, or multimodal workflows.
+PorosData sits between raw literature and delivery-ready packages. Typical workloads include building higher-quality training corpora, feeding stable inputs into structured extraction and semantic retrieval, and assembling body text, captions, tables, and images into one coherent layout for databases, knowledge organisation, or multimodal modelling.
 {: .section-intro}
 
 The project follows **Academic Atomicity**: usability and cleanliness are improved without stripping the substantive content of the original material.
@@ -63,7 +63,7 @@ PorosData organises work around a three-stage pipeline for scientific documents.
 
 ## What a delivery usually contains
 
-PorosData aims at packaged outputs, not only “cleaner text.” A standard delivery often includes full-text material for reading and review, plain-text streams for training, structured JSON for extraction and retrieval, multimodal indexes linking text to image assets, and reports or logs that support batch review and traceability.
+PorosData targets packaged outputs rather than marginally cleaner prose. A typical delivery bundles full-text views for reading and review, plain streams for training, structured JSON for extraction and retrieval, multimodal indexes that bind mentions to assets, and batch-oriented reports that support traceability.
 {: .section-intro}
 
 ## Where to go next

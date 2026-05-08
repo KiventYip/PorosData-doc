@@ -121,9 +121,9 @@ data/
 
 ## Fine-tuning formats: orientation
 
-There is **no universal** fine-tuning file format. Variation comes from model family (encoder-only, decoder, encoder–decoder), task shape (single-turn, dialogue, tools, classification), training framework conventions, and community templates around specific base models.
+There is **no single canonical** fine-tuning file format. Layouts differ with model family (encoder-only, causal decoder, encoder–decoder), task shape (single-turn chat, tool use, classification), training-framework habits, and the templates that surround a given base checkpoint.
 
-PorosData usually exposes **three parallel views per document**, which map cleanly onto most pipelines with a thin adapter (field rename, chunking, turn packing):
+PorosData typically ships **three parallel views per document**. Most training stacks need only a thin adapter—field renaming, chunking, or turn packing—to align with local conventions:
 
 | Need | Suggested PorosData view |
 |------|---------------------------|

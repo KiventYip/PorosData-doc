@@ -1,6 +1,6 @@
 # Document Formatting Guide
 
-This guide standardizes body presentation without changing the existing documentation structure.
+This guide standardises how pages are written and formatted. It does not change the information architecture of the site; it keeps tone, rhythm, and markup consistent across sections.
 
 ## Page Opening
 
@@ -9,7 +9,7 @@ This guide standardizes body presentation without changing the existing document
 - Apply the `lead` utility class to that paragraph.
 
 ```md
-PorosData organizes scientific document processing into a delivery-ready workflow.
+PorosData organises scientific document processing into a delivery-ready workflow.
 {: .lead}
 ```
 

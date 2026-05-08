@@ -3,7 +3,7 @@
 `Processor` is the **quality-preparation** stage: it does not emit the final structured package, but it turns [Parser](../parser/index.md) output into **cleaner, more stable** intermediates that downstream tooling can trust. In the delivery chain, it answers whether content is **fit to proceed**; [Designer](../designer/index.md) answers how that content should be **organised for handoff**.
 {: .lead}
 
-It targets recurring parser failure modes—OCR noise, broken spacing, corrupted terms and units, damaged chemistry or formulas, noisy captions and footnotes, and unstable citation boundaries. **Inputs** are body blocks, captions, table titles, image metadata, and upstream `*_content_list.json`; **outputs** land under `data/processed/` (cleaned lists, mirrored images when configured, `processing_report.json`, and review signals). Successful runs yield **clearer numerics and formula boundaries**, **more stable entities**, and safer body, caption, and footnote fields before export.
+It is aimed at recurring parser failure modes: OCR noise, irregular spacing, corrupted terms and units, damaged chemistry or formulas, noisy captions and footnotes, and unstable citation boundaries. **Inputs** are body blocks, captions, table titles, image metadata, and upstream `*_content_list.json`. **Outputs** are written under `data/processed/`—cleaned lists, mirrored images when configured, `processing_report.json`, and review-oriented signals. When a run succeeds, numerics and formula boundaries read more clearly, entities stay more stable, and body, caption, and footnote fields are safer to export.
 
 ## Typical repairs
 
@@ -17,7 +17,7 @@ It targets recurring parser failure modes—OCR noise, broken spacing, corrupted
 
 ## Runtime characteristics
 
-Linux is preferred for long batch jobs; Python 3.8+; SSD or NVMe helps I/O-heavy runs; **no GPU is required**. Indicative sizing: small validation ~4 vCPU / 16 GB RAM; routine batches ~8 vCPU / 32 GB RAM; large sustained jobs ~16 vCPU / 64 GB RAM. Prefer **stable** default concurrency; dial **evaluation or audit features** separately; reduce workers when individual files are extremely long. Throughput is **CPU-bound** and sensitive to formula density, worker count, optional evaluators, and OS; steady logs and updating reports usually mean the job is healthy even if a few files are slow.
+Linux is the preferred host for long batch jobs. Python 3.8 or newer is required, and **no GPU** is expected. Fast storage (SSD or NVMe) materially helps I/O-heavy passes. As a rough guide: small validation sets often fit ~4 vCPU / 16 GB RAM; routine batches ~8 vCPU / 32 GB RAM; large sustained jobs ~16 vCPU / 64 GB RAM. Keep default concurrency conservative, enable evaluation or audit tooling deliberately, and lower worker counts when individual documents are very large. Throughput is **CPU-bound** and sensitive to formula density, worker count, optional evaluators, and the host OS; steady logs together with a moving `processing_report.json` usually indicate a healthy run, even when a handful of files lag.
 
 ## Internal architecture
 

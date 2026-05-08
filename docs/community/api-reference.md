@@ -98,13 +98,11 @@ python -m porosdata_processor delivery-gate \
 Documented exception families include `ProcessingError` (failed transform) and `ConfigurationError` (invalid options). Batch issues often surface in logs and reports rather than as a single Python exception.
 
 ```python
-try:
-    cleaner = TextCleaner()
-    result = cleaner.clean(text)
-except ProcessingError as e:
-    ...
-except ConfigurationError as e:
-    ...
+from porosdata_processor import TextCleaner
+
+cleaner = TextCleaner()
+# clean() may raise ProcessingError (transform failure) or ConfigurationError (invalid options).
+result = cleaner.clean(text)
 ```
 
 **Common plugin identifiers** — e.g. `citation_rules`, `greek_to_latex`, `normalize_whitespace`, `latex_math_spaces` (exact set depends on version).

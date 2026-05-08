@@ -17,7 +17,7 @@ strict: false
 theme:
   name: material
   favicon: assets/images/favicon_link.png
-  logo: assets/images/logo.png
+  logo: assets/images/theme.logo.png
 
   font:
     text: Roboto
@@ -85,28 +85,37 @@ nav:
   - Getting Started:
       - Installation: get_started/installation.md
       - Quick Start: get_started/quickstart.md
-      - End-to-End Workflow: get_started/end-to-end-workflow.md
+      - End-to-end workflow: get_started/end-to-end-workflow.md
       - Examples: get_started/examples.md
 
-  - PorosData-Parser:
+  - PorosData Parser:
       - Overview: parser/index.md
       - Dataset Layout: parser/dataset-layout.md
 
-  - PorosData-Processor:
+  - PorosData Processor:
       - Overview: processor/index.md
-      - Data Governance: processor/data-governance.md
+      - CLI Reference: processor/cli-reference.md
+      - Configuration and Runtime: processor/configuration-and-runtime.md
+      - Data governance: processor/data-governance.md
 
-  - PorosData-Designer:
+  - PorosData Designer:
       - Overview: designer/index.md
-      - Delivery Standards: designer/delivery-standards.md
+      - Delivery standards: designer/delivery-standards.md
+      - CLI Reference: designer/cli-reference.md
+      - Output Artefacts: designer/output-artifacts.md
+      - Poros Tags: designer/tags-reference.md
+      - Configuration: designer/configuration.md
+      - Validation and Audit: designer/validation-and-audit.md
+      - Multimodal: designer/multimodal.md
+      - Python API: designer/python-api.md
+      - Troubleshooting: designer/troubleshooting.md
 
   - Community:
       - Glossary: community/glossary.md
-      - Abbreviations: includes/abbreviations.md
       - API Reference: community/api-reference.md
       - Design Philosophy: community/design-philosophy.md
       - Contributing: community/contributing.md
-      - Document Formatting: community/document-formatting.md
+      - Document formatting: community/document-formatting.md
       - Roadmap: community/roadmap.md
       - Changelog: community/changelog.md
 

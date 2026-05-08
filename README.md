@@ -6,7 +6,7 @@
 
 **PorosData** is a scientific data-processing stack aimed at AI-for-science workflows. The ecosystem currently centres on:
 
-- **PorosData-Parser** — parsing for PDF, HTML, and scientific documents  
+- **PorosData-Parser** — scientific PDFs to structured JSON via MinerU, with a dashboard and SLURM batch control plane (source implementation: **`gen-sci-data`** repository)  
 - **PorosData-Processor** — text cleaning with LaTeX-aware handling and academic normalisation  
 - **PorosData-Designer** — annotation, fine-tuning support, and training-data preparation  
 

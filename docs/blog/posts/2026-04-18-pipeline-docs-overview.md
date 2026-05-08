@@ -16,10 +16,10 @@ authors:
 
 # Mapping the pipeline to the docs
 
-PorosData splits **operational detail** (how to run and validate) from **conceptual** pages (contracts, layout, governance). This note is a **map**, not a tutorial: it tells you where to read once you know which stage you care about.
+This documentation splits **operational detail** (how to run and validate) from **conceptual** pages (contracts, layout, governance). This note is a **map**, not a tutorial: it tells you where to read once you know which stage you care about.
 
 <!-- more -->
 
-**Processor** documentation emphasises batch cleaning, intermediate artefacts under `processed/`, and quality signals before handoff. **Designer** documentation explains how stable intermediates become `structured/` views—full-text, datamining, and multimodal—and how those views relate to training and extraction consumers.
+**Processor** documentation emphasises batch cleaning, intermediate artefacts under **Processed Database**, and quality signals before handoff. **Designer** documentation explains how stable intermediates become per-`doc_id` delivery folders (default under **Designed Database**)—full-text JSON, structure JSON, multimodal indexes—and how those views relate to training and extraction consumers.
 
-For a single narrative path from install through integration, start at [End-to-End Workflow](../../get_started/end-to-end-workflow.md), then drill into [Processor](../../processor/index.md) and [Designer](../../designer/index.md) as needed.
+For a single narrative path from install through integration, start at [End-to-end workflow](../../get_started/end-to-end-workflow.md), then open [Processor](../../processor/index.md) and [Designer](../../designer/index.md) as needed.

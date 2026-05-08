@@ -7,12 +7,12 @@ Shared vocabulary used across workflow, tool, and delivery pages so you can move
 
 | Term | Meaning |
 |------|---------|
-| **Parser** | Upstream stage that turns papers into reusable text blocks, figures, captions, and metadata. |
-| **Processor** | Quality stage that cleans parser output so downstream steps see stable text and fields. |
-| **Designer** | Delivery stage that organises stable input into full-text, structured, and multimodal outputs. |
-| **`raw/`** | Layer retaining originals and parser packages for traceability. |
-| **`processed/`** | Layer holding cleaned intermediates and processing reports. |
-| **`structured/`** | Layer holding final full-text, datamining, and multimodal artefacts. |
+| **Parser** | Extraction stage (implementation repo: `gen-sci-data`) that turns papers into reusable text blocks, figures, captions, and metadata under the **Raw Database**. |
+| **Processor** | Quality stage that cleans Parser output into the **Processed Database** so downstream steps see stable text and fields. |
+| **Designer** | Delivery stage that organises stable input into full-text, structured, and multimodal outputs under the **Designed Database**. |
+| **Raw Database** | Layer retaining originals and Parser bundles for traceability (default root often `data/Raw Database/`; legacy docs may show a `raw/` segment). |
+| **Processed Database** | Layer holding cleaned intermediates and processing reports (default root often `data/Processed Database/`). |
+| **Designed Database** | Designer output root: per-`doc_id` folders with `*.content.json`, `*.structure.json`, `*.assets.index.json`, and `images/`. Override the path with `--output_dir`. |
 
 ## Output and field concepts
 

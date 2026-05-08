@@ -1,15 +1,19 @@
-# PorosData-Parser
+# Parser
 
-`Parser` is the **extraction** stage of the PorosData pipeline: it turns source PDFs and sidecar assets into reusable text blocks, figures, captions, and light metadata. The stage is optimised for **traceability and re-run**, not for a self-contained delivery package.
+**Parser** turns scientific PDFs into structured JSON through **[MinerU](https://github.com/opendatalab/MinerU)**, and adds a **web dashboard** plus **SLURM-oriented batch controls** so you can drive extraction and monitor jobs from one place. It is the **extraction** stage: it lands reusable text blocks, figures, captions, and light metadata under the **Raw Database** tree (default layout `data/Raw Database/{doc_id}/`; legacy layouts may use a lowercase `raw/` segment), optimised for **traceability and re-run**, not for a self-contained delivery package.
 {: .lead}
 
-## Current implementation
+## Naming in this manual
 
-Work is anchored on **[MinerU](https://github.com/opendatalab/MinerU)** as the upstream PDF/OCR engine. PorosData treats MinerU’s content lists, extracted images, and metadata as the canonical input to the `data/raw/` tier that [PorosData-Processor](../processor/index.md) consumes.
+The reference implementation lives in the **`gen-sci-data`** source repository; this manual names the stage **Parser** so it lines up with **Processor** and **Designer** in navigation.
+
+## Relationship to Processor
+
+Work is anchored on MinerU as the upstream PDF/OCR engine. Parser treats MinerU’s content lists, extracted images, and metadata as the canonical input to the **Raw Database** that [Processor](../processor/index.md) consumes.
 
 ## Roadmap
 
-`PorosData-Parser` is expected to ship as a **packaged CLI** that normalises multiple upstream engines behind one content-list contract, so Processor and Designer never branch on vendor specifics. Until that release, run MinerU (or a compatible engine) and land artefacts under `data/raw/{doc_id}/` exactly as laid out under [Dataset layout](dataset-layout.md).
+Parser is expected to ship as a **packaged CLI** that normalises multiple upstream engines behind one content-list contract, so Processor and Designer never branch on vendor specifics. Until that release, run MinerU (or a compatible engine) and land artefacts under the Raw Database path layout in [Dataset layout](dataset-layout.md).
 
 ## What Parser provides
 
@@ -23,10 +27,14 @@ Work is anchored on **[MinerU](https://github.com/opendatalab/MinerU)** as the u
 ## Input–output boundary
 
 - **In** — PDFs and, where relevant, supplementary layout or OCR artefacts.
-- **Out** — `*_content_list.json` plus image assets under `data/raw/{doc_id}/`. The bundle stays **engine-shaped**; do not hand-edit it to “fix” downstream issues.
-- **Consumer** — [PorosData-Processor](../processor/index.md) reads the list, performs cleaning and repair, and writes `data/processed/`.
-- **Contract** — Field-level layout and naming across `raw`, `processed`, and `structured` are defined in [Dataset layout](dataset-layout.md).
+- **Out** — `*_content_list.json` plus image assets under `data/Raw Database/{doc_id}/` (or your configured raw root). The bundle stays **engine-shaped**; do not hand-edit it to “fix” downstream issues.
+- **Consumer** — [Processor](../processor/index.md) reads the list, performs cleaning and repair, and writes **Processed Database** (default root `data/Processed Database/`).
+- **Contract** — Field-level layout and naming across **Raw Database**, **Processed Database**, and **Designed Database** are defined in [Dataset layout](dataset-layout.md).
+
+## Checkout and commands
+
+The reference web app and dashboard in **`gen-sci-data`** may use their own product naming. **UVicorn invocations, CLI script names, and environment layout** are maintained in that repository’s README so this manual stays aligned with whatever that tree ships.
 
 ## Related
 
-[Dataset layout](dataset-layout.md) · [End-to-End Workflow](../get_started/end-to-end-workflow.md) · [Processor overview](../processor/index.md) · [Designer overview](../designer/index.md)
+[Dataset layout](dataset-layout.md) · [End-to-end workflow](../get_started/end-to-end-workflow.md) · [Processor overview](../processor/index.md) · [Designer overview](../designer/index.md)

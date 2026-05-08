@@ -1,6 +1,6 @@
 ---
 description: >-
-  Scientific text quality for training versus mining, and where PorosData sits in the delivery chain.
+  Scientific text quality for training versus mining, and where Parser, Processor, and Designer sit in the delivery chain.
 date:
   created: 2026-05-06
 slug: 2026-05-06-research-review
@@ -11,7 +11,7 @@ tags:
   - Data Quality
   - Processor
 authors:
-  - kiventyip
+  - jianhonng
 ---
 
 !!! abstract "Note"
@@ -29,15 +29,15 @@ Scientific papers encode terminology, numerals, notation, figures, and qualifier
 
 Typical breakage includes split numbers and units, corrupted terms, damaged math delimiters, captions that no longer align with figures, and contextual qualifiers (temperature, method, condition) that drift away from the values they modify. **Training-oriented** workflows care about **token purity**, **term accuracy**, and **long-range coherence**: noise steals context window budget and teaches spurious patterns; systematic mis-readings (e.g. `X-ray` rendered as `10-ray`) corrupt concepts; hyphenation and line-break artefacts inflate vocabulary and fragment phrases. **Mining-oriented** workflows care about **determinate values**, **stable entities**, and **explicit anchors** between text and assets: if magnitudes or chemical names are ambiguous, extraction and linking fail even when the prose “looks fine” to a human skimmer.
 
-## PorosData as a layered response
+## A layered response
 
-Rather than treating “cleaning” and “packaging” as unrelated chores, PorosData chains **parse → stabilise → export**:
+Rather than treating “cleaning” and “packaging” as unrelated chores, the toolchain chains **parse → stabilise → export** across **Raw Database**, **Processed Database**, and **Designed Database**:
 
 | Stage | Responsibility | Why it matters |
 |-------|----------------|----------------|
-| Parser | Preserve recoverable content and assets | Keeps a defensible source-of-truth package |
-| Processor | Remove noise and stabilise text | Reduces failure rates for both training and mining |
-| Designer | Emit full-text, structured, and multimodal views | Matches heterogeneous downstream consumers without re-deriving structure from scratch |
+| Parser | Preserve recoverable content and assets in the **Raw Database** | Keeps a defensible source-of-truth package |
+| Processor | Remove noise and stabilise text into the **Processed Database** | Reduces failure rates for both training and mining |
+| Designer | Emit full-text, structured, and multimodal views into the **Designed Database** | Matches heterogeneous downstream consumers without re-deriving structure from scratch |
 
 ## Target quality profiles (sketch)
 
@@ -45,6 +45,6 @@ Rather than treating “cleaning” and “packaging” as unrelated chores, Por
 
 ## Open questions
 
-Important tensions remain: how far automatic repair may go before it alters meaning; how to normalise irregular formulas without structural damage; how large terminology resources can grow before maintenance dominates; how multimodal anchors stay stable across parser versions and layout styles. These are not cosmetic—they determine whether a delivery package can be **reused across projects** or only as a one-off.
+Important tensions remain: how far automatic repair may go before it alters meaning; how to normalise irregular formulas without structural damage; how large terminology resources can grow before maintenance dominates; how multimodal anchors stay stable across extraction-engine upgrades and layout styles. These are not cosmetic—they determine whether a delivery package can be **reused across projects** or only as a one-off.
 
 **Further reading:** [Design Insights](2026-05-06-design-insights.md) · [Processor](../../processor/index.md) · [Designer](../../designer/index.md) · [API Reference](../../community/api-reference.md)

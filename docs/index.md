@@ -9,14 +9,14 @@ hide:
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PyPI version](https://img.shields.io/pypi/v/PorosData-Processor.svg)](https://pypi.org/project/porosdata-processor/)
 
-PorosData is a document-processing framework that turns PDFs, OCR output, and parser artefacts into structured, review-ready assets. The goal is to make scientific content easier to validate, reuse, and hand off without rewriting the underlying research.
+This site documents a document-processing toolchain that turns PDFs, OCR output, and **Parser** output into structured, review-ready assets. The goal is to make scientific content easier to validate, reuse, and hand off without rewriting the underlying research.
 {: .lead}
 
-In domains such as materials science, source files often arrive with corrupted numerals, irregular spacing, damaged terminology, fractured formulas, and figure references that no longer align with captions. Those issues travel quickly into training corpora, extraction workflows, retrieval indexes, and human review queues. PorosData targets that class of noise: it stabilises text and structure while preserving meaning and maintaining an auditable path from raw input to delivered output.
+In domains such as materials science, source files often arrive with corrupted numerals, irregular spacing, damaged terminology, fractured formulas, and figure references that no longer align with captions. Those issues travel quickly into training corpora, extraction workflows, retrieval indexes, and human review queues. The stack targets that class of noise: it stabilises text and structure while preserving meaning and maintaining an auditable path from **Raw Database** inputs through **Processed Database** work to **Designed Database** deliveries.
 
 ## Overview and scope
 
-PorosData sits between raw literature and delivery-ready packages. Typical workloads include building higher-quality training corpora, feeding stable inputs into structured extraction and semantic retrieval, and assembling body text, captions, tables, and images into one coherent layout for databases, knowledge organisation, or multimodal modelling.
+The pipeline sits between original PDF literature and delivery-ready packages. Typical workloads include building higher-quality training corpora, feeding stable inputs into structured extraction and semantic retrieval, and assembling body text, captions, tables, and images into one coherent layout for databases, knowledge organisation, or multimodal modelling.
 {: .section-intro}
 
 The project follows **Academic Atomicity**: usability and cleanliness are improved without stripping the substantive content of the original material.
@@ -40,30 +40,30 @@ If you are new to the stack, these pages give the shortest path from install to 
 {: .tight-list}
 
 !!! tip "End-to-end walkthrough"
-    For a full path from papers to packaged outputs, see [End-to-End Workflow](get_started/end-to-end-workflow.md).
+    For a full path from papers to packaged outputs, see [End-to-end workflow](get_started/end-to-end-workflow.md).
 
 ## Pipeline, modules, and capabilities
 
-PorosData organises work around a three-stage pipeline for scientific documents. The diagram illustrates how storage, processing modules, and delivery-facing outputs connect in one system.
+Work is organised around a three-stage pipeline for scientific documents. The diagram illustrates how the **Raw Database**, **Processed Database**, and **Designed Database** layers connect with Parser, Processor, and Designer.
 {: .section-intro}
 
-![PorosData functional architecture](assets/images/DESIGN.jpg)
+![Pipeline functional architecture](assets/images/DESIGN.jpg)
 
 ```text
-[Raw Literature] -> Parser -> Processor -> Designer -> [Training Text / Structured Outputs / Multimodal Index]
+[PDF literature] -> Raw Database (Parser) -> Processed Database (Processor) -> Designed Database (Designer) -> [Training text / structured outputs / multimodal index]
 ```
 
 | Module | Role |
 |--------|------|
-| **Parser** | Extracts reusable text blocks and assets from PDFs and parser output |
-| **Processor** | Cleans noise, repairs fragmentation, and stabilises terms and numerical expressions |
-| **Designer** | Shapes quality-ready text into full-text views, extraction-oriented outputs, and multimodal indexes |
+| **[Parser](parser/index.md)** | Turns scientific PDFs into structured JSON (MinerU) and lands per-document trees under **Raw Database** for Processor |
+| **Processor** | Cleans noise, repairs fragmentation, and stabilises terms and numerical expressions into **Processed Database** |
+| **Designer** | Shapes quality-ready text into full-text views, extraction-oriented outputs, and multimodal indexes under **Designed Database** |
 
 **Typical cleaning and repair coverage** includes intelligent text cleaning (control characters, index noise, token fragmentation), scientific term validation (e.g. OCR corruption such as `X-ray` misread as `10-ray`), numerical and unit repair, entity stabilisation for chemical and material names, and cross-modal anchoring between figure references, images, and captions.
 
 ## What a delivery usually contains
 
-PorosData targets packaged outputs rather than marginally cleaner prose. A typical delivery bundles full-text views for reading and review, plain streams for training, structured JSON for extraction and retrieval, multimodal indexes that bind mentions to assets, and batch-oriented reports that support traceability.
+Downstream consumers typically need packaged outputs rather than marginally cleaner prose. A typical delivery bundles full-text views for reading and review, plain streams for training, structured JSON for extraction and retrieval, multimodal indexes that bind mentions to assets, and batch-oriented reports that support traceability.
 {: .section-intro}
 
 ## Where to go next

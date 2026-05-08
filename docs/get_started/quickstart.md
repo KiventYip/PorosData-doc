@@ -60,26 +60,25 @@ text = "Formula: $\\mathbf { X } + \\frac { a }{ b }$"
 result = cleaner.clean(text)
 ```
 
-**Single-file and directory processing** — clean one Markdown (or text) file in place on disk:
+**Single file on disk** — read the file, clean the string, then write:
 
 ```python
-cleaner.clean_file(
-    input_path="document.md",
-    output_path="clean_document.md",
-    encoding="utf-8",
-)
+from pathlib import Path
+from porosdata_processor import TextCleaner
+
+cleaner = TextCleaner()
+path = Path("document.md")
+cleaned = cleaner.clean(path.read_text(encoding="utf-8"))
+path.with_name("clean_document.md").write_text(cleaned, encoding="utf-8")
 ```
 
-For many documents, the batch entry point is usually preferable (see [Examples](examples.md)):
+**Batch processing** — for a full **Raw Database** tree, the CLI is the supported entry point (see [Examples](examples.md) and [CLI reference](../processor/cli-reference.md)):
 
-```python
-from processing.batch_processor import BatchProcessor
-
-processor = BatchProcessor()
-processor.process_text_data(
-    input_dir="data/raw",
-    output_dir="data/cleaned",
-)
+```bash
+porosdata-processor cleaning \
+  --input-dir "data/Raw Database" \
+  --output-dir "data/Processed Database" \
+  --max-workers 4
 ```
 
 **YAML configuration (optional)** — project layouts often keep defaults under `config/processing_config.yaml`:

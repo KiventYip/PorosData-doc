@@ -6,7 +6,7 @@
 
 **PorosData** is a scientific data-processing stack aimed at AI-for-science workflows. The ecosystem currently centres on:
 
-- **PorosData-Parser** — parsing for PDF, HTML, and scientific documents  
+- **PorosData-Parser** — scientific PDFs to structured JSON via MinerU, with a dashboard and SLURM batch control plane (source implementation: **`gen-sci-data`** repository)  
 - **PorosData-Processor** — text cleaning with LaTeX-aware handling and academic normalisation  
 - **PorosData-Designer** — annotation, fine-tuning support, and training-data preparation  
 
@@ -28,7 +28,7 @@ pip install -r requirements.txt
 |------|------|
 | `docs/` | Authoritative Markdown sources (`*.md`) |
 | `docs/assets/` | Styles, scripts, images (e.g. `custom.css`, `mathjax.js`, branding) |
-| `mkdocs.yml` | Theme, plugins, and navigation; includes `mkdocs-static-i18n` for Material blog integration |
+| `mkdocs.yml` | Theme, plugins, and navigation (English-only; Material blog + hooks) |
 | `site/` | Generated output (do not edit by hand) |
 
 **Adding a page:** create the `.md` file under `docs/`, register it in the `nav` section of `mkdocs.yml`, then run `python build_clean.py serve` (or `mkdocs serve`) to confirm navigation and rendering.

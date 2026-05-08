@@ -1,6 +1,6 @@
 # Installation
 
-Choose an install path that matches how you intend to use PorosData: a quick check from PyPI, a source checkout for development, or a server-style batch environment.
+Choose an install path that matches how you intend to use the stack: a quick check from PyPI, a source checkout for development, or a server-style batch environment.
 {: .lead}
 
 **PyPI (recommended for most users)** — install the published package to confirm behaviour and run small experiments:
@@ -32,6 +32,6 @@ print(porosdata_processor.__version__)
 python -m porosdata_processor --help
 ```
 
-**Before the first real run** — line up (1) source documents or parser artefacts, (2) a writable output root, and (3) a small sample you can reprocess until results look stable.
+**Before the first real run** — line up (1) source documents or Parser output under **Raw Database**, (2) a writable output root for **Processed Database** / **Designed Database**, and (3) a small sample you can reprocess until results look stable.
 
-**Next:** [Quick Start](quickstart.md) · [End-to-End Workflow](end-to-end-workflow.md) · [Examples](examples.md) · [Home](../index.md)
+**Next:** [Quick Start](quickstart.md) · [End-to-end workflow](end-to-end-workflow.md) · [Examples](examples.md) · [Home](../index.md)

@@ -12,7 +12,7 @@ tags:
   - Processor
   - Designer
 authors:
-  - kiventyip
+  - jianhonng
 ---
 
 !!! abstract "Note"
@@ -23,7 +23,7 @@ authors:
 **Quick links:** [Home](../../index.md) · [Quick Start](../../get_started/quickstart.md)
 {: .lead}
 
-Model-centric pre-training and literature-scale mining impose **different** failure sensitivities. PorosData therefore treats **semantic stability**, **structural consistency**, and **minability** as explicit design targets, implemented mainly through [Processor](../../processor/index.md) (quality) and [Designer](../../designer/index.md) (views and contracts). Executable detail on pipelines, tags, and acceptance tests now lives in those product docs rather than in this essay.
+Model-centric pre-training and literature-scale mining impose **different** failure sensitivities. The pipeline therefore treats **semantic stability**, **structural consistency**, and **minability** as explicit design targets, implemented mainly through [Processor](../../processor/index.md) (quality) and [Designer](../../designer/index.md) (views and contracts). Executable detail on pipelines, tags, and acceptance tests now lives in those product docs rather than in this essay.
 
 <!-- more -->
 

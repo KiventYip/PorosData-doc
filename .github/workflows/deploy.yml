@@ -42,7 +42,6 @@ jobs:
         # git-* / rss) that are off by default for fast local builds.
         env:
           CI: true
-        # mkdocs-static-i18n stays in the build (English-only today; required
-        # for Material blog integration via hooks/material_blog_i18n_posts.py).
+        # English-only site; Material blog uses hooks/material_blog_i18n_posts.py.
         run: |
           python build_clean.py gh-deploy --force

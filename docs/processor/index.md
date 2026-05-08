@@ -1,9 +1,11 @@
-# PorosData-Processor
+# Processor
 
-`Processor` is the **quality-preparation** stage: it does not emit the final structured package, but it turns [Parser](../parser/index.md) output into **cleaner, more stable** intermediates that downstream tooling can trust. In the delivery chain, it answers whether content is **fit to proceed**; [Designer](../designer/index.md) answers how that content should be **organised for handoff**.
+`Processor` is the **quality-preparation** stage: it does not emit the final structured package, but it turns [Parser](../parser/index.md) output in the **Raw Database** into **cleaner, more stable** intermediates in the **Processed Database** that downstream tooling can trust. In the delivery chain, it answers whether content is **fit to proceed**; [Designer](../designer/index.md) answers how that content should be **organised for handoff**.
 {: .lead}
 
-It targets recurring parser failure modes—OCR noise, broken spacing, corrupted terms and units, damaged chemistry or formulas, noisy captions and footnotes, and unstable citation boundaries. **Inputs** are body blocks, captions, table titles, image metadata, and upstream `*_content_list.json`; **outputs** land under `data/processed/` (cleaned lists, mirrored images when configured, `processing_report.json`, and review signals). Successful runs yield **clearer numerics and formula boundaries**, **more stable entities**, and safer body, caption, and footnote fields before export.
+It is aimed at recurring extraction-stage failure modes: OCR noise, irregular spacing, corrupted terms and units, damaged chemistry or formulas, noisy captions and footnotes, and unstable citation boundaries. **Inputs** are body blocks, captions, table titles, image metadata, and upstream `*_content_list.json`. **Outputs** land under the configured output root (CLI default `data/Processed Database`)—cleaned lists, mirrored images when configured, `processing_report.json`, and review-oriented signals. When a run succeeds, numerics and formula boundaries read more clearly, entities stay more stable, and body, caption, and footnote fields are safer to export.
+
+**Operational detail:** [CLI reference](cli-reference.md) lists entry points, flags, and exit codes; [Configuration and runtime](configuration-and-runtime.md) covers `Config`, environment variables, batch limits, and the default pipeline order.
 
 ## Typical repairs
 
@@ -17,7 +19,7 @@ It targets recurring parser failure modes—OCR noise, broken spacing, corrupted
 
 ## Runtime characteristics
 
-Linux is preferred for long batch jobs; Python 3.8+; SSD or NVMe helps I/O-heavy runs; **no GPU is required**. Indicative sizing: small validation ~4 vCPU / 16 GB RAM; routine batches ~8 vCPU / 32 GB RAM; large sustained jobs ~16 vCPU / 64 GB RAM. Prefer **stable** default concurrency; dial **evaluation or audit features** separately; reduce workers when individual files are extremely long. Throughput is **CPU-bound** and sensitive to formula density, worker count, optional evaluators, and OS; steady logs and updating reports usually mean the job is healthy even if a few files are slow.
+Linux is the preferred host for long batch jobs. Python 3.8 or newer is required, and **no GPU** is expected. Fast storage (SSD or NVMe) materially helps I/O-heavy passes. As a rough guide: small validation sets often fit ~4 vCPU / 16 GB RAM; routine batches ~8 vCPU / 32 GB RAM; large sustained jobs ~16 vCPU / 64 GB RAM. Keep default concurrency conservative, enable evaluation or audit tooling deliberately, and lower worker counts when individual documents are very large. Throughput is **CPU-bound** and sensitive to formula density, worker count, optional evaluators, and the host OS; steady logs together with a moving `processing_report.json` usually indicate a healthy run, even when a handful of files lag.
 
 ## Internal architecture
 
@@ -37,11 +39,11 @@ input text
 
 ## Batch execution: streaming and workers
 
-**Streaming JSON** yields content-list items incrementally so huge files need not load fully into memory (small files may use a fast path). **Multiprocessing** spreads documents across workers with CPU/memory-aware caps and **per-block / per-file timeouts**; on timeout the original text is retained and processing continues. Tokenisers and `TextCleaner` instances are **reused per worker** to amortise setup.
+**Streaming JSON** kicks in above a size threshold when `ijson` is installed, so large `*_content_list.json` files avoid a single `json.load`. **Multiprocessing** caps workers from CPU and free memory, applies per-file and overall timeouts, and downgrades risky blocks through an isolated subprocess path. Tokenisers and `TextCleaner` instances are cached per process. Numbers, defaults, and fallback order are summarised in [Configuration and runtime](configuration-and-runtime.md).
 
 ## Formula space repair
 
-OCR often injects spurious spaces inside LaTeX. Repair is **conservative** and **zoned**: an **aggressive** region (e.g. `\mathrm`, `\mathbf`, `\ce`, `\unit`, nested braces) may collapse character-level noise; **Zone-O** (remaining math) follows **fix numbers, not letters** so operator spacing such as `a \ b` survives. Three phases—structural normalisation, semantic collapse (aggressive only, inside-out), numerical fixing—run in order; steps are **idempotent**, and failed validation **rolls back** changes. Citation commands, `~`, binary operators, and `\text{...}` are left untouched.
+OCR often injects spurious spaces inside LaTeX. The implementation names only an **aggressive** region (e.g. `\mathrm`, `\mathbf`, `\mathsf`, `\mathit`, `\boldsymbol`, `\ce`, `\unit` brace arguments) for recursive collapse; other spans still receive structural normalisation, selective semantic folding, and numeric fixes, but without that inner aggressive pass. Work proceeds in phases—structure first, then guarded collapse, then numeric cleanup—with iteration caps, explicit protection for `\cite`, `\ref`, `\label`, `\text`, and spacing commands, and **rollback** when validation fails. The passes aim for stability on real inputs but are **not** a formal fixed point when limits trip.
 
 ## Token evaluation (optional)
 
@@ -49,4 +51,4 @@ Audits may compare token counts before and after cleaning. For large corpora, co
 
 ## Quality loop, limits, and handoff to Designer
 
-Real projects iterate: batch → inspect suspicious patterns → adjust rules or config → re-batch until outputs meet the gate. `Processor` **does not** define final business schemas or replace domain field design; on pathological math it prefers **structural safety** to aggressive rewriting. The more trustworthy `processed/` is, the more reliable [Designer](../designer/index.md) becomes—treat this stage as the **quality gate**, not the terminal product layer.
+Real projects iterate: batch → inspect suspicious patterns → adjust rules or config → re-batch until outputs meet the gate. `Processor` **does not** define final business schemas or replace domain field design; on pathological math it prefers **structural safety** to aggressive rewriting. The more trustworthy the **Processed Database** is, the more reliable [Designer](../designer/index.md) becomes—treat this stage as the **quality gate**, not the terminal product layer.

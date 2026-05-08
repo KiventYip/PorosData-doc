@@ -1,4 +1,4 @@
-# Contributing to PorosData Documentation
+# Contributing to this documentation
 
 This page describes how to contribute to the `PorosData-doc` site: prose, structure, navigation, and examples in this repository only.
 {: .lead}

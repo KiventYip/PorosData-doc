@@ -12,9 +12,9 @@ After you complete [Quick Start](quickstart.md), the scenarios below add **batch
 **Command**
 
 ```bash
-python -m porosdata_processor run \
-  --input-dir data/raw \
-  --output-dir data/processed \
+porosdata-processor cleaning \
+  --input-dir "data/Raw Database" \
+  --output-dir "data/Processed Database" \
   --max-workers 1
 ```
 
@@ -22,17 +22,17 @@ python -m porosdata_processor run \
 
 ```text
 data/
-└── raw/
+└── Raw Database/
     └── 00001/
         ├── 00001.pdf
-        └── ... upstream parser files ...
+        └── ... Parser / raw-tier files ...
 ```
 
 **Expected output**
 
 ```text
 data/
-└── processed/
+└── Processed Database/
     ├── processing_report.json
     └── 00001/
         └── ... cleaned intermediates ...
@@ -40,18 +40,18 @@ data/
 
 **You should see** — one cleaned bundle per source folder plus a processing report suitable for quick review.
 
-**If it fails** — verify `data/raw` is complete, the process can write to `data/processed`, and logs or `processing_report.json` do not report missing inputs.
+**If it fails** — verify **Raw Database** is complete, the process can write to **Processed Database**, and logs or `processing_report.json` do not report missing inputs.
 
 ## Example 2: Batch processing
 
-**When to use** — many papers must be normalised to a single `processed/` batch before design or handoff.
+**When to use** — many papers must be normalised to a single **Processed Database** batch before design or handoff.
 
 **Command**
 
 ```bash
-python -m porosdata_processor run \
-  --input-dir data/raw \
-  --output-dir data/processed \
+porosdata-processor cleaning \
+  --input-dir "data/Raw Database" \
+  --output-dir "data/Processed Database" \
   --max-workers 4
 ```
 
@@ -59,7 +59,7 @@ python -m porosdata_processor run \
 
 ```text
 data/
-└── raw/
+└── Raw Database/
     ├── 00001/
     ├── 00002/
     └── 00003/
@@ -69,7 +69,7 @@ data/
 
 ```text
 data/
-└── processed/
+└── Processed Database/
     ├── processing_report.json
     ├── 00001/
     ├── 00002/
@@ -87,51 +87,55 @@ data/
 **Commands**
 
 ```bash
-python -m porosdata_processor run \
-  --input-dir data/raw \
-  --output-dir data/processed \
+porosdata-processor cleaning \
+  --input-dir "data/Raw Database" \
+  --output-dir "data/Processed Database" \
   --max-workers 4
 ```
 
 ```bash
-porosdata-designer run all --input_dir data/processed
+designer run all --input_dir "data/Processed Database"
 ```
 
 **Input layout**
 
 ```text
 data/
-├── raw/
-└── processed/
+├── Raw Database/
+└── Processed Database/
 ```
 
 **Expected output**
 
 ```text
 data/
-└── structured/
-    ├── full_text/
-    ├── datamining/
-    └── multimodal/
+└── Designed Database/
+    ├── 00001/
+    │   ├── 00001.content.json
+    │   ├── 00001.structure.json
+    │   ├── 00001.assets.index.json
+    │   └── images/
+    └── 00002/
+        └── …
 ```
 
 **Deliverables** — full-text views, plain streams where configured, structured JSON for mining, multimodal indexes, and traceability-oriented reports.
 
-**If it fails** — confirm `processed/` is complete before invoking the designer; inspect whether `structured/` subtrees exist; resolve any quality flags in processor output before treating the package as final.
+**If it fails** — confirm **Processed Database** is complete before invoking Designer; inspect whether each `doc_id` folder exists under the output root; resolve any quality flags in Processor output before treating the package as final.
 
 ## Fine-tuning formats: orientation
 
-There is **no universal** fine-tuning file format. Variation comes from model family (encoder-only, decoder, encoder–decoder), task shape (single-turn, dialogue, tools, classification), training framework conventions, and community templates around specific base models.
+There is **no single canonical** fine-tuning file format. Layouts differ with model family (encoder-only, causal decoder, encoder–decoder), task shape (single-turn chat, tool use, classification), training-framework habits, and the templates that surround a given base checkpoint.
 
-PorosData usually exposes **three parallel views per document**, which map cleanly onto most pipelines with a thin adapter (field rename, chunking, turn packing):
+A typical delivery ships **three parallel views per document**. Most training stacks need only a thin adapter—field renaming, chunking, or turn packing—to align with local conventions:
 
-| Need | Suggested PorosData view |
-|------|---------------------------|
-| Plain pre-training, embeddings, retrieval | `pure_text_stream` in `_structured.json`, or `_structured.txt` |
-| Structure-aware long-context training | `content` in `_structured.json` (Poros tags intact) |
-| Extraction, KG-style assembly, instruction data prep | `_datamining.json` |
-| Multimodal / figure-grounded training | `multimodal/` index plus figure cards and assets |
+| Need | Suggested view |
+|------|----------------|
+| Plain pre-training, embeddings, retrieval | `pure_text_stream` in `{doc_id}.content.json`, or optional `{doc_id}.content.txt` |
+| Structure-aware long-context training | `content` in `{doc_id}.content.json` (Poros tags intact) |
+| Extraction, KG-style assembly, instruction data prep | `{doc_id}.structure.json` |
+| Multimodal / figure-grounded training | `{doc_id}.assets.index.json` plus `images/` and Markdown figure cards |
 
 View contracts are specified in [Delivery standards](../designer/delivery-standards.md). A fuller catalogue of task-specific templates may appear in a later revision of this page.
 
-**Related:** [Installation](installation.md) · [Quick Start](quickstart.md) · [End-to-End Workflow](end-to-end-workflow.md) · [Processor](../processor/index.md) · [Designer](../designer/index.md) · [Home](../index.md)
+**Related:** [Installation](installation.md) · [Quick Start](quickstart.md) · [End-to-end workflow](end-to-end-workflow.md) · [Processor](../processor/index.md) · [Designer](../designer/index.md) · [Home](../index.md)

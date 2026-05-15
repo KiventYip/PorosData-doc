@@ -8,7 +8,7 @@
 
 /* 主题默认 .md-grid 为 61rem；略加宽以匹配「模板站」观感 */
 .md-grid {
-    max-width: 72rem;
+    max-width: 60rem;
 }
 
 /* flex 子项默认可不收缩，宽表格会挤出视口；允许主列收缩以便出现横向滚动条 */

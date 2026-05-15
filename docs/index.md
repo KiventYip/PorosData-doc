@@ -5,9 +5,6 @@ hide:
 
 # PorosData
 
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![PyPI version](https://img.shields.io/pypi/v/PorosData-Processor.svg)](https://pypi.org/project/porosdata-processor/)
 
 This site documents a document-processing toolchain that turns PDFs, OCR output, and **Parser** output into structured, review-ready assets. The goal is to make scientific content easier to validate, reuse, and hand off without rewriting the underlying research.
 {: .lead}

@@ -3,7 +3,8 @@
 Thank you for your interest in contributing to the PorosData documentation.
 
 The full, authoritative contributor guide lives in the docs site:
-**[docs/community/contributing.md](docs/community/contributing.md)**.
+**[docs/community/contributing.md](docs/community/contributing.md)**
+(workflow, style notes, and **how to submit blog posts**).
 
 For local development setup (dependencies, preview, build), see the
 "Local setup and preview" section in [README.md](README.md).

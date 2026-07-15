@@ -39,4 +39,4 @@ pip install -r requirements.txt
 
 ## Contributing and licence
 
-Contributions are welcome; see [docs/community/contributing.md](docs/community/contributing.md). This project is released under the MIT Licence — refer to [LICENSE](LICENSE) for the full text.
+Contributions are welcome. Start at [CONTRIBUTING.md](CONTRIBUTING.md); the detailed guide (including **blog posts from third parties**) is [docs/community/contributing.md](docs/community/contributing.md). This project is released under the MIT Licence — refer to [LICENSE](LICENSE) for the full text.

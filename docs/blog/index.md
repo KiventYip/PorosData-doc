@@ -5,15 +5,9 @@ description: >-
 
 # Blog
 
-Short, dated notes sit here when a new handbook chapter would be heavy-handed: release context, design trade-offs, and engineering notes. The site is English-only; each post is one Markdown file under `docs/blog/posts/`.
+This blog tracks design thinking, technical trade-offs, and engineering notes related to scientific data processing in the PorosData project.
 
-Start procedures in [Quick Start](../get_started/quickstart.md); vocabulary and principles in [Design Philosophy](../community/design-philosophy.md). Longer narrative—e.g. [Research Review](posts/2026-05-06-research-review.md) and [Design Insights](posts/2026-05-06-design-insights.md)—lives in posts, not in the manuals.
-
-The [Changelog](../community/changelog.md) lists factual documentation moves and milestones. The blog can explain *why* something changed without copying every changelog line.
-
-RSS is emitted when the build runs with **`CI=true`** (as in publishing). A plain `mkdocs serve` often skips the RSS plugin; that is normal locally.
-
-**See also:** [Changelog](../community/changelog.md) · [Contributing](../community/contributing.md)
+These notes are "living" — they evolve with code and understanding, and may reflect new thinking earlier than formal documentation. They are written for readers interested in data processing pipelines, architecture evolution, and engineering practice.
 
 ## Recent posts
 

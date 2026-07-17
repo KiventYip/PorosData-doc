@@ -68,5 +68,5 @@ Downstream consumers typically need packaged outputs rather than marginally clea
 Terminology, integration detail, and design rationale sit under **Community**—start with the [Glossary](community/glossary.md), [Design Philosophy](community/design-philosophy.md), and [API Reference](community/api-reference.md). Essay-length background stays on the [Blog](blog/index.md) ([Research Review](blog/posts/2026-05-06-research-review.md), [Design Insights](blog/posts/2026-05-06-design-insights.md)).
 {: .section-intro}
 
-If you intend to contribute or follow releases, use the [Contributing Guide](community/contributing.md), [Roadmap](community/roadmap.md), and [Changelog](community/changelog.md).
+If you intend to contribute or follow releases, see the [CONTRIBUTING guide](https://github.com/KiventYip/PorosData-doc/blob/main/CONTRIBUTING.md), [Roadmap](community/roadmap.md), and [Changelog](community/changelog.md).
 {: .section-intro}

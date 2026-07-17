@@ -11,6 +11,7 @@ These notes are "living" — they evolve with code and understanding, and may re
 
 ## Recent posts
 
+- [调研分析：大模型训练全流程解析](posts/2026-07-17-llm-training-pipeline.md)
 - [Research Review](posts/2026-05-06-research-review.md)
 - [Design Insights](posts/2026-05-06-design-insights.md)
 - [Mapping the pipeline to the docs](posts/2026-04-18-pipeline-docs-overview.md)

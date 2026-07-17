@@ -98,4 +98,4 @@ processing:
 
 Tokenisation or chunking settings, when used, may live in a separate `config/token_config.yaml` (model family, BOS/EOS markers, chunk size, overlap). Align those files with the version of the processor you run; fields can change between releases.
 
-**Where to read next** — [API Reference](../community/api-reference.md) · [Examples](examples.md) · [Contributing](../community/contributing.md) (process for doc changes in this site)
+**Where to read next** — [API Reference](../community/api-reference.md) · [Examples](examples.md) · [Contributing](https://github.com/KiventYip/PorosData-doc/blob/main/CONTRIBUTING.md) (process for doc changes in this site)

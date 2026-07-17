@@ -102,7 +102,7 @@ $$\text{Knowledge Score} = \log \frac{f_{\text{领域}}(\text{序列}) + \alpha}
 
 计算该完整长序列上的**平均负对数似然（Mean NLL）**：
 
-$$L(S) = -\frac{1}{N} \sum_{i=1}^{N} \log P(w_i \mid w_{<i})$$
+$$L(S) = -\frac{1}{N} \sum_{i=1}^{N} \log P(w_i \mid w_{\lt i})$$
 
 **判读准则**：$L(S)$ 越低，表示模型在完整逻辑链上的预测越自信、越准确，反映其对长程依赖关系的真正吸收深度。
 

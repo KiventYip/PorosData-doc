@@ -1,0 +1,384 @@
+/* docs/assets/stylesheets/custom.css */
+/* Material for MkDocs：正文排版、代码块、表格与工具类（无 Sphinx 遗留） */
+
+/* ---------------------------------------------------------
+ * 版心宽度：接近官方 Material 全宽阅读列，避免比主题 .md-grid 更窄
+ * 大屏略加宽；移动端依赖 min-width:0 + 表格横向滚动，防止撑破布局
+ * --------------------------------------------------------- */
+
+/* 主题默认 .md-grid 为 61rem；略加宽以匹配「模板站」观感 */
+.md-grid {
+    max-width: 60rem;
+}
+
+/* flex 子项默认可不收缩，宽表格会挤出视口；允许主列收缩以便出现横向滚动条 */
+.md-main__inner,
+.md-content {
+    min-width: 0;
+}
+
+/* 不再二次限制正文列（原先 58rem 会导致比网格更窄） */
+.md-content__inner {
+    max-width: none;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+}
+
+/* 博客（material/blog 插件）：索引/摘要区 .md-post--excerpt、.md-meta 与官方一致 */
+.md-content__inner > header.md-typeset {
+    margin-bottom: 0.5rem;
+}
+
+.md-content__inner > header.md-typeset h1 {
+    margin-top: 0;
+}
+
+@media (max-width: 768px) {
+    .md-post--excerpt .md-post__header {
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .md-post--excerpt .md-post__meta {
+        width: 100%;
+    }
+
+    .md-post--excerpt .md-post__meta .md-meta__list {
+        row-gap: 0.15rem;
+    }
+}
+
+/* 博客单篇（Material blog-post.html）：仅作用于 .md-content--post，避免影响手册页 */
+.md-content.md-content--post .md-content__inner.md-typeset > h1 {
+    margin-top: 0;
+}
+
+@media (min-width: 76.25em) {
+    .md-sidebar--post .md-sidebar__inner.md-post {
+        padding-top: 0.25rem;
+    }
+
+    .md-content.md-content--post .md-content__inner.md-typeset {
+        padding-top: 0.15rem;
+    }
+}
+
+/* 增强数学公式显示 */
+.md-typeset .arithmatex,
+.md-typeset .MathJax {
+    font-size: 1.05em;
+    color: var(--md-default-fg-color);
+}
+
+/* 改进列表样式 */
+.md-typeset ul {
+    list-style-type: disc;
+    margin-left: 1.5em;
+}
+
+.md-typeset ol {
+    list-style-type: decimal;
+    margin-left: 1.5em;
+}
+
+/* 自定义提示框样式 */
+.md-typeset .admonition {
+    border-radius: 8px;
+    margin: 1em 0;
+    padding: 1em;
+}
+
+.md-typeset .admonition.note {
+    border-left: 4px solid #2196f3;
+    background-color: #e3f2fd;
+}
+
+.md-typeset .admonition.warning {
+    border-left: 4px solid #ff9800;
+    background-color: #fff3e0;
+}
+
+.md-typeset .admonition.error {
+    border-left: 4px solid #f44336;
+    background-color: #ffebee;
+}
+
+.md-typeset .admonition.success {
+    border-left: 4px solid #4caf50;
+    background-color: #e8f5e8;
+}
+
+/* 学术文档专用样式 */
+.scientific-formula {
+    background-color: var(--md-code-bg-color);
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 4px;
+    padding: 1em;
+    margin: 1em 0;
+    font-family: 'Computer Modern', 'Latin Modern Roman', serif;
+}
+
+.scientific-formula .formula-title {
+    font-weight: bold;
+    color: var(--md-default-fg-color);
+    margin-bottom: 0.5em;
+}
+
+.citation {
+    color: var(--md-default-fg-color--light);
+    font-style: italic;
+}
+
+.citation:before {
+    content: "[";
+}
+
+.citation:after {
+    content: "]";
+}
+
+/* ---------------------------------------------------------
+ * Material typography — 阅读节奏与扫描
+ * --------------------------------------------------------- */
+
+.md-typeset {
+    font-size: 0.9375rem;
+    line-height: 1.78;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+}
+
+.md-typeset h1 {
+    margin: 0 0 1rem;
+    padding-bottom: 0.45rem;
+    font-weight: 700;
+    font-size: 1.7rem;
+    border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-typeset h2 {
+    margin: 1.85rem 0 0.85rem;
+    font-weight: 650;
+    font-size: 1.3rem;
+}
+
+.md-typeset h1 + h2 {
+    margin-top: 1.15rem;
+}
+
+.md-typeset h3 {
+    margin: 1.5rem 0 0.65rem;
+    font-weight: 650;
+    font-size: 1.08rem;
+}
+
+.md-typeset h4 {
+    margin: 1.25rem 0 0.55rem;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.md-typeset p,
+.md-typeset li,
+.md-typeset td,
+.md-typeset blockquote {
+    line-height: 1.78;
+}
+
+.md-typeset p {
+    margin: 0 0 1rem;
+}
+
+.md-typeset strong {
+    font-weight: 700;
+}
+
+.md-typeset .lead {
+    margin: 0.65rem 0 1.35rem;
+    max-width: none;
+    font-size: 1em;
+    line-height: 1.82;
+    color: var(--md-default-fg-color--light);
+}
+
+.md-typeset .section-intro {
+    margin: 0 0 1rem;
+    color: var(--md-default-fg-color--light);
+}
+
+.md-typeset ul,
+.md-typeset ol {
+    margin-top: 0.65rem;
+    margin-bottom: 1.15rem;
+}
+
+.md-typeset li {
+    margin-bottom: 0.45rem;
+}
+
+.md-typeset li > p {
+    margin-bottom: 0.45rem;
+}
+
+.md-typeset .tight-list li {
+    margin-bottom: 0.2rem;
+}
+
+/* 代码块（作用域在 .md-typeset 内，与 Material 变量一致） */
+.md-typeset .highlight {
+    margin: 1rem 0;
+    border-radius: 0.35rem;
+    overflow: hidden;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    background-color: var(--md-code-bg-color);
+}
+
+.md-typeset .highlight pre {
+    margin: 0;
+}
+
+.md-typeset .highlighttable {
+    margin: 1rem 0;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 0.35rem;
+    overflow: hidden;
+    background-color: var(--md-code-bg-color);
+}
+
+.md-typeset .highlighttable pre {
+    margin: 0;
+}
+
+.md-typeset pre {
+    font-size: 0.88em;
+    line-height: 1.6;
+    padding: 0.85em 1em;
+    border-radius: 0.35rem;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    background-color: var(--md-code-bg-color);
+    overflow-x: auto;
+}
+
+.md-typeset code {
+    font-size: 0.92em;
+    padding: 0.12em 0.35em;
+    border-radius: 0.3rem;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    background-color: var(--md-code-bg-color);
+}
+
+.md-typeset pre code {
+    font-size: inherit;
+    line-height: inherit;
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
+/* 表格：全宽、表头、斑马纹、轻 hover（移动端见下方媒体查询，避免 overflow 裁切导致无法横滑） */
+.md-typeset table {
+    display: table;
+    width: 100%;
+    margin: 1.25rem 0 1.5rem;
+    border-collapse: collapse;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.md-typeset table th,
+.md-typeset table td {
+    padding: 0.75rem 0.9rem;
+    vertical-align: top;
+    border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-typeset table thead th,
+.md-typeset table tr:first-child th {
+    font-weight: 650;
+    color: var(--md-default-fg-color);
+    background-color: var(--md-code-bg-color);
+    border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-typeset table tbody tr:nth-child(even) {
+    background-color: color-mix(in srgb, var(--md-default-fg-color--lightest) 35%, transparent);
+}
+
+.md-typeset table tbody tr:hover {
+    background-color: color-mix(in srgb, var(--md-default-fg-color--lightest) 55%, transparent);
+}
+
+.md-typeset table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+    margin: 1.2rem 0 1.4rem;
+    border-radius: 0.7rem;
+    box-shadow: 0 0.2rem 0.8rem rgba(15, 23, 42, 0.06);
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+    font-weight: 700;
+}
+
+.md-typeset hr {
+    margin: 1.85rem 0;
+}
+
+@media (max-width: 768px) {
+    /* 正文列可横向滚动：宽表格不覆盖侧栏/顶栏，由整列 overscroll 约束在内容区 */
+    article.md-content__inner.md-typeset {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-x: contain;
+    }
+
+    .md-typeset h1 {
+        font-size: 1.5rem;
+    }
+
+    .md-typeset h2 {
+        font-size: 1.15rem;
+    }
+
+    .md-typeset pre {
+        font-size: 0.85em;
+        padding: 0.7em 0.85em;
+    }
+
+    /* 允许表格按内容变宽，配合上文 article 的 overflow-x 横向滑动阅读 */
+    .md-typeset table {
+        width: max-content;
+        min-width: 100%;
+        max-width: none;
+        overflow: visible;
+        border-radius: 0.35rem;
+    }
+
+    .md-typeset table th,
+    .md-typeset table td {
+        padding: 0.55rem 0.65rem;
+        font-size: 0.92em;
+        word-break: break-word;
+    }
+}
+
+/* color-mix 不可用时：偶数行仅用主题浅色底，hover 与主样式一致 */
+@supports not (background: color-mix(in srgb, white 50%, black)) {
+    .md-typeset table tbody tr:nth-child(even) {
+        background-color: var(--md-default-fg-color--lightest);
+    }
+}

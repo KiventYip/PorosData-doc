@@ -114,7 +114,6 @@ nav:
       - Glossary: community/glossary.md
       - API Reference: community/api-reference.md
       - Design Philosophy: community/design-philosophy.md
-      - Contributing: community/contributing.md
       - Document formatting: community/document-formatting.md
       - Roadmap: community/roadmap.md
       - Changelog: community/changelog.md

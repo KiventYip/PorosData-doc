@@ -9,3 +9,8 @@ authors:
     description: PorosData maintainer and technical writing
     avatar: "assets/images/author - Kivent.png"
     url: https://github.com/KiventYip
+  yusheng:
+    name: Yu Sheng
+    description: Research contributor
+    avatar: "assets/images/author-avatar-default.svg"
+    url: https://github.com/KiventYip/PorosData-doc
